@@ -1,0 +1,22 @@
+@import "styles/themes/colors";
+.mainNav{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  ul{
+    li{
+      padding-left: 20px;
+      padding-right: 20px;
+      letter-spacing: 2px;
+      a{
+        color: $blue;
+        font-weight: 600;
+      }
+    }
+  }
+  .cartIcon{
+    padding-right: 20px;
+  }
+}

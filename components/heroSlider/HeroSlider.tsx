@@ -22,6 +22,42 @@ export default function HeroSlider() {
                     </div>
                 </div>
                 <div className={styles.heroSliderSection}>
+                    <div className={`row`}>
+                        <div className={`col-md-4`}>
+                            <div className={`${styles.heroCard} d-flex justify-content-center align-items-center text-primary`}>
+                                <div className={styles.herocardLeft}>
+                                    <h3>Personal Care Products</h3>
+                                    <img src={`../images/arrow-right.svg`} />
+                                </div>
+                                <div className={styles.herocardRight}>
+                                    <img className={styles.heroImage} src={`../images/card-image.png`} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`col-md-4`}>
+                            <div className={`${styles.heroCard} d-flex justify-content-center align-items-center text-primary`}>
+                                <div className={styles.herocardLeft}>
+                                    <h3>Personal Care Products</h3>
+                                    <img src={`../images/arrow-right.svg`} />
+                                </div>
+                                <div className={styles.herocardRight}>
+                                    <img className={styles.heroImage}  src={`../images/card-image.png`} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`col-md-4`}>
+                            <div className={`${styles.heroCard} d-flex justify-content-center align-items-center text-primary`}>
+                                <div className={styles.herocardLeft}>
+                                    <h3>Personal Care Products</h3>
+                                    <img src={`../images/arrow-right.svg`} />
+                                </div>
+                                <div className={styles.herocardRight}>
+                                    <img className={styles.heroImage} src={`../images/card-image.png`} />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
 
                 </div>

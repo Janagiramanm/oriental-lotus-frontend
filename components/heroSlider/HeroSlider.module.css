@@ -13,5 +13,23 @@
   font-size: 61px;
   line-height: 70px;
 }
+.heroSlider p {
+  font-size: 21px;
+}
+.heroSlider .heroCard {
+  background: #ffffff;
+  padding: 20px;
+}
+.heroSlider .heroCard h3 {
+  font-size: 22px;
+}
+.heroSlider .heroImage {
+  width: 110px;
+}
+
+.heroSliderSection {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
 
 /*# sourceMappingURL=HeroSlider.module.css.map */

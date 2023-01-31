@@ -1,10 +1,23 @@
 import next from "next";
 import styles from "./MainNav.module.scss";
-import React, {} from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from "next/link";
 export default function MainNav() {
+
+    const [scroll, setScroll] = useState('')
+    useEffect(() => {
+        document.addEventListener("scroll", () => {
+            const scrollCheck = window.scrollY > 100
+            if (scrollCheck) {
+                setScroll('whitemenu');
+            } else {
+                setScroll('');
+            }
+        })
+
+    },[])
     return (
-        <div className={styles.mainNav}>
+        <div className={styles.mainNav +' '+ scroll} >
             <div className="container-fluid">
                 <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
                     <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">

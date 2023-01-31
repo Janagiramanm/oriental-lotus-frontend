@@ -1,6 +1,7 @@
 import next from "next";
 import styles from "./MainNav.module.scss";
 import React, {} from 'react'
+import Link from "next/link";
 export default function MainNav() {
     return (
         <div className={styles.mainNav}>
@@ -10,10 +11,10 @@ export default function MainNav() {
                         <img src={"/images/logo.png"} width={"100px"} />
                     </a>
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" className="nav-link px-2 ">PRODUCTS</a></li>
-                        <li><a href="#" className="nav-link px-2 ">BRANDS</a></li>
-                        <li><a href="#" className="nav-link px-2 ">CUSTOMISE</a></li>
-                        <li><a href="#" className="nav-link px-2 ">ABOUT</a></li>
+                        <li><Link href="#" className="nav-link px-2 ">PRODUCTS</Link></li>
+                        <li><Link href="#" className="nav-link px-2 ">BRANDS</Link></li>
+                        <li><Link href="#" className="nav-link px-2 ">CUSTOMISE</Link></li>
+                        <li><Link href="#" className="nav-link px-2 ">ABOUT</Link></li>
                     </ul>
 
                     <div className="col-md-3 text-end">

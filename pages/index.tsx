@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/themes/styles.module.scss'
 import MainNav from "../components/nav/MainNav";
 import HeroSlider from "../components/heroSlider/HeroSlider";
+import AboutSection from "../components/aboutSection/AboutSection";
+import FeaturedProductSection from "../components/featuredProductSection/FeaturedProductSection";
 
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
     <div>
         <MainNav/>
         <HeroSlider/>
+        <AboutSection/>
+        <FeaturedProductSection/>
     </div>
   )
 }

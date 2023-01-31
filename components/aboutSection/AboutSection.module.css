@@ -1,0 +1,16 @@
+.aboutSection {
+  padding-top: 140px;
+  padding-bottom: 240px;
+  background: url("/images/curve-bg.svg");
+  color: #ffffff;
+  margin-top: -45px;
+}
+.aboutSection h2 {
+  font-size: 46px;
+  font-weight: 100;
+}
+.aboutSection p {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=AboutSection.module.css.map */

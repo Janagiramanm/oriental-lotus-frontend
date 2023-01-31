@@ -2,6 +2,7 @@ import next from "next";
 import styles from "./FeaturedProductSlider.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
+import Image from "next/image";
 export default function FeaturedProductSlider() {
     return (
        <div className={styles.featuredSlider}>
@@ -13,7 +14,7 @@ export default function FeaturedProductSlider() {
            <div className={`container`}>
                <div className={styles.SliderSection}>
                    <div className={``}>
-                       <img src={`../images/featuredbanner.png`} />
+                       <Image alt={`image`} src={`../images/featuredbanner.png`} />
                    </div>
                </div>
            </div>

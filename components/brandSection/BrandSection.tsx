@@ -2,6 +2,7 @@ import next from "next";
 import styles from "./BrandSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
+import Image from "next/image"
 export default function BrandSection() {
     return (
        <div className={styles.brandSection}>
@@ -15,31 +16,31 @@ export default function BrandSection() {
               <div className={`row justify-content-center align-items-center`}>
                   <div className={`col-md-2`}>
                       <div className={styles.brandBlock}>
-                          <img src={`../images/client-1.png`} />
+                          <Image src={`../images/client-1.png`} alt={`image`} />
                       </div>
                   </div>
                   <div className={`col-md-2`}>
                       <div className={styles.brandBlock}>
-                          <img src={`../images/client-2.png`} />
+                          <Image src={`../images/client-2.png`} alt={`image`} />
                       </div>
                   </div>
                   <div className={`col-md-2`}>
                       <div className={styles.brandBlock}>
-                          <img src={`../images/client-3.png`} />
+                          <Image src={`../images/client-3.png`} alt={`image`} />
                       </div>
                   </div>
                   <div className={`col-md-2`}>
                       <div className={styles.brandBlock}>
-                          <img src={`../images/client-4.png`} />
+                          <Image src={`../images/client-4.png`} alt={`image`} />
                       </div>
                   </div> <div className={`col-md-2`}>
                   <div className={styles.brandBlock}>
-                      <img src={`../images/client-5.png`} />
+                      <Image src={`../images/client-5.png`} alt={`image`} />
                   </div>
               </div>
                   <div className={`col-md-2`}>
                       <div className={styles.brandBlock}>
-                          <img src={`../images/client-6.png`} />
+                          <Image src={`../images/client-6.png`} alt={`image`} />
                       </div>
                   </div>
 

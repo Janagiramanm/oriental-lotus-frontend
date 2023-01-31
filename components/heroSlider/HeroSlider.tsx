@@ -1,6 +1,7 @@
 import next from "next";
 import styles from "./HeroSlider.module.scss";
 import React, {} from 'react'
+import Image from "next/image";
 export default function HeroSlider() {
     return (
         <div className={styles.heroSlider}>
@@ -17,7 +18,7 @@ export default function HeroSlider() {
                     </div>
                     <div className={`col-6`}>
                         <div className={styles.heroBanner}>
-                            <img src={`../images/banner.png`} width={`100%`} />
+                            <Image src={`../images/banner.png`}  alt={`image`}/>
                         </div>
                     </div>
                 </div>
@@ -27,7 +28,7 @@ export default function HeroSlider() {
                             <div className={`${styles.heroCard} d-flex justify-content-center align-items-center text-secondary`}>
                                 <div className={styles.herocardLeft}>
                                     <h3>Personal Care Products</h3>
-                                    <img src={`../images/arrow-right.svg`} />
+                                    <Image src={`../images/arrow-right.svg`} alt={`image`} />
                                 </div>
                                 <div className={styles.herocardRight}>
                                     <img className={styles.heroImage} src={`../images/card-image.png`} />
@@ -38,10 +39,10 @@ export default function HeroSlider() {
                             <div className={`${styles.heroCard} d-flex justify-content-center align-items-center text-secondary`}>
                                 <div className={styles.herocardLeft}>
                                     <h3>Personal Care Products</h3>
-                                    <img src={`../images/arrow-right.svg`} />
+                                    <Image src={`../images/arrow-right.svg`} alt={`image`} />
                                 </div>
                                 <div className={styles.herocardRight}>
-                                    <img className={styles.heroImage}  src={`../images/card-image.png`} />
+                                    <Image className={styles.heroImage}  src={`../images/card-image.png`} alt={`image`} />
                                 </div>
                             </div>
                         </div>
@@ -49,10 +50,10 @@ export default function HeroSlider() {
                             <div className={`${styles.heroCard} d-flex justify-content-center align-items-center text-secondary`}>
                                 <div className={styles.herocardLeft}>
                                     <h3>Personal Care Products</h3>
-                                    <img src={`../images/arrow-right.svg`} />
+                                    <Image src={`../images/arrow-right.svg`} alt={`image`} />
                                 </div>
                                 <div className={styles.herocardRight}>
-                                    <img className={styles.heroImage} src={`../images/card-image.png`} />
+                                    <Image className={styles.heroImage} src={`../images/card-image.png`} alt={`image`} />
                                 </div>
                             </div>
                         </div>

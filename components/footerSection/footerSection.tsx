@@ -2,13 +2,14 @@ import next from "next";
 import styles from "./footerSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
+import Image from "next/image";
 export default function FooterSection() {
     return (
        <div className={styles.footerSection}>
            <div className={`container`}>
                <div className={`row pb-5 justify-content-center align-items-center`}>
                    <div className={`col-md-8 text-start`}>
-                      <img src={'../images/logo-footer.png'} />
+                      <Image src={'../images/logo-footer.png'} alt={`image`}  />
                    </div>
                    <div className={`col-md-4 justify-content-end text-end`}>
                         <div className={styles.talkExpert}>

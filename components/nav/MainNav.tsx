@@ -7,9 +7,9 @@ export default function MainNav() {
         <div className={styles.mainNav}>
             <div className="container-fluid">
                 <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-                    <a href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                         <img src={"/images/logo.png"} width={"100px"} />
-                    </a>
+                    </Link>
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <li><Link href="#" className="nav-link px-2 ">PRODUCTS</Link></li>
                         <li><Link href="#" className="nav-link px-2 ">BRANDS</Link></li>

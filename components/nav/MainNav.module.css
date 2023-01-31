@@ -1,17 +1,21 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "styles/themes/colors";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   MainNav.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"styles/themes/colors\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   MainNav.module.scss 1:9  root stylesheet";
+.mainNav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
 }
+.mainNav ul li {
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+}
+.mainNav ul li a {
+  color: #36276F;
+  font-weight: 600;
+}
+.mainNav .cartIcon {
+  padding-right: 20px;
+}
+
+/*# sourceMappingURL=MainNav.module.css.map */

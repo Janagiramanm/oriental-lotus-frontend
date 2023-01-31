@@ -6,7 +6,7 @@ export default function InsightSection() {
     return (
        <div className={styles.insightSection}>
            <div className={`container`}>
-               <div className={`row`}>
+               <div className={`row pb-5`}>
                    <div className={`col-md-6 text-left`}>
                        <h3>LATEST INSIGHT</h3>
                    </div>

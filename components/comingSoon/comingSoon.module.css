@@ -1,0 +1,48 @@
+.footerSection {
+  text-align: center;
+  background: url("/images/shape-bg.svg");
+  padding-top: 140px;
+  padding-bottom: 20px;
+  background-size: 100%;
+}
+.footerSection .talkExpert {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.footerSection h5 {
+  color: #FFD2DD;
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.footerSection ul {
+  text-align: left;
+  padding-left: 0px;
+}
+.footerSection ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footerSection ul li a {
+  color: #ffffff;
+}
+.footerSection .InputCustom {
+  width: 80%;
+  margin-top: 20px;
+}
+.footerSection .footerBottom {
+  border-top: 1px solid #979797;
+  padding-top: 20px;
+  margin-top: 60px;
+}
+.footerSection .footerBottom ul {
+  display: flex;
+  justify-items: center;
+}
+.footerSection .footerBottom ul li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+/*# sourceMappingURL=comingSoon.module.css.map */

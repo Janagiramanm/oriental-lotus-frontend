@@ -31,7 +31,7 @@ export default function HeroSlider() {
                                     <Image src={`../images/arrow-right.svg`} alt={`image`} />
                                 </div>
                                 <div className={styles.herocardRight}>
-                                    <img className={styles.heroImage} src={`../images/card-image.png`} />
+                                    <Image className={styles.heroImage} src={`../images/card-image.png`} alt={`image`} />
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,7 @@ export default function FeaturedProductSlider() {
            <div className={`container`}>
                <div className={styles.SliderSection}>
                    <div className={``}>
-                       <Image alt={`image`} src={`../images/featuredbanner.png`} />
+                       <Image alt={`image`} src={`/images/featuredbanner.png`} />
                    </div>
                </div>
            </div>

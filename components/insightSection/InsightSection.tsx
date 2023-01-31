@@ -19,7 +19,7 @@ export default function InsightSection() {
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
                           <div className={styles.image1}>
-                            <Image src={"../images/insight-1.png"} alt={`image`} />
+                            <Image src={"/images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
                           <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
@@ -28,7 +28,7 @@ export default function InsightSection() {
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
                           <div className={styles.image1}>
-                              <Image src={"../images/insight-1.png"} alt={`image`} />
+                              <Image src={"/images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
                           <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
@@ -37,7 +37,7 @@ export default function InsightSection() {
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
                           <div className={styles.image1}>
-                              <Image src={"../images/insight-1.png"} alt={`image`} />
+                              <Image src={"/images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
                           <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>

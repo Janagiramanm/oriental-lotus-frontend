@@ -11,20 +11,20 @@ export default function FeaturedProductSection() {
                     <div className={`col-md-4`}>
                         <div className={styles.featuredPro}>
                             <div className={styles.featuredImage}>
-                                <Image src={"../images/product-image.png"} alt={`image`}/>
+                                <Image src={"/images/product-image.png"} alt={`image`}/>
                                 <Link href={`/`}>Body Lotion</Link>
                             </div>
                         </div>
                     </div>
                     <div className={`col-md-4 pt-5`}>
                         <div className={styles.featuredImage}>
-                            <Image src={"../images/product-image.png"} alt={`image`}/>
+                            <Image src={"/images/product-image.png"} alt={`image`}/>
                             <Link href={`/`}>Body Lotion</Link>
                         </div>
                     </div>
                     <div className={`col-md-4`}>
                         <div className={styles.featuredImage}>
-                            <Image src={"../images/product-image.png"} alt={`image`}/>
+                            <Image src={"/images/product-image.png"} alt={`image`}/>
                             <Link href={`/`}>Body Lotion</Link>
                         </div>
                     </div>

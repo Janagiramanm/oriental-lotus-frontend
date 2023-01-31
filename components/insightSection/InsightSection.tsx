@@ -2,6 +2,7 @@ import next from "next";
 import styles from "./InsightSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
+import Image from 'next/image';
 export default function InsightSection() {
     return (
        <div className={styles.insightSection}>
@@ -18,7 +19,7 @@ export default function InsightSection() {
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
                           <div className={styles.image1}>
-                            <img src={"../images/insight-1.png"} />
+                            <Image src={"../images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
                           <p>INTERNATIONAL MEN'S DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
@@ -27,7 +28,7 @@ export default function InsightSection() {
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
                           <div className={styles.image1}>
-                              <img src={"../images/insight-1.png"} />
+                              <Image src={"../images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
                           <p>INTERNATIONAL MEN'S DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
@@ -36,7 +37,7 @@ export default function InsightSection() {
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
                           <div className={styles.image1}>
-                              <img src={"../images/insight-1.png"} />
+                              <Image src={"../images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
                           <p>INTERNATIONAL MEN'S DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>

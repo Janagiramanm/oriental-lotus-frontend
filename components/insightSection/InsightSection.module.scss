@@ -1,0 +1,16 @@
+.insightSection{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  .InsightBlock{
+    .Image{
+      img{
+        width: 100%;
+      }
+    }
+    h6{
+      font-size: 13px;
+    }
+  }
+}

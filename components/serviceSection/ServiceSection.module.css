@@ -3,6 +3,11 @@
   padding-top: 60px;
   padding-bottom: 60px;
 }
+@media (max-width: 575.98px) {
+  .serviceSection {
+    margin-top: 90px;
+  }
+}
 .serviceSection h5 {
   font-weight: 600;
   color: #231752;

@@ -6,6 +6,12 @@
   padding-right: 40px;
   transition: 0.5s ease all;
 }
+@media (max-width: 575.98px) {
+  .mainNav {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .mainNav ul li {
   padding-left: 20px;
   padding-right: 20px;

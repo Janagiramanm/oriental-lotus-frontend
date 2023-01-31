@@ -1,5 +1,11 @@
+
+
 .heroSlider{
   height: 100vh;
+  @media (max-width: 575.98px) {
+    height: 1010px;
+    margin-bottom: 40px;
+  }
   width: 100%;
   background: url("/images/heroslider-bg.svg");
   background-repeat: no-repeat;
@@ -7,17 +13,35 @@
   justify-content: center;
   align-items: center;
   background-size: cover;
+  background-position: top center;
+
   h1{
     font-weight: 400;
     font-size: 61px;
     line-height: 70px;
+    @media (max-width: 575.98px) {
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: 600;
+    }
   }
+
+
   p{
     font-size: 21px;
+    @media (max-width: 575.98px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
   .heroCard{
     background: #ffffff;
     padding: 20px;
+    @media (max-width: 575.98px) {
+        margin-bottom: 20px;
+        margin-top: 20px;
+      box-shadow:-3px 7px 11px #f49cc34d;
+    }
     h3{
       font-size: 22px;
     }
@@ -30,4 +54,8 @@
 .heroSliderSection{
   margin-top: 20px;
   padding-bottom: 60px;
+  @media (max-width: 575.98px) {
+    padding-bottom: 0px;
+  }
+
 }

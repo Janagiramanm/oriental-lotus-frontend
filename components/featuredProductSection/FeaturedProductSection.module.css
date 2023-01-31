@@ -4,7 +4,9 @@
   padding-top: 140px;
   padding-bottom: 440px;
   margin-top: -64px;
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .featuredSection a {
   margin-top: 20px;
@@ -21,6 +23,9 @@
 }
 .featuredSection .pushTop {
   margin-top: -250px;
+}
+.featuredSection .featuredImage {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=FeaturedProductSection.module.css.map */

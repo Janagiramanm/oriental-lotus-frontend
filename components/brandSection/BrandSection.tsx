@@ -14,31 +14,31 @@ export default function BrandSection() {
                    </div>
                </div>
               <div className={`row justify-content-center align-items-center`}>
-                  <div className={`col-md-2`}>
+                  <div className={`col-6 col-md-2`}>
                       <div className={styles.brandBlock}>
                           <img src={`/images/client-1.png`} alt={`image`} />
                       </div>
                   </div>
-                  <div className={`col-md-2`}>
+                  <div className={`col-6 col-md-2`}>
                       <div className={styles.brandBlock}>
                           <img src={`/images/client-2.png`} alt={`image`} />
                       </div>
                   </div>
-                  <div className={`col-md-2`}>
+                  <div className={`col-6 col-md-2`}>
                       <div className={styles.brandBlock}>
                           <img src={`/images/client-3.png`} alt={`image`} />
                       </div>
                   </div>
-                  <div className={`col-md-2`}>
+                  <div className={`col-6 col-md-2`}>
                       <div className={styles.brandBlock}>
                           <img src={`/images/client-4.png`} alt={`image`} />
                       </div>
-                  </div> <div className={`col-md-2`}>
+                  </div> <div className={`col-6 col-md-2`}>
                   <div className={styles.brandBlock}>
                       <img src={`/images/client-5.png`} alt={`image`} />
                   </div>
               </div>
-                  <div className={`col-md-2`}>
+                  <div className={`col-6 col-md-2`}>
                       <div className={styles.brandBlock}>
                           <img src={`/images/client-6.png`} alt={`image`} />
                       </div>

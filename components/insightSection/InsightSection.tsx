@@ -8,10 +8,10 @@ export default function InsightSection() {
        <div className={styles.insightSection}>
            <div className={`container`}>
                <div className={`row pb-5`}>
-                   <div className={`col-md-6 text-left`}>
+                   <div className={`col-6 text-left`}>
                        <h3>LATEST INSIGHT</h3>
                    </div>
-                   <div className={`col-md-6 justify-content-end text-end`}>
+                   <div className={`col-6 justify-content-end text-end`}>
                        <button className={`btn btn-primary`}>View More</button>
                    </div>
                </div>

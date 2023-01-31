@@ -3,9 +3,18 @@
   background: url("/images/shape-bg.svg");
   padding-top: 140px;
   padding-bottom: 20px;
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 575.98px) {
+    padding-top: 50px;
+    .footerLeft{
+      padding-bottom: 30px;
+    }
+  }
 
-  .talkExpert{
+
+    .talkExpert{
     display: flex;
     justify-content: space-between;
     align-items: end;

@@ -8,7 +8,7 @@ export default function FooterSection() {
        <div className={styles.footerSection}>
            <div className={`container`}>
                <div className={`row pb-5 justify-content-center align-items-center`}>
-                   <div className={`col-md-8 text-start`}>
+                   <div className={`col-md-8 text-center text-md-start pb-4`}>
                       <img src={'/images/logo-footer.png'} alt={`image`}  />
                    </div>
                    <div className={`col-md-4 justify-content-end text-end`}>
@@ -32,7 +32,7 @@ export default function FooterSection() {
                       </div>
 
                   </div>
-                  <div className={`col-md-2`}>
+                  <div className={`col-4 col-md-2`}>
                       <h5>Useful Links</h5>
                       <ul>
                           <li><Link href={`/`}>Products</Link></li>
@@ -42,7 +42,7 @@ export default function FooterSection() {
                       </ul>
 
                   </div>
-                  <div className={`col-md-2`}>
+                  <div className={`col-4 col-md-2`}>
                       <h5>About</h5>
                       <ul>
                           <li><Link href={`/`}>Our Story</Link></li>
@@ -51,7 +51,7 @@ export default function FooterSection() {
                           <li><Link href={`/`}>Careers</Link></li>
                       </ul>
                   </div>
-                  <div className={`col-md-2 justify-content-start`}>
+                  <div className={`col-4 col-md-2 justify-content-start`}>
                       <h5>Help</h5>
                       <ul>
                           <li><Link href={`/`}>FAQs</Link></li>
@@ -61,13 +61,13 @@ export default function FooterSection() {
               </div>
                <div className={styles.footerBottom}>
                    <div className={`row`}>
-                       <div className={`col-md-4`}>
+                       <div className={`col-md-4 text-center text-md-end`}>
                            <ul className={`nav-link`}>
                                <li><Link href={`/`}>Terms & Conditions</Link></li>
                                <li><Link href={`/`}>Privacy Policy</Link></li>
                            </ul>
                        </div>
-                       <div className={`col-md-8 text-end`}>
+                       <div className={`col-md-8 text-center text-md-end`}>
                                <p className={`text-white`}>Copyright © 2023 Oriental Lotus  |  All Rights Reserved.  |  Powered by NetiApps</p>
                        </div>
                    </div>

@@ -7,18 +7,45 @@
   justify-content: center;
   align-items: center;
   background-size: cover;
+  background-position: top center;
+}
+@media (max-width: 575.98px) {
+  .heroSlider {
+    height: 1010px;
+    margin-bottom: 40px;
+  }
 }
 .heroSlider h1 {
   font-weight: 400;
   font-size: 61px;
   line-height: 70px;
 }
+@media (max-width: 575.98px) {
+  .heroSlider h1 {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+}
 .heroSlider p {
   font-size: 21px;
+}
+@media (max-width: 575.98px) {
+  .heroSlider p {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 .heroSlider .heroCard {
   background: #ffffff;
   padding: 20px;
+}
+@media (max-width: 575.98px) {
+  .heroSlider .heroCard {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: -3px 7px 11px rgba(244, 156, 195, 0.3019607843);
+  }
 }
 .heroSlider .heroCard h3 {
   font-size: 22px;
@@ -30,6 +57,11 @@
 .heroSliderSection {
   margin-top: 20px;
   padding-bottom: 60px;
+}
+@media (max-width: 575.98px) {
+  .heroSliderSection {
+    padding-bottom: 0px;
+  }
 }
 
 /*# sourceMappingURL=HeroSlider.module.css.map */

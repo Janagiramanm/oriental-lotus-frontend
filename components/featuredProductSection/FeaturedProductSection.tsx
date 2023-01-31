@@ -16,7 +16,7 @@ export default function FeaturedProductSection() {
                             </div>
                         </div>
                     </div>
-                    <div className={`col-md-4 pt-5`}>
+                    <div className={`col-md-4 pt-0 pt-md-5`}>
                         <div className={styles.featuredImage}>
                             <img src={"/images/product-image.png"} alt={`image`}/>
                             <Link href={`/`}>Body Lotion</Link>

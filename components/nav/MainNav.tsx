@@ -33,7 +33,7 @@ export default function MainNav() {
 
                     <div className="col-md-3 text-end">
                         <div className="d-flex justify-content-end align-items-center">
-                            <div className={styles.cartIcon}><Image alt={`image`} src={"/images/cart.svg"}  width={"auto"} /></div>
+                            <div className={styles.cartIcon}><Image alt={`image`} src={"/images/cart.svg"} /></div>
                             <button type="button" className="btn btn-primary">CONTACT</button>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ export default function InsightSection() {
               <div className={`row justify-content-center align-items-center`}>
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
-                          <div className={styles.Image}>
+                          <div className={styles.image1}>
                             <img src={"../images/insight-1.png"} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
@@ -26,7 +26,7 @@ export default function InsightSection() {
                   </div>
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
-                          <div className={styles.Image}>
+                          <div className={styles.image1}>
                               <img src={"../images/insight-1.png"} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
@@ -35,7 +35,7 @@ export default function InsightSection() {
                   </div>
                   <div className={`col-md-4`}>
                       <div className={styles.InsightBlock}>
-                          <div className={styles.Image}>
+                          <div className={styles.image1}>
                               <img src={"../images/insight-1.png"} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>

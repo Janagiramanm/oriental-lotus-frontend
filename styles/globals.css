@@ -9893,5 +9893,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.whitemenu {
+  background: #ffffff;
+  box-shadow: 1px -15px 30px #2c205c;
+}
 
 /*# sourceMappingURL=globals.css.map */

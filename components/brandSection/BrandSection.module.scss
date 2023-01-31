@@ -10,7 +10,9 @@
     padding-left: 10px;
     padding-right: 10px;
     img{
-      height: 100%;
+      max-width: 80%;
+      object-fit: cover;
+      margin: auto;
     }
   }
 }

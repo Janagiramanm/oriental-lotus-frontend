@@ -19,7 +19,7 @@ export default function MainNav() {
     return (
         <div className={styles.mainNav +' '+ scroll} >
             <div className="container-fluid">
-                <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+                <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
                     <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                         <img src={"/images/logo.png"} width={"100px"} />
                     </Link>

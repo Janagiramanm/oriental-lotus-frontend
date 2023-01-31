@@ -10,7 +10,9 @@
   padding-right: 10px;
 }
 .brandSection .brandBlock img {
-  height: 100%;
+  max-width: 80%;
+  object-fit: cover;
+  margin: auto;
 }
 
 /*# sourceMappingURL=BrandSection.module.css.map */

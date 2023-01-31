@@ -9,6 +9,7 @@ import FeaturedProductSlider from "../components/featuredProductSlider/FeaturedP
 import ServiceSection from "../components/serviceSection/ServiceSection";
 import BrandSection from "../components/brandSection/BrandSection";
 import InsightSection from "../components/insightSection/InsightSection";
+import FooterSection from "../components/footerSection/footerSection";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <ServiceSection/>
         <BrandSection/>
         <InsightSection/>
+        <FooterSection/>
     </div>
   )
 }

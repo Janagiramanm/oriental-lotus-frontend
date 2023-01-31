@@ -6,6 +6,8 @@ import HeroSlider from "../components/heroSlider/HeroSlider";
 import AboutSection from "../components/aboutSection/AboutSection";
 import FeaturedProductSection from "../components/featuredProductSection/FeaturedProductSection";
 import FeaturedProductSlider from "../components/featuredProductSlider/FeaturedProductSlider";
+import ServiceSection from "../components/serviceSection/ServiceSection";
+import BrandSection from "../components/brandSection/BrandSection";
 
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
         <AboutSection/>
         <FeaturedProductSection/>
         <FeaturedProductSlider/>
+        <ServiceSection/>
+        <BrandSection/>
     </div>
   )
 }

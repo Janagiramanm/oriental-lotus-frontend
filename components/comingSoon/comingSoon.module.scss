@@ -1,47 +1,20 @@
-.footerSection{
-  text-align: center;
-  background: url("/images/shape-bg.svg");
-  padding-top: 140px;
-  padding-bottom: 20px;
-  background-size: 100%;
-
-  .talkExpert{
+.comingSoon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  h1{
+    font-size: 110px;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    color: #34256b;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-  }
-  h5{
-    color: #FFD2DD;
-    text-align: left;
-    padding-bottom: 10px;
-    font-size: 16px;
-  }
-  ul{
-    text-align: left;
-    padding-left: 0px;
-    li{
-      list-style: none;
-      margin-bottom: 10px;
-      a{
-        color: #ffffff;
-      }
-    }
-  }
-  .InputCustom{
-    width: 80%;
-    margin-top: 20px;
-  }
-  .footerBottom{
-    border-top: 1px solid #979797;
-    padding-top: 20px;
-    margin-top: 60px;
-    ul{
-      display: flex;
-      justify-items: center;
-      li{
-        display: inline-block;
-        padding-right: 20px;
-      }
-    }
+    opacity: .5;
+    transform: rotateZ(-18deg);
   }
 }

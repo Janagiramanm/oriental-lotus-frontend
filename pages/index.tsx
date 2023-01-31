@@ -10,6 +10,7 @@ import ServiceSection from "../components/serviceSection/ServiceSection";
 import BrandSection from "../components/brandSection/BrandSection";
 import InsightSection from "../components/insightSection/InsightSection";
 import FooterSection from "../components/footerSection/footerSection";
+import ComingSoon from "../components/comingSoon/comingSoon";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <BrandSection/>
         <InsightSection/>
         <FooterSection/>
+        <ComingSoon/>
     </div>
   )
 }

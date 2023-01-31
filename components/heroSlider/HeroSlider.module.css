@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 100%;
+  background-size: cover;
 }
 .heroSlider h1 {
   font-weight: 400;

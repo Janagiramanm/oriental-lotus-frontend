@@ -2,6 +2,9 @@
 @import "themes/variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+body{
+  font-family: 'Josefin Sans', sans-serif;
+}
 .whitemenu{
   background: #ffffff;
   box-shadow: 1px -15px 30px #2c205c;

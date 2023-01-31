@@ -16,5 +16,8 @@
     display: flex;
     opacity: .5;
     transform: rotateZ(-18deg);
+    @media (max-width: 575.98px) {
+      font-size: 40px;
+    }
   }
 }

@@ -42,7 +42,7 @@ export default function HeroSlider() {
                                     <img src={`/images/arrow-right.svg`} alt={`image`} />
                                 </div>
                                 <div className={styles.herocardRight}>
-                                    <img className={styles.heroImage}  src={`/images/card-image.png`} alt={`image`} />
+                                    <img className={styles.heroImage}  src={`/images/pro-2.png`} alt={`image`} />
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ export default function HeroSlider() {
                                     <img src={`/images/arrow-right.svg`} alt={`image`} />
                                 </div>
                                 <div className={styles.herocardRight}>
-                                    <img className={styles.heroImage} src={`/images/card-image.png`} alt={`image`} />
+                                    <img className={styles.heroImage} src={`/images/pro-3.png`} alt={`image`} />
                                 </div>
                             </div>
                         </div>

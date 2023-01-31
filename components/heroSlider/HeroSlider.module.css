@@ -51,7 +51,9 @@
   font-size: 22px;
 }
 .heroSlider .heroImage {
-  width: 110px;
+  max-width: 100%;
+  object-fit: cover;
+  height: 80px;
 }
 
 .heroSliderSection {

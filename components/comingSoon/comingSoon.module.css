@@ -18,5 +18,10 @@
   opacity: 0.5;
   transform: rotateZ(-18deg);
 }
+@media (max-width: 575.98px) {
+  .comingSoon h1 {
+    font-size: 40px;
+  }
+}
 
 /*# sourceMappingURL=comingSoon.module.css.map */

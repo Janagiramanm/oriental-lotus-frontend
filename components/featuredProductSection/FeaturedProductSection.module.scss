@@ -2,7 +2,7 @@
   text-align: center;
   background: url("/images/shape-bg.svg");
   padding-top: 140px;
-  padding-bottom: 140px;
+  padding-bottom: 440px;
   margin-top: -64px;
   a{
     margin-top: 20px;
@@ -13,11 +13,12 @@
     line-height: 20px;
     color: #ffffff;
   }
-  .featuredPro{
 
-  }
   img{
     width: 100%;
     margin-bottom: 20px;
+  }
+  .pushTop{
+    margin-top: -250px;
   }
 }

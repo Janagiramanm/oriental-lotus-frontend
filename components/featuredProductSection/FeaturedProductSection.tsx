@@ -6,7 +6,7 @@ export default function FeaturedProductSection() {
     return (
         <div className={styles.featuredSection}>
             <div className={`container`}>
-                <div className={`row`}>
+                <div className={`${styles.pushTop} row`}>
                     <div className={`col-md-4`}>
                         <div className={styles.featuredPro}>
                             <div className={styles.featuredImage}>

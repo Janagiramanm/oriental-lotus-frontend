@@ -2,7 +2,7 @@
   text-align: center;
   background: url("/images/shape-bg.svg");
   padding-top: 140px;
-  padding-bottom: 140px;
+  padding-bottom: 440px;
   margin-top: -64px;
 }
 .featuredSection a {
@@ -17,6 +17,9 @@
 .featuredSection img {
   width: 100%;
   margin-bottom: 20px;
+}
+.featuredSection .pushTop {
+  margin-top: -250px;
 }
 
 /*# sourceMappingURL=FeaturedProductSection.module.css.map */

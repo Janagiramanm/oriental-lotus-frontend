@@ -1,0 +1,14 @@
+.featuredSlider {
+  margin-top: -340px;
+}
+.featuredSlider .title {
+  text-align: center;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.featuredSlider .SliderSection img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=FeaturedProductSlider.module.css.map */

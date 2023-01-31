@@ -22,7 +22,7 @@ export default function InsightSection() {
                             <Image src={"../images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
-                          <p>INTERNATIONAL MEN'S DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
+                          <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
                       </div>
                   </div>
                   <div className={`col-md-4`}>
@@ -31,7 +31,7 @@ export default function InsightSection() {
                               <Image src={"../images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
-                          <p>INTERNATIONAL MEN'S DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
+                          <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
                       </div>
                   </div>
                   <div className={`col-md-4`}>
@@ -40,7 +40,7 @@ export default function InsightSection() {
                               <Image src={"../images/insight-1.png"} alt={`image`} />
                           </div>
                           <h6>NOVEMBER 16, 2022</h6>
-                          <p>INTERNATIONAL MEN'S DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
+                          <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
                       </div>
                   </div>
 

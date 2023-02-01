@@ -28,7 +28,6 @@ export default function Home() {
         <BrandSection/>
         <InsightSection/>
         <FooterSection/>
-        <ComingSoon/>
     </div>
   )
 }

@@ -1,0 +1,101 @@
+.introSection{
+  background: #000000;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: #ffffff;
+  h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+  }
+  h4{
+    font-weight: 200;
+    font-size: 34px;
+    padding-left: 40pt;
+    padding-right: 40pt;
+  }
+}
+
+@keyframes marqueeOne {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+// marqueeTwo moves from LEFT to RIGHT.
+@keyframes marqueeTwo {
+  0% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+}
+
+
+
+.marquee {
+  position: relative;
+  // Overflow hidden prevents the div from being scrollable.
+  overflow: hidden;
+  // Offset is just the off-screen placement of the marquees. We don't want them dead-center.
+  --offset: 20vw;
+  // Adjust "-25%" based on how many spans you have.
+  // In our case, "-25%" is ONE span out of FOUR.
+  // The -50% is just double that, so when the animation resets,
+  // the text will have moved in such a way that one span overlaps the span next to it.
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+
+  &__inner {
+    // Width of the div is set to FIT its content.
+    width: fit-content;
+    display: flex;
+    position: relative;
+    // white-space: nowrap; means on overflow, the text doesn't wrap to the next line.
+    // This allows us to have a single line of text, regardless of the font-size.
+    white-space: nowrap;
+    span {
+      // I chose a font-size of 10vw just because it looks good and adapts to the screen size.
+      // I could use clamp() here, but I want the font-size to adapt consistently at every viewport width.
+      // If I set a min/max font-size with clamp(), it'll mess up the animation.
+      font-size: 10vw;
+      padding: 0 2vw;
+      text-transform: uppercase;
+    }
+  }
+  .first {
+    // Here our text moves in the x-direction (left/right) based on our variable above.
+    transform: translate3d(var(--move-initial), 0, 0);
+    // Here we declare our animation.
+    // We're using the marqueeOne animation.
+    // 10s duration with a linear ease and will repeat infinitely.
+    animation: marqueeOne 10s linear infinite;
+
+    span {
+      // This is how you get those 'bordered' texts.
+      // text-stroke is the border.
+      // text-fill-color is (obviously) the fill color of the text.
+      -webkit-text-stroke: 2px black;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: 1024px) {
+        -webkit-text-stroke: 3px black;
+      }
+    }
+  }
+
+  .second {
+    // Here our text moves in the x-direction (left/right) based on our variable above.
+    // I'm using the final variable here as this second marquee is the reverse of the first one.
+    // Although, when I experimented with this, it didn't seem to matter haha.
+    transform: translate3d(var(--final-initial), 0, 0);
+    // We're using the marqueeTwo animation (basically reverse of marqueeOne).
+    // 10s duration with a linear ease and will repeat infinitely.
+    animation: marqueeTwo 10s linear infinite;
+  }
+}

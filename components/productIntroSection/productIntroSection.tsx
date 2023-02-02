@@ -46,6 +46,18 @@ export default function ProductIntroSection() {
                           <div className="orb">BODY SHOWER</div>
                         <div className="orb">CAP</div>
                     </span>
+                    <span>
+                        <div className="orb">LIQUIDS</div>
+                        <div className="orb">BAR SOAP</div>
+                        <div className="orb">CREAMS AND FOAMS</div>
+                        <div className="orb">PERSONAL CARE</div>
+                        <div className="orb">LIQUIDS</div>
+                        <div className="orb">SHOWER GEL</div>
+                        <div className="orb">BODY SHOWER</div>
+                          <div className="orb">BODY SHOWER</div>
+                          <div className="orb">BODY SHOWER</div>
+                        <div className="orb">CAP</div>
+                    </span>
 
                 </div>
             </div>

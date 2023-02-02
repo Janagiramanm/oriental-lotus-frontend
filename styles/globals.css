@@ -9911,7 +9911,7 @@ body {
   padding-left: 40px;
   float: left;
   transition: all 0.2s ease-out;
-  font-size: 40px;
+  font-size: 28px;
 }
 
 .orb:hover {
@@ -9927,6 +9927,9 @@ body {
   box-sizing: border-box;
   position: relative;
   margin: 0px auto;
+  border-top: 1px solid #fff;
+  margin-top: 60px;
+  z-index: 1;
 }
 
 .marquee--inner {

@@ -1,35 +1,33 @@
 import next from "next";
-import styles from "./productHeroSection.module.scss";
+import styles from "./brandHeroSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
-export default function ProductHeroSection() {
+export default function BrandHeroSection() {
     return (
         <div>
-            <div className={styles.productHeroSection}>
+            <div className={styles.brandHeroSection}>
                 <div className={`container`}>
-                    <div className={`row`}>
+                    <div className={`row justify-content-center align-items-center`}>
                        <div className={`col-md-6`}>
-
-                           <div className={styles.breadcrumb}>
-                               <nav aria-label="breadcrumb">
-                                   <ol className="breadcrumb">
-                                       <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                       <li className="breadcrumb-item active" aria-current="page">Library</li>
-                                   </ol>
-                               </nav>
-                               </div>
+                           <div className={styles.brandImage}>
+                                <img src={`/images/client-1.png`} />
+                           </div>
                                <div className={styles.HeroContent}>
-                                   <h2>Moisturize, purify and relax with LOccitane sensorial body care products, made with natural ingredients from the South of France.</h2>
+                                   <h2>Keep up with good skin care habits to stay Glow</h2>
                                </div>
 
                        </div>
-                       <div className={`col-md-6`}></div>
+                       <div className={`col-md-6`}>
+                           <div className={styles.heroBanner}>
+                               <img src={`/images/amaki.png`} />
+                           </div>
+                       </div>
                </div>
                 </div>
 
             </div>
                 <div className={`row gx-0`}>
-                    <div className={`col-md-6 bg-secondary pr-0`}>
+                    <div className={`col-md-6 bg-primary pr-0`}>
                         <div className={`row gx-0 justify-content-center align-items-center`}>
                             <div className={`col-md-6 text-white`}>
                                 <div className={styles.heroSmallContent}>
@@ -45,7 +43,7 @@ export default function ProductHeroSection() {
                             </div>
                         </div>
                     </div>
-                    <div className={`col-md-6 bg-secondary pr-0`}>
+                    <div className={`col-md-6 bg-primary pr-0`}>
                         <div className={`row gx-0 justify-content-center align-items-center`}>
                             <div className={`col-md-6 text-white`}>
                                 <div className={styles.heroSmallContent}>

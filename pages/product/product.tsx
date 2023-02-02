@@ -12,6 +12,7 @@ import InsightSection from "../../components/insightSection/InsightSection";
 import FooterSection from "../../components/footerSection/footerSection";
 import ProductHeroSection from "../../components/productHeroSection/productHeroSection";
 import ProductIntroSection from "../../components/productIntroSection/productIntroSection";
+import ProductListSection from "../../components/productListSection/productListSection";
 
 
 export default function Product() {
@@ -20,8 +21,11 @@ export default function Product() {
             <MainNav/>
             <ProductHeroSection/>
             <ProductIntroSection/>
+            <ProductListSection/>
             <BrandSection/>
+            <ServiceSection/>
             <FooterSection/>
+
         </div>
     )
 }

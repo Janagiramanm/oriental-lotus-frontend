@@ -3,39 +3,21 @@ import styles from "./ServiceSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 import Image from "next/image";
-export default function ServiceSection() {
+export default function ServiceSection({service}:any) {
     return (
        <div className={styles.serviceSection}>
            <div className={`container`}>
               <div className={`row`}>
-                  <div className={`col-md-3`}>
-                      <div className={styles.serviceBlock}>
-                          <img src={`/images/icon-1.png`}  alt={`image`}/>
-                          <h5>PRABEN FREE</h5>
-                          <p>Our products are paraben free, and that goes for all our products, not just our top picks.</p>
-                      </div>
-                  </div>
-                  <div className={`col-md-3`}>
-                      <div className={styles.serviceBlock}>
-                          <img src={`/images/icon-2.png`} alt={`image`} />
-                          <h5>PRABEN FREE</h5>
-                          <p>Our products are paraben free, and that goes for all our products, not just our top picks.</p>
-                      </div>
-                  </div>
-                  <div className={`col-md-3`}>
-                      <div className={styles.serviceBlock}>
-                          <img src={`/images/icon-3.png`} alt={`image`} />
-                          <h5>PRABEN FREE</h5>
-                          <p>Our products are paraben free, and that goes for all our products, not just our top picks.</p>
-                      </div>
-                  </div>
-                  <div className={`col-md-3`}>
-                      <div className={styles.serviceBlock}>
-                          <img src={`/images/icon-4.png`} alt={`image`} />
-                          <h5>PRABEN FREE</h5>
-                          <p>Our products are paraben free, and that goes for all our products, not just our top picks.</p>
-                      </div>
-                  </div>
+                  {service?.map((element:any, index:any)=>(
+                        <div className={`col-md-3`} key={index}>
+                            <div className={styles.serviceBlock}>
+                                <img src={element.image.url}  alt={`image`}/>
+                                <h5>{element.title}</h5>
+                                <div dangerouslySetInnerHTML={{__html:element.description}}></div>
+                            </div>
+                        </div>
+                  ))}
+                 
               </div>
            </div>
        </div>

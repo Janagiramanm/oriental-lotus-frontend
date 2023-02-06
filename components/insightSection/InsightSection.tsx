@@ -3,46 +3,33 @@ import styles from "./InsightSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 import Image from 'next/image';
-export default function InsightSection() {
+import { format } from 'date-fns';
+import Moment from 'moment';
+export default function InsightSection({insight}:any) {
     return (
        <div className={styles.insightSection}>
            <div className={`container`}>
                <div className={`row pb-5`}>
                    <div className={`col-6 text-left`}>
-                       <h3>LATEST INSIGHT</h3>
+                       <h3>{insight.title}</h3>
                    </div>
                    <div className={`col-6 justify-content-end text-end`}>
-                       <button className={`btn btn-primary`}>View More</button>
+                      <Link href={insight.button_link}> <button className={`btn btn-primary`}>{insight.button_label}</button> </Link> 
                    </div>
                </div>
               <div className={`row justify-content-center align-items-center`}>
-                  <div className={`col-md-4`}>
-                      <div className={styles.InsightBlock}>
-                          <div className={styles.image1}>
-                            <img src={"/images/insight-1.png"} alt={`image`} />
-                          </div>
-                          <h6>NOVEMBER 16, 2022</h6>
-                          <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
-                      </div>
-                  </div>
-                  <div className={`col-md-4`}>
-                      <div className={styles.InsightBlock}>
-                          <div className={styles.image1}>
-                              <img src={"/images/insight-2.png"} alt={`image`} />
-                          </div>
-                          <h6>NOVEMBER 16, 2022</h6>
-                          <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
-                      </div>
-                  </div>
-                  <div className={`col-md-4`}>
-                      <div className={styles.InsightBlock}>
-                          <div className={styles.image1}>
-                              <img src={"/images/insight-3.png"} alt={`image`} />
-                          </div>
-                          <h6>NOVEMBER 16, 2022</h6>
-                          <p>INTERNATIONAL MENS DAY 2022: THOUGHTFUL GIFTS TO CELEBRATE THE MEN IN OUR LIVES</p>
-                      </div>
-                  </div>
+                  {insight.insight_list?.map((element:any, index:any)=>(
+                    <div className={`col-md-4`} key={index}>
+                        <div className={styles.InsightBlock}>
+                            <div className={styles.image1}>
+                            <img src={element.image.url} alt={element.image.title} />
+                            </div>
+                            <h6>{Moment(element.date).format('MMMM Do YYYY')}</h6>
+                            <p>{element.title}</p>
+                        </div>
+                    </div>
+                  ))}
+                 
 
               </div>
            </div>

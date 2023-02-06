@@ -3,31 +3,22 @@ import styles from "./FeaturedProductSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 import Image from "next/image";
-export default function FeaturedProductSection() {
+export default function FeaturedProductSection({featureProduct}:any) {
+
     return (
         <div className={styles.featuredSection}>
             <div className={`container`}>
                 <div className={`${styles.pushTop} row`}>
-                    <div className={`col-md-4`}>
-                        <div className={styles.featuredPro}>
-                            <div className={styles.featuredImage}>
-                                <img src={"/images/product-image.png"} alt={`image`}/>
-                                <Link href={`/`}>Body Lotion</Link>
+                    {featureProduct?.map((element:any, index:any)=>(
+                        <div className={ (index==1)? `col-md-4 pt-md-5`:`col-md-4`} key={index}>
+                            <div className={styles.featuredPro} >
+                                <div className={styles.featuredImage}>
+                                    <img src={element.product_image.url} alt={`image`}/>
+                                    <Link href={element.product_link}>{element.product_title}</Link>
+                                </div>
                             </div>
-                        </div>
                     </div>
-                    <div className={`col-md-4 pt-0 pt-md-5`}>
-                        <div className={styles.featuredImage}>
-                            <img src={"/images/featured-3.png"} alt={`image`}/>
-                            <Link href={`/`}>Body Lotion</Link>
-                        </div>
-                    </div>
-                    <div className={`col-md-4`}>
-                        <div className={styles.featuredImage}>
-                            <img src={"/images/featured-4.png"} alt={`image`}/>
-                            <Link href={`/`}>Body Lotion</Link>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>

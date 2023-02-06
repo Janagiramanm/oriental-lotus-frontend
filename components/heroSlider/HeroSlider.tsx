@@ -2,7 +2,8 @@ import next from "next";
 import styles from "./HeroSlider.module.scss";
 import React, {} from 'react'
 import Image from "next/image";
-export default function HeroSlider() {
+export default function HeroSlider({heroSlider}:any) {
+    console.log('RES==--',heroSlider)
     return (
         <div className={styles.heroSlider}>
             <div className={`container`}>

@@ -4,7 +4,6 @@ import React, {} from 'react'
 import Image from "next/image";
 import Link from "next/link";
 export default function HeroSlider({heroSlider, heroProduct}:any) {
-    console.log('RES==--',heroSlider)
     return (
         <div className={styles.heroSlider}>
             <div className={`container`}>
@@ -32,7 +31,6 @@ export default function HeroSlider({heroSlider, heroProduct}:any) {
                                     <div className={styles.herocardLeft}>
                                         <h3>{element.product_title}</h3>
                                         <Link href={element.product_link}><img src={`/images/arrow-right.svg`} alt={`image`} /></Link>
-                                         
                                     </div>
                                     <div className={styles.herocardRight}>
                                         <img className={styles.heroImage} src={element.product_image.url} alt={`image`} />

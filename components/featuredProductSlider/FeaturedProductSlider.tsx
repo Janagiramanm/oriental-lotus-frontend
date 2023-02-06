@@ -3,19 +3,22 @@ import styles from "./FeaturedProductSlider.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 import Image from "next/image";
-export default function FeaturedProductSlider() {
+export default function FeaturedProductSlider({productSlider}:any) {
     return (
        <div className={styles.featuredSlider}>
            <div className={`container`}>
                <div className={styles.title}>
-                   <h3>For Hotels & Hospitality</h3>
+                   <h3>{productSlider.title}</h3>
                </div>
            </div>
            <div className={`container`}>
                <div className={styles.SliderSection}>
-                   <div className={``}>
-                       <img alt={`image`} src={`/images/featuredbanner.png`} />
-                   </div>
+                   {productSlider?.slider_product?.map((element:any, index:any)=>(
+                        <div className={``} key={index}>
+                            <img alt={`image`} src={element.image.url} />
+                        </div>
+                   ))}
+                  
                </div>
            </div>
        </div>

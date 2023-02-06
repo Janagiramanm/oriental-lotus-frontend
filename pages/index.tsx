@@ -21,12 +21,12 @@ export default function Home(props: any) {
     <div>
         <MainNav/>
         <HeroSlider heroSlider={props.acf.hero_section} heroProduct={props.acf.hero_product}/>
-        <AboutSection/>
-        <FeaturedProductSection/>
-        <FeaturedProductSlider/>
-        <ServiceSection/>
-        <BrandSection/>
-        <InsightSection/>
+        <AboutSection aboutUs={props.acf.about_section}/>
+        <FeaturedProductSection featureProduct={props.acf.feature_product}/>
+        <FeaturedProductSlider productSlider={props.acf.feature_product_slider}/>
+        <ServiceSection service={props.acf.service_section}/>
+        <BrandSection brand={props.acf.brand_section}/>
+        <InsightSection insight={props.acf.insight_section}/>
         <FooterSection/>
     </div>
   )

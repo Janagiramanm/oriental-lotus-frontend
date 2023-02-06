@@ -89,8 +89,8 @@ export default function HeroSlider({heroSlider, heroProduct}:any) {
                             </div>
                         </div>
                     </Slider>
-
-
+                </div>
+                <div>
                     <div className={`container`}>
                     <div className={styles.heroSliderSection}>
                         <div className={`row`}>

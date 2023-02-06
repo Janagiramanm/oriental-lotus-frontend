@@ -19,11 +19,8 @@ export default function Home(props: any) {
   //  console.log('RES==',props);
   return (
     <div>
-        <Head>
-            <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&display=swap" rel="stylesheet" />
-        </Head>
         <MainNav/>
-        <HeroSlider heroSlider={props.acf.hero_section}/>
+        <HeroSlider heroSlider={props.acf.hero_section} heroProduct={props.acf.hero_product}/>
         <AboutSection/>
         <FeaturedProductSection/>
         <FeaturedProductSlider/>
@@ -38,7 +35,7 @@ export default function Home(props: any) {
 export async function getServerSideProps() {
 
   const baseUrl = new ApiService();
-  const response = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/home-page`);
+  const response = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/home-page?_fields=acf&acf_format=standard`);
   const res = await response.json();
   
   if (res && res.length > 0) {

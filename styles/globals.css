@@ -4192,7 +4192,7 @@ textarea.form-control-lg {
   --bs-breadcrumb-padding-x: 1rem;
   --bs-breadcrumb-padding-y: 0.75rem;
   --bs-breadcrumb-margin-bottom: 1rem;
-  --bs-breadcrumb-bg: #e9ecef;
+  --bs-breadcrumb-bg: ;
   --bs-breadcrumb-border-radius: ;
   --bs-breadcrumb-divider-color: #868e96;
   --bs-breadcrumb-item-padding-x: 0.5rem;
@@ -9900,6 +9900,62 @@ body {
 .whitemenu {
   background: #ffffff;
   box-shadow: 1px -15px 30px #2c205c;
+}
+
+.orb {
+  width: fit-content;
+  height: 50px;
+  display: inline-block;
+  color: #ffffff;
+  padding-right: 40px;
+  padding-left: 40px;
+  float: left;
+  transition: all 0.2s ease-out;
+  font-size: 28px;
+}
+
+.orb:hover {
+  transform: scale(1.2);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.marquee {
+  height: 90px;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0px auto;
+  border-top: 1px solid #fff;
+  margin-top: 60px;
+  z-index: 1;
+}
+
+.marquee--inner {
+  display: block;
+  width: 200%;
+  margin: 40px 0;
+  position: absolute;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+span {
+  float: left;
+  width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
 /*# sourceMappingURL=globals.css.map */

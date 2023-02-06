@@ -1,0 +1,34 @@
+.productHeroSection{
+  background: #F3F3F3;
+  min-height: 600px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  .HeroContent{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.heroSmallContent{
+  padding: 40px;
+  h4{
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+  p{
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  a{
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+}
+.heroSmallImg{
+  img{
+    max-width: 100%;
+    height: 330px;
+    object-fit: cover;
+    width: 100%;
+  }
+}

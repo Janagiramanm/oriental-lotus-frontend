@@ -1,0 +1,21 @@
+.RightImageBlock .RightContent {
+  padding: 80px;
+}
+.RightImageBlock .RightContent h3 {
+  font-size: 34px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+.RightImageBlock .RightContent p {
+  font-size: 20px;
+}
+.RightImageBlock .RightImage {
+  height: 600px;
+  overflow: hidden;
+}
+.RightImageBlock .RightImage img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=BrandSingleImageBlock.module.css.map */

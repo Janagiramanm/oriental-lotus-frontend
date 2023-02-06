@@ -1,0 +1,36 @@
+.brandHeroSection{
+  min-height: 750px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  .brandImage{
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  h2{
+    font-size: 48px;
+  }
+}
+.heroSmallContent{
+  padding: 40px;
+  h4{
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+  p{
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  a{
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+}
+.heroSmallImg{
+  img{
+    max-width: 100%;
+    height: 330px;
+    object-fit: cover;
+    width: 100%;
+  }
+}

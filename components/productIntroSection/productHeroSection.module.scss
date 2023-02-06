@@ -1,0 +1,73 @@
+.introSection{
+  background: #000000;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  color: #ffffff;
+  h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+  }
+  h4{
+    font-weight: 200;
+    font-size: 34px;
+    padding-left: 40pt;
+    padding-right: 40pt;
+  }
+}
+
+@keyframes marqueeOne {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+@keyframes marqueeTwo {
+  0% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+}
+
+
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+
+  &__inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    span {
+      font-size: 10vw;
+      padding: 0 2vw;
+      text-transform: uppercase;
+    }
+  }
+  .first {
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marqueeOne 10s linear infinite;
+    span {
+      -webkit-text-stroke: 2px black;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: 1024px) {
+        -webkit-text-stroke: 3px black;
+      }
+    }
+  }
+  .second {
+    transform: translate3d(var(--final-initial), 0, 0);
+    animation: marqueeTwo 10s linear infinite;
+  }
+}

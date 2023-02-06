@@ -4,7 +4,7 @@ import React, {} from 'react'
 import Image from "next/image";
 import Link from "next/link";
 export default function HeroSlider({heroSlider, heroProduct}:any) {
-    console.log('RES==--',heroProduct)
+    console.log('RES==--',heroSlider)
     return (
         <div className={styles.heroSlider}>
             <div className={`container`}>
@@ -14,7 +14,7 @@ export default function HeroSlider({heroSlider, heroProduct}:any) {
                             <div className={styles.heroContent}>
                                 <h1 className={`text-secondary`}>{heroSlider[0].title}</h1>
                                 <p className={`text-secondary`}>{heroSlider[0].description}</p>
-                                <button className={`btn btn-primary`}>{heroSlider[0].link_title}</button>
+                                <Link href={heroSlider[0].link_url}><button className={`btn btn-primary`}>{heroSlider[0].link_title}</button></Link>
                             </div>
                          </div>
                     </div>
@@ -31,7 +31,8 @@ export default function HeroSlider({heroSlider, heroProduct}:any) {
                                 <div className={`${styles.heroCard} d-flex justify-content-between align-items-center text-secondary`}>
                                     <div className={styles.herocardLeft}>
                                         <h3>{element.product_title}</h3>
-                                         <img src={`/images/arrow-right.svg`} alt={`image`} />
+                                        <Link href={element.product_link}><img src={`/images/arrow-right.svg`} alt={`image`} /></Link>
+                                         
                                     </div>
                                     <div className={styles.herocardRight}>
                                         <img className={styles.heroImage} src={element.product_image.url} alt={`image`} />

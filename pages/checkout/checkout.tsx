@@ -1,4 +1,7 @@
+import Head from 'next/head'
+import Image from 'next/image'
 import MainNav from "../../components/nav/MainNav";
+
 import ServiceSection from "../../components/serviceSection/ServiceSection";
 import BrandSection from "../../components/brandSection/BrandSection";
 import FooterSection from "../../components/footerSection/footerSection";
@@ -7,7 +10,7 @@ import ProductIntroSection from "../../components/productIntroSection/productInt
 import ProductListSection from "../../components/productListSection/productListSection";
 
 
-export default function Product() {
+export default function Checkout() {
     return (
         <div>
             <MainNav/>
@@ -17,7 +20,6 @@ export default function Product() {
             <BrandSection/>
             <ServiceSection/>
             <FooterSection/>
-
 
         </div>
     )

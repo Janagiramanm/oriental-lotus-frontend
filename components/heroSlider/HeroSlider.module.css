@@ -3,11 +3,25 @@
   width: 100%;
   background: url("/images/heroslider-bg.svg");
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-size: cover;
   background-position: top center;
+}
+.heroSlider .slide {
+  width: 100%;
+  overflow: hidden;
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  height: 540px;
+}
+.heroSlider .slide .heroBanner {
+  width: 100%;
+  height: 100%;
+}
+.heroSlider .slide .heroBanner img {
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 @media (max-width: 575.98px) {
   .heroSlider {
@@ -39,6 +53,7 @@
 .heroSlider .heroCard {
   background: #ffffff;
   padding: 20px;
+  margin-top: 26px;
 }
 @media (max-width: 575.98px) {
   .heroSlider .heroCard {
@@ -57,13 +72,14 @@
 }
 .heroSlider .heroImage {
   max-width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   height: 80px;
 }
 
 .heroSliderSection {
   margin-top: 20px;
   padding-bottom: 60px;
+  width: 100%;
 }
 @media (max-width: 575.98px) {
   .heroSliderSection {

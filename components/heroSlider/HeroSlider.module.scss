@@ -3,17 +3,20 @@
 .heroSlider{
   height: 100vh;
   width: 100%;
+  padding-top: 60px;
   background: url("/images/heroslider-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+
+
   .slide{
     width: 100%;
     overflow: hidden;
     justify-items: center;
     align-items: center;
     display: flex;
-    height: 540px;
+    height: 100%;
     .heroBanner{
       width: 100%;
       height: 100%;

@@ -23,14 +23,13 @@ export default function FeaturedProductSlider({productSlider}:any) {
 
                <div className={styles.SliderSection}>
                    <Slider {...settings}>
-
-                   {productSlider?.slider_product?.map((element:any, index:any)=>(
-                        <div className={``} key={index}>
-                            <div className={`w-75`}>
-                                <img alt={`image`} src={element.image.url} />
-                            </div>
-                        </div>
-                   ))}
+                        {productSlider?.slider_product?.map((element:any, index:any)=>(
+                                <div className={``} key={index}>
+                                    <div className={`w-75`}>
+                                        <img alt={`image`} src={element.image.url} />
+                                    </div>
+                                </div>
+                        ))}
                    </Slider>
                   
 

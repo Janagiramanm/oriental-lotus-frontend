@@ -1,5 +1,5 @@
 import next from "next";
-import Slider from "react-slick";
+import Slider from 'react-slick';
 import styles from "./FeaturedProductSlider.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
@@ -9,9 +9,11 @@ export default function FeaturedProductSlider({productSlider}:any) {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "10px",
-        slidesToShow: 3,
-        speed: 500
+        centerPadding: "30px",
+        slidesToShow: 1,
+        speed: 500,
+        arrows: false,
+        autoplay: true,
     };
     return (
        <div className={styles.featuredSlider}>

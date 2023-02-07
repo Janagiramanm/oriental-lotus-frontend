@@ -7,11 +7,13 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.featuredSlider .SliderSection img {
-  width: 100%;
-}
 .featuredSlider .featuredSlide {
-  width: 100%;
+  padding: 40px;
+}
+.featuredSlider .featuredSlide img {
+  max-width: 75%;
+  margin: auto;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=FeaturedProductSlider.module.css.map */

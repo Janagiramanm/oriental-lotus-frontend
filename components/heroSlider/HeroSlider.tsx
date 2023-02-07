@@ -26,7 +26,7 @@ export default function HeroSlider({heroSlider, heroProduct}:any) {
                             <div key={index}>
                                 <div className={styles.slide}>
                                     <div className={`container`}>
-                                        <div className={`row justify-content-center align-items-center`}>
+                                        <div className={`row g-0 justify-content-center align-items-center`}>
                                             <div className={`col-6`}>
                                                 <div className={styles.heroSliderMain}>
                                                     <div className={styles.heroContent}>

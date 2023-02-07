@@ -17,7 +17,7 @@ export default function BrandSection({brandTitle, brands}:any) {
                </div>
               <div className={`row justify-content-center align-items-center`}>
                   {brands?.map((element:any, index:any)=>(
-                        <div className={`col-6 col-md-2`}>
+                        <div className={`col-6 col-md-2`} key={index}>
                             <div className={styles.brandBlock}>
                                 <img src={element.acf.brands.brand_logo.url} alt={`image`} />
                             </div>

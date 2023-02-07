@@ -20,7 +20,7 @@ export default function Brand() {
             <BrandRightBlock/>
             <BrandLeftBlock/>
             <BrandSingleImageBlock/>
-            <InsightSection/>
+            {/* <InsightSection/> */}
             <FooterSection/>
         </div>
     )

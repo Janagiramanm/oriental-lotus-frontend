@@ -25,7 +25,7 @@ export default function Home(props: any) {
         <FeaturedProductSection featureProduct={props.acf.feature_product}/>
         <FeaturedProductSlider productSlider={props.acf.feature_product_slider}/>
         <ServiceSection service={props.acf.service_section}/>
-        <BrandSection brand={props.acf.brand_section}/>
+        {/*<BrandSection brand={props.acf.brand_section}/>*/}
         <InsightSection insight={props.acf.insight_section}/>
         <FooterSection/>
     </div>

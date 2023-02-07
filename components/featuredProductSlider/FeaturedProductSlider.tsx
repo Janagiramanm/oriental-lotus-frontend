@@ -25,7 +25,7 @@ export default function FeaturedProductSlider({productSlider}:any) {
                    <Slider {...settings}>
                         {productSlider?.slider_product?.map((element:any, index:any)=>(
                                 <div className={``} key={index}>
-                                    <div className={`w-75`}>
+                                    <div className={styles.featuredSlide}>
                                         <img alt={`image`} src={element.image.url} />
                                     </div>
                                 </div>

@@ -10,5 +10,8 @@
 .featuredSlider .SliderSection img {
   width: 100%;
 }
+.featuredSlider .featuredSlide {
+  width: 100%;
+}
 
 /*# sourceMappingURL=FeaturedProductSlider.module.css.map */

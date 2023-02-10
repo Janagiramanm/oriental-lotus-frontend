@@ -14,7 +14,7 @@ export default function Product() {
             <ProductHeroSection/>
             <ProductIntroSection/>
             <ProductListSection/>
-            <BrandSection/>
+            {/* <BrandSection/> */}
             <ServiceSection/>
             <FooterSection/>
 

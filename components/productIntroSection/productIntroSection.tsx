@@ -3,19 +3,15 @@ import styles from "./productHeroSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 
-export default function ProductIntroSection() {
+export default function ProductIntroSection({brandIntro}:any) {
     return (
         <div className={styles.introSection}>
             <div className={`container`}>
                 <div className={`row`}>
                     <div className={`col-12 text-center`}>
                         <div className={styles.introContent}>
-                            <h2>Our best-selling collection!</h2>
-                            <h4>Esa natural guest toiletries are made using spa quality formulations, minimal
-                                preservatives, post consumer non-bleached board, soy based ink, and crafted vegetable
-                                based soaps. Choose from 6 bottled products, 5 soaps, and numerous sundry items. Our esa
-                                natural collection of guest toiletries has been a best selling hotel amenity line for
-                                many years throughout the U.S. and Canada.</h4>
+                            <h2>{brandIntro?.title}</h2>
+                            <h4>{brandIntro?.description}</h4>
                         </div>
                     </div>
                 </div>
@@ -60,6 +56,8 @@ export default function ProductIntroSection() {
                     </span>
 
                 </div>
+
+                
             </div>
         </div>
     );

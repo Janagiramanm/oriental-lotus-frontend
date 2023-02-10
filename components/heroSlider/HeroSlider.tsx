@@ -5,7 +5,7 @@ import React, {} from 'react'
 import Image from "next/image";
 import Link from "next/link";
 export default function HeroSlider({heroSlider, heroProduct}:any) {
-    console.log('RES==--',heroProduct)
+    
 
     const settings = {
         dots: true,

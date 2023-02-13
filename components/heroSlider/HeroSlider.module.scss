@@ -1,15 +1,11 @@
-
-
 .heroSlider{
   height: 100vh;
   width: 100%;
   padding-top: 60px;
   background: url("/images/heroslider-bg.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: top center;
-
-
   .slide{
     width: 100%;
     overflow: hidden;

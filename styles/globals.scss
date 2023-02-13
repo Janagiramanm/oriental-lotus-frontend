@@ -1,6 +1,7 @@
 
 @import "themes/variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -69,3 +70,28 @@ span {
   100% { left: -100%; }
 }
 
+
+.slick-dots li {
+  display: inline-block;
+  height: 4px;
+  width: 50px;
+  margin: 0 8px;
+  padding: 0;
+  cursor: pointer;
+  background-color: #33256a;
+  border-radius: 0;
+}
+
+.slick-dots li.slick-active {
+  opacity: .5;
+  background-color: #33256a;
+}
+
+.slick-dots li button:before{
+  content: none;
+}
+
+.slick-dots li button{
+  height: 4px;
+  width: 50px;
+}

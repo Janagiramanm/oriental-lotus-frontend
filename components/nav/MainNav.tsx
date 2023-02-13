@@ -19,7 +19,6 @@ export default function MainNav() {
     },[])
     return (
         <div className={styles.mainNav +' '+ scroll} >
-
             <div className="container-fluid">
                 <header className="d-flex flex-wrap justify-content-between align-items-center py-0 py-sm-4">
                     <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">

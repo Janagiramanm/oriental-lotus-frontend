@@ -1,0 +1,35 @@
+.checkoutTitle {
+  margin-top: 120px;
+  background: #eee;
+  padding: 16px;
+  margin-bottom: 30px;
+}
+.checkoutTitle h3 {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+
+.orderHead {
+  padding-top: 40px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.orderBody {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+.orderBody img {
+  width: 100%;
+}
+.orderBody h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.orderBody h5 {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=checkoutBlock.module.css.map */

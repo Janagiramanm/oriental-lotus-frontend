@@ -19,7 +19,11 @@
 
 .orderBody {
   padding-bottom: 20px;
+  padding-top: 20px;
   border-bottom: 1px solid #eeeeee;
+}
+.orderBody:last-child {
+  border-bottom: 0px solid #eeeeee;
 }
 .orderBody img {
   width: 100%;
@@ -30,6 +34,10 @@
 }
 .orderBody h5 {
   font-size: 14px;
+}
+
+.threeInput {
+  width: fit-content;
 }
 
 /*# sourceMappingURL=checkoutBlock.module.css.map */

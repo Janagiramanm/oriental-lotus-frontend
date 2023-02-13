@@ -42,19 +42,90 @@ export default function CheckoutBlock() {
                         <div className={`col-1`}>
                             <img src={`/images/smallimg.png`} />
                         </div>
-                        <div className={`col-9`}>
+                        <div className={`col-8`}>
                             <h4>Simplicity Dispenser</h4>
                             <h5>Item Code - 83320012342</h5>
                         </div>
                         <div className={`col-2`}>
-
-                                <div className="input-group">
-                                    <span className="input-group-text"> <i className="bi bi-plus"></i></span>
-                                    <input type="text" aria-label="First name" className="form-control" />
+                                <div className={`${styles.threeInput} input-group`}>
+                                    <span className="input-group-text"> <i className="bi bi-dash"></i></span>
+                                    <input type="text" aria-label="First name" className="form-control text-center" />
                                     <span className="input-group-text"> <i className="bi bi-plus"></i></span>
                                 </div>
                         </div>
                     </div>
+                    </div>
+                    <div className={styles.orderBody}>
+                        <div className={`row justify-content-center align-items-center`}>
+                            <div className={`col-1`}>
+                                <img src={`/images/smallimg.png`} />
+                            </div>
+                            <div className={`col-8`}>
+                                <h4>Simplicity Dispenser</h4>
+                                <h5>Item Code - 83320012342</h5>
+                            </div>
+                            <div className={`col-2`}>
+                                <div className={`${styles.threeInput} input-group`}>
+                                    <span className="input-group-text"> <i className="bi bi-dash"></i></span>
+                                    <input type="text" aria-label="First name" className="form-control text-center" />
+                                    <span className="input-group-text"> <i className="bi bi-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.orderBody}>
+                        <div className={`row justify-content-center align-items-center`}>
+                            <div className={`col-1`}>
+                                <img src={`/images/smallimg.png`} />
+                            </div>
+                            <div className={`col-8`}>
+                                <h4>Simplicity Dispenser</h4>
+                                <h5>Item Code - 83320012342</h5>
+                            </div>
+                            <div className={`col-2`}>
+                                <div className={`${styles.threeInput} input-group`}>
+                                    <span className="input-group-text"> <i className="bi bi-dash"></i></span>
+                                    <input type="text" aria-label="First name" className="form-control text-center" />
+                                    <span className="input-group-text"> <i className="bi bi-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.orderBody}>
+                        <div className={`row justify-content-center align-items-center`}>
+                            <div className={`col-1`}>
+                                <img src={`/images/smallimg.png`} />
+                            </div>
+                            <div className={`col-8`}>
+                                <h4>Simplicity Dispenser</h4>
+                                <h5>Item Code - 83320012342</h5>
+                            </div>
+                            <div className={`col-2`}>
+                                <div className={`${styles.threeInput} input-group`}>
+                                    <span className="input-group-text"> <i className="bi bi-dash"></i></span>
+                                    <input type="text" aria-label="First name" className="form-control text-center" />
+                                    <span className="input-group-text"> <i className="bi bi-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.orderBody}>
+                        <div className={`row justify-content-center align-items-center`}>
+                            <div className={`col-1`}>
+                                <img src={`/images/smallimg.png`} />
+                            </div>
+                            <div className={`col-8`}>
+                                <h4>Simplicity Dispenser</h4>
+                                <h5>Item Code - 83320012342</h5>
+                            </div>
+                            <div className={`col-2`}>
+                                <div className={`${styles.threeInput} input-group`}>
+                                    <span className="input-group-text"> <i className="bi bi-dash"></i></span>
+                                    <input type="text" aria-label="First name" className="form-control text-center" />
+                                    <span className="input-group-text"> <i className="bi bi-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

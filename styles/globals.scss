@@ -60,7 +60,7 @@ body{
   animation-play-state: paused;
 }
 
-span {
+.marquee span {
   float: left;
   width: 100%;
 }
@@ -86,6 +86,7 @@ span {
   opacity: .5;
   background-color: #33256a;
 }
+
 
 .slick-dots li button:before{
   content: none;

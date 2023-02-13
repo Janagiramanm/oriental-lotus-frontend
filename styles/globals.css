@@ -17950,7 +17950,7 @@ body {
   animation-play-state: paused;
 }
 
-span {
+.marquee span {
   float: left;
   width: 100%;
 }

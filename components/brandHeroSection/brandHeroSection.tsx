@@ -23,7 +23,7 @@ export default function BrandHeroSection({heroSection, hereProduct}:any) {
                         {heroSection?.map((element:any,index: any)=> (
                             <div key={index}>
                                     <div className={`row justify-content-center align-items-center`}>
-                                            <div className={`col-md-6`} key={index}>
+                                            <div className={`col-md-6`}>
                                                 <div className={styles.brandImage}>
                                                     <img src={`/images/client-1.png`} />
                                                 </div>
@@ -47,7 +47,7 @@ export default function BrandHeroSection({heroSection, hereProduct}:any) {
             </div>
                
                 {hereProduct?.map((element:any, index:any)=>(
-                    <div className={`row gx-0`}>
+                    <div className={`row gx-0`} key={index}>
                                 <div className={`col-md-6 bg-primary pr-0`}>
                                     <div className={`row gx-0 justify-content-center align-items-center`}>
                                         <div className={`col-md-6 text-white`}>

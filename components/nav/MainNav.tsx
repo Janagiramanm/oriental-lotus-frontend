@@ -25,7 +25,65 @@ export default function MainNav() {
                         <img width={`120`} src={"/images/logo.png"}  alt={`image`} />
                     </Link>
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li><Link href="#" className="nav-link px-2 ">PRODUCTS</Link></li>
+
+                        <li>
+                            <Link href="#" className="nav-link px-2 ">PRODUCTS</Link>
+                            <div className="menuDrop product-menu">
+                                <div className={`row`}>
+                                    <div className={`col-md-3`}>
+                                        <h4>Products</h4>
+                                        <ul>
+                                            <li><Link href={`/`}>Soap</Link></li>
+                                            <li><Link href={`/`}>Dispensers</Link></li>
+                                            <li><Link href={`/`}>Personal Hygiene</Link></li>
+                                            <li><Link href={`/`}>Oral Care</Link></li>
+                                            <li><Link href={`/`}>Grooming</Link></li>
+                                            <li><Link href={`/`}>OS&E Items</Link></li>
+                                        </ul>
+                                        <Link href={`/`} className={styles.viewMore}>View More Products</Link>
+                                    </div>
+                                    <div className={`col-md-9`}>
+                                        <h4 className={`text-center`}>Products by Brand</h4>
+                                        <div className={`row`}>
+                                            <div className={`col-3`}>
+                                                <div className={styles.MenuCard}>
+                                                    <div className={styles.MenuImage}>
+                                                        <img src={`/images/menupro.png`} />
+                                                    </div>
+                                                    <h5>Body Lotion</h5>
+                                                </div>
+                                            </div>
+                                            <div className={`col-3`}>
+                                                <div className={styles.MenuCard}>
+                                                    <div className={styles.MenuImage}>
+                                                        <img src={`/images/menupro.png`} />
+                                                    </div>
+                                                    <h5>Body Lotion</h5>
+                                                </div>
+                                            </div>
+                                            <div className={`col-3`}>
+                                                <div className={styles.MenuCard}>
+
+                                                    <div className={styles.MenuImage}>
+                                                        <img src={`/images/menupro.png`} />
+                                                    </div>
+                                                    <h5>Body Lotion</h5>
+                                                </div>
+                                            </div>
+                                            <div className={`col-3`}>
+                                                <div className={styles.MenuCard}>
+                                                    <div className={styles.MenuImage}>
+                                                        <img src={`/images/menupro.png`} />
+                                                    </div>
+                                                    <h5>Body Lotion</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
                         <li><Link href="#" className="nav-link px-2 ">BRANDS</Link></li>
                         <li><Link href="#" className="nav-link px-2 ">CUSTOMISE</Link></li>
                         <li><Link href="#" className="nav-link px-2 ">ABOUT</Link></li>

@@ -25,3 +25,32 @@
     padding-right: 20px;
   }
 }
+
+
+.viewMore{
+  padding-top: 40px;
+  display: block;
+  text-decoration: underline;
+}
+
+.MenuCard{
+  .MenuImage{
+    height: 240px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+  h5{
+    text-align: center;
+    margin-top: 10px;
+    color: #36276F;
+    font-size: 18px;
+    a{
+      color: #36276F;
+    }
+  }
+}

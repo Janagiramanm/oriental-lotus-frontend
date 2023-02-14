@@ -26,4 +26,30 @@
   padding-right: 20px;
 }
 
+.viewMore {
+  padding-top: 40px;
+  display: block;
+  text-decoration: underline;
+}
+
+.MenuCard .MenuImage {
+  height: 240px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.MenuCard img {
+  width: 100%;
+  object-fit: cover;
+}
+.MenuCard h5 {
+  text-align: center;
+  margin-top: 10px;
+  color: #36276F;
+  font-size: 18px;
+}
+.MenuCard h5 a {
+  color: #36276F;
+}
+
 /*# sourceMappingURL=MainNav.module.css.map */

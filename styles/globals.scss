@@ -96,3 +96,33 @@ body{
   height: 4px;
   width: 50px;
 }
+
+.menuDrop{
+  position: absolute;
+  background: #f8f8f8;
+  left: 0px;
+  right: 0px;
+  top: 112px;
+  width: 70%;
+  margin: auto;
+  padding: 60px;
+  letter-spacing: 0px;
+  z-index: 100;
+  h4{
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 24px;
+    color: #33256a;
+  }
+  ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    li{
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+  }
+}

@@ -37,7 +37,7 @@ export default function ProductHeroSection({heroProduct}:any) {
                                         <div className={`col-md-6 text-white`}>
                                             <div className={styles.heroSmallContent}>
                                                 <h4>{element.left_content.title}</h4>
-                                                <div dangerouslySetInnerHTML={{__html: element.left_content.description}}></div>
+                                                <p>{element.left_content.description}</p>
                                                 <Link href={element.left_content.link_url}>{element.left_content.link_text}</Link>
                                             </div>
                                         </div>
@@ -53,7 +53,7 @@ export default function ProductHeroSection({heroProduct}:any) {
                                         <div className={`col-md-6 text-white`}>
                                             <div className={styles.heroSmallContent}>
                                                 <h4>{element.right_content.title}</h4>
-                                                <div dangerouslySetInnerHTML={{__html: element.right_content.description}}></div>
+                                                <p>{element.right_content.description}</p>
                                                 <Link href={element.right_content.link_url}>{element.right_content.link_text}</Link>
                                             </div>
                                         </div>

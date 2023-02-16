@@ -46,7 +46,7 @@ export default function MainNav({categories, products}: any) {
                                         <ul>
                                             {categories?.map((element:any, index:any)=>(
                                                
-                                                 <li key={index}><Link href={`/product/`+element.slug}>{element.acf.title}</Link></li>
+                                                 <li key={index}><Link href={`/product/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
                                                
                                             ))}
                                            

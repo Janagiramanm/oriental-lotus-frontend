@@ -57,7 +57,7 @@ export default function MainNav({categories, products}: any) {
                                         <h4 className={`text-center`}>Products by Brand</h4>
                                         <div className={`row`}>
                                                {products?.map((element:any, index:any)=>(
-                                                    <div className={`col-3`}>
+                                                    <div className={`col-3`} key={index}>
                                                         <div className={styles.MenuCard}>
                                                             <div className={styles.MenuImage}>
                                                                 <img src={element.acf.product_image.url} />

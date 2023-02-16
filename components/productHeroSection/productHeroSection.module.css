@@ -9,6 +9,14 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.productHeroSection .proIntroBanner {
+  width: 100%;
+  height: 100%;
+}
+.productHeroSection .proIntroBanner img {
+  width: 100%;
+  object-fit: cover;
+}
 
 .heroSmallContent {
   padding: 40px;

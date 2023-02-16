@@ -8,7 +8,7 @@ export default function ProductHeroSection({heroProduct}:any) {
         <div>
             <div className={styles.productHeroSection}>
                 <div className={`container`}>
-                    <div className={`row`}>
+                    <div className={`row justify-content-center align-items-center`}>
                        <div className={`col-md-6`}>
 
                            <div className={styles.breadcrumb}>
@@ -24,7 +24,9 @@ export default function ProductHeroSection({heroProduct}:any) {
                                </div>
                             </div>
                             <div className={`col-md-6`}>
+                                <div className={styles.proIntroBanner}>
                                     <img src={heroProduct.product_intro.intro_product_image.url} alt={`image`} />
+                                </div>
                             </div>
                </div>
                 </div>

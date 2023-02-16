@@ -47,7 +47,7 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
     const menuCats = await cat.json();
 
-    const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard`);
+    const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     const products = await prod.json();
     
     if (categories && categories.length > 0) {

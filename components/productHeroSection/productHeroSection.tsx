@@ -16,7 +16,7 @@ export default function ProductHeroSection({heroProduct}:any) {
                                         <nav aria-label="breadcrumb">
                                             <ol className="breadcrumb p-0">
                                                 <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                                <li className="breadcrumb-item active" aria-current="page">Library</li>
+                                                <li className="breadcrumb-item active" aria-current="page">{heroProduct.title}</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -25,17 +25,6 @@ export default function ProductHeroSection({heroProduct}:any) {
                                     </div>
                                 </div>
 
-                           <div className={styles.breadcrumb}>
-                               <nav aria-label="breadcrumb">
-                                   <ol className="breadcrumb">
-                                       <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                       <li className="breadcrumb-item active" aria-current="page">{heroProduct.title}</li>
-                                   </ol>
-                               </nav>
-                               </div>
-                               <div className={styles.HeroContent}>
-                                   <h4>{heroProduct.product_intro.intro_content}</h4>
-                               </div>
                             </div>
                             <div className={`col-md-6`}>
                                 <div className={styles.proIntroBanner}>

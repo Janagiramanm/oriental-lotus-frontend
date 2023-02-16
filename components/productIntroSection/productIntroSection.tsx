@@ -3,15 +3,15 @@ import styles from "./productHeroSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 
-export default function ProductIntroSection({brandIntro}:any) {
+export default function ProductIntroSection({introContent}:any) {
     return (
         <div className={styles.introSection}>
             <div className={`container`}>
                 <div className={`row`}>
                     <div className={`col-12 text-center`}>
                         <div className={styles.introContent}>
-                            <h2>{brandIntro?.title}</h2>
-                            <h4>{brandIntro?.description}</h4>
+                            <h2>{introContent?.title}</h2>
+                            <div dangerouslySetInnerHTML={{ __html: introContent?.description}}></div>
                         </div>
                     </div>
                 </div>

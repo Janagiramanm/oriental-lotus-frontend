@@ -3,9 +3,14 @@ import styles from "./MainNav.module.scss";
 import React, { useState, useEffect } from 'react'
 import Link from "next/link";
 import Image from "next/image";
-export default function MainNav() {
-
+import { ApiService } from "../../services/api.service";
+import axios from "axios";
+export default function MainNav({categories, products}: any) {
+  
+    console.log('CAT==',categories)
+   
     const [scroll, setScroll] = useState('')
+    const [dblock, setDblock] = useState(" d-none");
     useEffect(() => {
         document.addEventListener("scroll", () => {
             const scrollCheck = window.scrollY > 100
@@ -17,8 +22,14 @@ export default function MainNav() {
         })
 
     },[])
+    const showMenu = (() =>{
+        setDblock("");
+    });
+    const hideMenu = (() =>{
+        setDblock(" d-none");
+    });
     return (
-        <div className={styles.mainNav +' '+ scroll} >
+        <div className={styles.mainNav +' '+ scroll } >
             <div className="container-fluid">
                 <header className="d-flex flex-wrap justify-content-between align-items-center py-0 py-sm-4">
                     <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
@@ -27,57 +38,37 @@ export default function MainNav() {
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
 
                         <li>
-                            <Link href="#" className="nav-link px-2 ">PRODUCTS</Link>
-                            <div className="menuDrop product-menu">
+                            <Link href="#" className="nav-link px-2 " onClick={showMenu}>PRODUCTS</Link>
+                            <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
                                 <div className={`row`}>
                                     <div className={`col-md-3`}>
                                         <h4>Products</h4>
                                         <ul>
-                                            <li><Link href={`/`}>Soap</Link></li>
-                                            <li><Link href={`/`}>Dispensers</Link></li>
-                                            <li><Link href={`/`}>Personal Hygiene</Link></li>
-                                            <li><Link href={`/`}>Oral Care</Link></li>
-                                            <li><Link href={`/`}>Grooming</Link></li>
-                                            <li><Link href={`/`}>OS&E Items</Link></li>
+                                            {categories?.map((element:any, index:any)=>(
+                                               
+                                                 <li key={index}><Link href={`/product/`+element.slug}>{element.acf.title}</Link></li>
+                                               
+                                            ))}
+                                           
                                         </ul>
                                         <Link href={`/`} className={styles.viewMore}>View More Products</Link>
                                     </div>
                                     <div className={`col-md-9`}>
                                         <h4 className={`text-center`}>Products by Brand</h4>
                                         <div className={`row`}>
-                                            <div className={`col-3`}>
-                                                <div className={styles.MenuCard}>
-                                                    <div className={styles.MenuImage}>
-                                                        <img src={`/images/menupro.png`} />
+                                               {products?.map((element:any, index:any)=>(
+                                                    <div className={`col-3`}>
+                                                        <div className={styles.MenuCard}>
+                                                            <div className={styles.MenuImage}>
+                                                                <img src={element.acf.product_image.url} />
+                                                            </div>
+                                                            <h5>{element.acf.product_title}</h5>
+                                                        </div>
                                                     </div>
-                                                    <h5>Body Lotion</h5>
-                                                </div>
-                                            </div>
-                                            <div className={`col-3`}>
-                                                <div className={styles.MenuCard}>
-                                                    <div className={styles.MenuImage}>
-                                                        <img src={`/images/menupro.png`} />
-                                                    </div>
-                                                    <h5>Body Lotion</h5>
-                                                </div>
-                                            </div>
-                                            <div className={`col-3`}>
-                                                <div className={styles.MenuCard}>
-
-                                                    <div className={styles.MenuImage}>
-                                                        <img src={`/images/menupro.png`} />
-                                                    </div>
-                                                    <h5>Body Lotion</h5>
-                                                </div>
-                                            </div>
-                                            <div className={`col-3`}>
-                                                <div className={styles.MenuCard}>
-                                                    <div className={styles.MenuImage}>
-                                                        <img src={`/images/menupro.png`} />
-                                                    </div>
-                                                    <h5>Body Lotion</h5>
-                                                </div>
-                                            </div>
+                                               ))}
+                                                
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -102,3 +93,4 @@ export default function MainNav() {
         </div>
     );
 }
+

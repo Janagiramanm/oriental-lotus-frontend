@@ -16,10 +16,10 @@ import axios from 'axios';
 
 export default function Home(props: any) {
 
-  //  console.log('RES==',props);
+   console.log('RES==',props.cats);
   return (
     <div>
-        <MainNav/>
+        <MainNav categories={props.menuCats} products={[]}/>
         <HeroSlider heroSlider={props.acf.hero_section} heroProduct={props.acf.hero_product}/>
         <AboutSection aboutUs={props.acf.about_section}/>
         <FeaturedProductSection featureProduct={props.acf.feature_product}/>
@@ -40,10 +40,20 @@ export async function getServerSideProps() {
 
   const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?_fields=acf&acf_format=standard`);
   const brands = await brand.json();
+
+  
+  const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
+  const menuCats = await cat.json();
+
+  const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard`);
+  const products = await product.json();
+
+
+ 
   
   if (res && res.length > 0) {
     const acf = res[0].acf;
-      return { props: { acf, brands } }
+      return { props: { acf, brands, menuCats, products } }
   } else {
       return {
           props: {}

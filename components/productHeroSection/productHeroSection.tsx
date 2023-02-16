@@ -2,7 +2,8 @@ import next from "next";
 import styles from "./productHeroSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
-export default function ProductHeroSection() {
+export default function ProductHeroSection({heroProduct}:any) {
+    console.log('DDD==',heroProduct)
     return (
         <div>
             <div className={styles.productHeroSection}>
@@ -19,16 +20,54 @@ export default function ProductHeroSection() {
                                </nav>
                                </div>
                                <div className={styles.HeroContent}>
-                                   <h2>Moisturize, purify and relax with LOccitane sensorial body care products, made with natural ingredients from the South of France.</h2>
+                                   <h4>{heroProduct.product_intro.intro_content}</h4>
                                </div>
-
-                       </div>
-                       <div className={`col-md-6`}></div>
+                            </div>
+                            <div className={`col-md-6`}>
+                                    <img src={heroProduct.product_intro.intro_product_image.url} alt={`image`} />
+                            </div>
                </div>
                 </div>
 
             </div>
-                <div className={`row gx-0`}>
+            {heroProduct.hero_product?.map((element:any, index:any)=>(
+                    <div className={`row gx-0`} key={index}>
+                                <div className={`col-md-6 bg-secondary pr-0`}>
+                                    <div className={`row gx-0 justify-content-center align-items-center`}>
+                                        <div className={`col-md-6 text-white`}>
+                                            <div className={styles.heroSmallContent}>
+                                                <h4>{element.left_content.title}</h4>
+                                                <div dangerouslySetInnerHTML={{__html: element.left_content.description}}></div>
+                                                <Link href={element.left_content.link_url}>{element.left_content.link_text}</Link>
+                                            </div>
+                                        </div>
+                                        <div className={`col-md-6`}>
+                                            <div className={styles.heroSmallImg}>
+                                                <img src={element.left_image.image.url} alt={element.left_image.image.name} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={`col-md-6 bg-secondary pr-0`}>
+                                    <div className={`row gx-0 justify-content-center align-items-center`}>
+                                        <div className={`col-md-6 text-white`}>
+                                            <div className={styles.heroSmallContent}>
+                                                <h4>{element.right_content.title}</h4>
+                                                <div dangerouslySetInnerHTML={{__html: element.right_content.description}}></div>
+                                                <Link href={element.right_content.link_url}>{element.right_content.link_text}</Link>
+                                            </div>
+                                        </div>
+                                        <div className={`col-md-6`}>
+                                            <div className={styles.heroSmallImg}>
+                                                <img src={element.right_image.image.url} alt={element.right_image.image.name} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                   </div>
+                       
+                ))}
+                {/* <div className={`row gx-0`}>
                     <div className={`col-md-6 bg-secondary pr-0`}>
                         <div className={`row gx-0 justify-content-center align-items-center`}>
                             <div className={`col-md-6 text-white`}>
@@ -61,7 +100,7 @@ export default function ProductHeroSection() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
         </div>
     );
 }

@@ -17,9 +17,9 @@ export default function Brand(props: any) {
     console.log('Brands==',props);
     return (
         <div>
-            <MainNav/>
+            <MainNav categories={props.categories} products={[]}/>
             <BrandHeroSection heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
-            <ProductIntroSection brandIntro={props.brands.brand_intro}/>
+            <ProductIntroSection introContent={props.brands.brand_intro}/>
             <ProductListSection/>
             <BrandContentBlock content={props.brands.content_section}/>
             {/* <BrandLeftBlock/> */}
@@ -37,10 +37,20 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     
     const res = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?slug=${brand}&_fields=acf&acf_format=standard`);
     const result = await res.json();
+
+    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
+    const menuCats = await cat.json();
+
+    const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard`);
+    const products = await product.json();
+
+
+    // const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products`);
+    // const products = await product.json();
     
     if (result && result.length > 0) {
       const brands = result[0].acf.brands;
-        return { props: { brands } }
+        return { props: { brands:brands, categories:menuCats, products:products } }
     } else {
         return {
             props: {}

@@ -19,7 +19,7 @@ export default function Home(props: any) {
    console.log('RES==',props.cats);
   return (
     <div>
-        <MainNav categories={props.menuCats} products={[]}/>
+        <MainNav categories={props.menuCats} products={props.products}/>
         <HeroSlider heroSlider={props.acf.hero_section} heroProduct={props.acf.hero_product}/>
         <AboutSection aboutUs={props.acf.about_section}/>
         <FeaturedProductSection featureProduct={props.acf.feature_product}/>

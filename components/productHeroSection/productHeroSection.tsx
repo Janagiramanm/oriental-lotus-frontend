@@ -3,7 +3,7 @@ import styles from "./productHeroSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 export default function ProductHeroSection({heroProduct}:any) {
-    console.log('DDD==',heroProduct)
+   
     return (
         <div>
             <div className={styles.productHeroSection}>
@@ -15,7 +15,7 @@ export default function ProductHeroSection({heroProduct}:any) {
                                <nav aria-label="breadcrumb">
                                    <ol className="breadcrumb">
                                        <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                       <li className="breadcrumb-item active" aria-current="page">Library</li>
+                                       <li className="breadcrumb-item active" aria-current="page">{heroProduct.title}</li>
                                    </ol>
                                </nav>
                                </div>

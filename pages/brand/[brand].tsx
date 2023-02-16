@@ -17,7 +17,7 @@ export default function Brand(props: any) {
     console.log('Brands==',props);
     return (
         <div>
-            <MainNav categories={props.categories} products={[]}/>
+            <MainNav categories={props.categories} products={props.products}/>
             <BrandHeroSection heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
             <ProductIntroSection introContent={props.brands.brand_intro}/>
             <ProductListSection/>

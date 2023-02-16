@@ -32,7 +32,7 @@ export default function CheckoutBlock() {
                             <div className={styles.tableTitle}><h4>Product Information</h4></div>
                         </div>
                         <div className={`col-2`}>
-                            <div className={styles.tableTitle}><h4>Quantity</h4></div>
+                            <div className={styles.tableTitle}><h4>MOQ</h4></div>
                         </div>
                     </div>
                     </div>

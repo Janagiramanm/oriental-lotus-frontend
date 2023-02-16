@@ -11,7 +11,7 @@ export default function ProductIntroSection({introContent}:any) {
                     <div className={`col-12 text-center`}>
                         <div className={styles.introContent}>
                             <h2>{introContent?.title}</h2>
-                            <div dangerouslySetInnerHTML={{ __html: introContent?.description}}></div>
+                            <h4 dangerouslySetInnerHTML={{ __html: introContent?.description}}></h4>
                         </div>
                     </div>
                 </div>

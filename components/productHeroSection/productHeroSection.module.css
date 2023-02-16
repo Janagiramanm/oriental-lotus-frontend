@@ -1,6 +1,7 @@
 .productHeroSection {
   background: #F3F3F3;
   min-height: 600px;
+  margin-top: 110px;
   display: flex;
   justify-items: center;
   align-items: center;
@@ -16,6 +17,10 @@
 .productHeroSection .proIntroBanner img {
   width: 100%;
   object-fit: cover;
+}
+.productHeroSection .productSection {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .heroSmallContent {

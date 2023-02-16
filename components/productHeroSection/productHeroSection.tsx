@@ -7,21 +7,24 @@ export default function ProductHeroSection({heroProduct}:any) {
     return (
         <div>
             <div className={styles.productHeroSection}>
-                <div className={`container`}>
-                    <div className={`row justify-content-center align-items-center`}>
+                <div className={`container-fluid px-0`}>
+                    <div className={`row justify-content-center align-items-center g-0`}>
                        <div className={`col-md-6`}>
+                                <div className={styles.productSection}>
 
-                           <div className={styles.breadcrumb}>
-                               <nav aria-label="breadcrumb">
-                                   <ol className="breadcrumb">
-                                       <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                       <li className="breadcrumb-item active" aria-current="page">Library</li>
-                                   </ol>
-                               </nav>
-                               </div>
-                               <div className={styles.HeroContent}>
-                                   <h4>{heroProduct.product_intro.intro_content}</h4>
-                               </div>
+                                    <div className={styles.breadcrumb}>
+                                        <nav aria-label="breadcrumb">
+                                            <ol className="breadcrumb p-0">
+                                                <li className="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li className="breadcrumb-item active" aria-current="page">Library</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                    <div className={styles.HeroContent}>
+                                        <h4>{heroProduct.product_intro.intro_content}</h4>
+                                    </div>
+                                </div>
+
                             </div>
                             <div className={`col-md-6`}>
                                 <div className={styles.proIntroBanner}>

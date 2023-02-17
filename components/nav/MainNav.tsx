@@ -7,7 +7,7 @@ import { ApiService } from "../../services/api.service";
 import axios from "axios";
 export default function MainNav({categories, products}: any) {
   
-    console.log('CAT==',categories)
+    console.log('PROSU==',products)
    
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");
@@ -38,7 +38,7 @@ export default function MainNav({categories, products}: any) {
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
 
                         <li>
-                            <Link href="#" className="nav-link px-2 " onClick={showMenu}>PRODUCTS</Link>
+                            <Link href="#" className="nav-link px-2 " onMouseOver={showMenu}>PRODUCTS</Link>
                             <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
                                 <div className={`row`}>
                                     <div className={`col-md-3`}>
@@ -58,12 +58,15 @@ export default function MainNav({categories, products}: any) {
                                         <div className={`row`}>
                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
-                                                        <div className={styles.MenuCard}>
-                                                            <div className={styles.MenuImage}>
-                                                                <img src={element.acf.product_image.url} />
+                                                        <Link href={`/product/`+element.acf.product_overview.post_name}>
+                                                            <div className={styles.MenuCard}>
+                                                                <div className={styles.MenuImage}>
+                                                                    <img src={element.acf.product_image.url} />
+                                                                </div>
+                                                                <h5>{element.acf.product_title}</h5>
                                                             </div>
-                                                            <h5>{element.acf.product_title}</h5>
-                                                        </div>
+                                                        </Link>
+                                                       
                                                     </div>
                                                ))}
                                                 

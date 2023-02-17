@@ -10,9 +10,9 @@ import axios from 'axios';
 
 export default function Product(props: any) {
 
-    console.log('PROD==',props.heroProduct);
+    // console.log('PROD==',props.heroProduct);
     // console.log('CATS==',props.cats);
-    console.log('SLUG==',props.slug);
+    console.log('PRODLIST==',props.productList);
     
     return (
         <div>
@@ -37,22 +37,22 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     const category =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/categories?orderby=id&order=asc`);
     const categories = await category.json();
 
-    const menuProduct =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard`);
-    const menuProducts = await menuProduct.json();
-
-    const heroProduct =  await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?slug=${product}&_fields=acf&acf_format=standard`);
-    const heroProducts = heroProduct.data[0].acf;
-    
+    const productOverview =  await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?slug=${product}&acf_format=standard`);
+    const heroProducts = productOverview.data[0].acf;  
+    const heroProductId = productOverview.data[0].id;  
 
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
     const menuCats = await cat.json();
 
     const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     const products = await prod.json();
+
+    const allProd =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=product_overview&meta_value=${heroProductId}`);
+    const productList = await allProd.json();
     
     if (categories && categories.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { categories:menuCats, menuProducts:products, heroProduct:heroProducts } }
+        return { props: { categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList } }
     } else {
         return {
             props: {}

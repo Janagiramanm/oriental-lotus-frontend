@@ -40,7 +40,7 @@
 }
 .MenuCard img {
   width: 100%;
-  object-fit: cover;
+  padding: 20px;
 }
 .MenuCard h5 {
   text-align: center;

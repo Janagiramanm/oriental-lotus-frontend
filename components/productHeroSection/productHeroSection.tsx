@@ -21,7 +21,7 @@ export default function ProductHeroSection({heroProduct}:any) {
                                         </nav>
                                     </div>
                                     <div className={styles.HeroContent}>
-                                        <h4>{heroProduct.product_intro.intro_content}</h4>
+                                        <h2>{heroProduct.product_intro.intro_content}</h2>
                                     </div>
                                 </div>
 

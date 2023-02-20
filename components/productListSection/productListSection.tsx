@@ -43,7 +43,7 @@ export default function ProductListSection({productList}:any) {
                                         <div className={`row pb-4`}>
                                             <div className={`col-md-6`}>
                                                 <div className={styles.brandImage}>
-                                                    <img src={element.acf.brand.brands.brand_logo.url} />
+                                                    <img src={element.acf.brand.brands?.brand_logo?.url} />
                                                 </div>
                                             </div>
                                             <div className={`col-md-6`}>

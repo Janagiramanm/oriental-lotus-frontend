@@ -1,11 +1,11 @@
 import next from "next";
 import styles from "./productListSection.module.scss";
-import React, {} from 'react'
+import React, { useState} from 'react'
 import Link from "next/link";
 
 export default function ProductListSection({productList}:any) {
 
-    console.log('LIST==',productList);
+    const [pcount, setPcount] = useState(productList.length);
     return (
         <div className={styles.productList}>
 
@@ -14,7 +14,7 @@ export default function ProductListSection({productList}:any) {
                     <div className={`row`}>
                         <div className={`col-9`}>
                             <div className={styles.productItemsTitle}>
-                                <h3>18 Items</h3>
+                                <h3>{pcount}{pcount > 1 ? ` Items` : ` Item` }</h3>
                             </div>
                         </div>
                         <div className={`col-3 text-end`}>

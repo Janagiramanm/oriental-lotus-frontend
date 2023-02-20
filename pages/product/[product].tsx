@@ -34,8 +34,8 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     const baseUrl = new ApiService();
     const { product } = context.query; 
        
-    const category =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/categories?orderby=id&order=asc`);
-    const categories = await category.json();
+    // const category =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/categories?orderby=id&order=asc`);
+    // const categories = await category.json();
 
     const productOverview =  await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?slug=${product}&acf_format=standard`);
     const heroProducts = productOverview.data[0].acf;  
@@ -50,7 +50,7 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     const allProd =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=product_overview&meta_value=${heroProductId}`);
     const productList = await allProd.json();
     
-    if (categories && categories.length > 0) {
+    if (menuCats && menuCats.length > 0) {
     //   const brands = res[0].acf.brands;
         return { props: { categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList } }
     } else {

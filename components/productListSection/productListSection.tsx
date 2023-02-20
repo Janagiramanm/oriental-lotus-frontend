@@ -5,6 +5,8 @@ import Link from "next/link";
 
 export default function ProductListSection({productList}:any) {
 
+     
+    console.log('PRODLIST==', productList);
     const [pcount, setPcount] = useState(productList.length);
     return (
         <div className={styles.productList}>
@@ -43,7 +45,7 @@ export default function ProductListSection({productList}:any) {
                                         <div className={`row pb-4`}>
                                             <div className={`col-md-6`}>
                                                 <div className={styles.brandImage}>
-                                                    <img src={element.acf.brand.brands?.brand_logo?.url} />
+                                                    <img src={element.acf.brand?.brands?.brand_logo?.url} />
                                                 </div>
                                             </div>
                                             <div className={`col-md-6`}>
@@ -58,11 +60,13 @@ export default function ProductListSection({productList}:any) {
                                 </div>
                         ))}
                     </div>
+                    {pcount > 9 ? 
                     <div className={`row pt-5 pb-5`}>
                         <div className={`col-12 text-center`}>
                             <button className={`btn btn-primary`}>Load More</button>
                         </div>
                     </div>
+                    :''}
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ import { ApiService } from "../../services/api.service";
 import axios from "axios";
 export default function MainNav({categories, products}: any) {
   
-    console.log('PROSU==',products)
+    // console.log('PROSU==',products)
    
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");

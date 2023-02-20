@@ -27,7 +27,7 @@ export default function Home(props: any) {
         {/* <ServiceSection service={props.acf.service_section}/> */}
         <BrandSection brandTitle={props.acf.brand_section.title} brands={props.brands}/>
         <InsightSection insight={props.acf.insight_section}/>
-        <FooterSection/>
+        {/* <FooterSection/> */}
     </div>
   )
 }

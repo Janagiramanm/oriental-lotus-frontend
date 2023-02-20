@@ -12,14 +12,14 @@ export default function Product(props: any) {
 
     // console.log('PROD==',props.heroProduct);
     // console.log('CATS==',props.cats);
-    console.log('PRODLIST==',props.productList);
+    // console.log('PRODLIST==',props.productList);
     
     return (
         <div>
             <MainNav categories={props.categories} products={props.menuProducts}/>
             <ProductHeroSection heroProduct={props.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct.content_section}/>
-            <ProductListSection/>
+            <ProductListSection productList={props.productList}/>
             {/* <BrandSection/> */}
             <ServiceSection/>
             <FooterSection/>

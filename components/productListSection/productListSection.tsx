@@ -3,7 +3,9 @@ import styles from "./productListSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 
-export default function ProductListSection() {
+export default function ProductListSection({productList}:any) {
+
+    console.log('LIST==',productList);
     return (
         <div className={styles.productList}>
 
@@ -29,246 +31,32 @@ export default function ProductListSection() {
                 </div>
                 <div className={styles.productsCardBlock}>
                     <div className={`row gx-5 gy-5 justify-content-center`}>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row pb-4`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
+                        {productList?.map((element:any, index:any)=>(
+                            <div className={`col-md-4`} key={index}>
+                                    <div className={styles.productCard}>
+                                        <div className={styles.productImage}>
+                                            <img src={element.acf.product_image.url} />
                                         </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
+                                        <div className={styles.protitle}>
+                                            <h5>{element.acf.product_title}</h5>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
+                                        <div className={`row pb-4`}>
+                                            <div className={`col-md-6`}>
+                                                <div className={styles.brandImage}>
+                                                    <img src={element.acf.brand.brands.brand_logo.url} />
+                                                </div>
+                                            </div>
+                                            <div className={`col-md-6`}>
+                                                <div className={styles.shopNow}>
+                                                    <Link href={`/`}>
+                                                        <img src={`/images/readmore.svg`} />
+                                                    </Link>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`col-md-4`}>
-                            <div className={styles.productCard}>
-                                <div className={styles.productImage}>
-                                    <img src={`/images/product-1.png`} />
-                                </div>
-                                <div className={styles.protitle}>
-                                    <h5>Super vitamin Body Soap + Brightening</h5>
-                                </div>
-                                <div className={`row`}>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.brandImage}>
-                                            <img src={`/images/brand-image.png`} />
-                                        </div>
-                                    </div>
-                                    <div className={`col-md-6`}>
-                                        <div className={styles.shopNow}>
-                                            <Link href={`/`}>
-                                                <img src={`/images/readmore.svg`} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                     <div className={`row pt-5 pb-5`}>
                         <div className={`col-12 text-center`}>

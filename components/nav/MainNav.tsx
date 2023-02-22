@@ -5,12 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
-export default function MainNav({categories, products}: any) {
+export default function MainNav({categories, products, brands}: any) {
   
-    // console.log('PROSU==',products)
+    // console.log('BRANDS==',brands)
    
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");
+    const [bmenu, setBrandblock] = useState(" d-none");
     useEffect(() => {
         document.addEventListener("scroll", () => {
             const scrollCheck = window.scrollY > 100
@@ -23,11 +24,18 @@ export default function MainNav({categories, products}: any) {
 
     },[])
     const showMenu = (() =>{
+        hideMenu();
         setDblock("");
     });
     const hideMenu = (() =>{
         setDblock(" d-none");
+        setBrandblock(" d-none");
     });
+
+    const showBrandMenu = (()=>{
+        hideMenu();
+        setBrandblock("");
+    })
     return (
         <div className={styles.mainNav +' '+ scroll } >
             <div className="container-fluid">
@@ -58,7 +66,7 @@ export default function MainNav({categories, products}: any) {
                                         <div className={`row`}>
                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
-                                                        <Link href={`/product/`+element.acf.product_overview.post_name}>
+                                                        <Link href={`/product/`+element.acf.product_overview.post_name} onClick={hideMenu}>
                                                             <div className={styles.MenuCard}>
                                                                 <div className={styles.MenuImage}>
                                                                     <img src={element.acf.product_image.url} />
@@ -78,7 +86,46 @@ export default function MainNav({categories, products}: any) {
 
                             </div>
                         </li>
-                        <li><Link href="#" className="nav-link px-2 ">BRANDS</Link></li>
+                        <li><Link href="#" className="nav-link px-2 " onMouseOver={showBrandMenu}>BRANDS</Link>
+                        
+                        <div className={ "menuDrop product-menu "+bmenu } onMouseLeave={hideMenu}>
+                                <div className={`row`}>
+                                    <div className={`col-md-3`}>
+                                        <h4>Brands</h4>
+                                        <ul>
+                                            {brands?.map((element:any, index:any)=>(
+                                               
+                                                 <li key={index}><Link href={`/brand/`+element.slug} onClick={hideMenu}>{element.acf.brands.brand_title}</Link></li>
+                                               
+                                            ))}
+                                           
+                                        </ul>
+                                        <Link href={`/`} className={styles.viewMore}>View More Products</Link>
+                                    </div>
+                                    <div className={`col-md-9`}>
+                                        <div className={`row`}>
+                                               {brands?.map((element:any, index:any)=>(
+                                                    <div className={`col-4`} key={index}>
+                                                        <Link href={`/brand/`+element.slug} onClick={hideMenu}>
+                                                           
+                                                                <div className={styles.MenuImage}>
+                                                                    <img src={element.acf.brands.brand_logo.url} />
+                                                                </div>
+                                                               
+                                                            
+                                                        </Link>
+                                                       
+                                                    </div>
+                                               ))}
+                                                
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
                         <li><Link href="#" className="nav-link px-2 ">CUSTOMISE</Link></li>
                         <li><Link href="#" className="nav-link px-2 ">ABOUT</Link></li>
                     </ul>

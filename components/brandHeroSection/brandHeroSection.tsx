@@ -19,8 +19,8 @@ export default function BrandHeroSection({heroSection, hereProduct}:any) {
             <div className={styles.brandHeroSection}>
                 <div className={`container`}>
                     <Slider {...settings}>
-                    
-                        {heroSection?.map((element:any,index: any)=> (
+                     { heroSection ?
+                        heroSection?.map((element:any,index: any)=> (
                             <div key={index}>
                                     <div className={`row justify-content-center align-items-center`}>
                                             <div className={`col-md-6`}>
@@ -39,14 +39,16 @@ export default function BrandHeroSection({heroSection, hereProduct}:any) {
                                             </div>
                                     </div>
                             </div>
-                        ) )}
+                        ) )
+                        :''
+                    }
                         </Slider>
                    
                 </div>
 
             </div>
                
-                {hereProduct?.map((element:any, index:any)=>(
+               {hereProduct? hereProduct?.map((element:any, index:any)=>(
                     <div className={`row gx-0`} key={index}>
                                 <div className={`col-md-6 bg-primary pr-0`}>
                                     <div className={`row gx-0 justify-content-center align-items-center`}>
@@ -82,7 +84,7 @@ export default function BrandHeroSection({heroSection, hereProduct}:any) {
                                 </div>
                    </div>
                        
-                ))}
+                )): ''}
                    
         </div>
         

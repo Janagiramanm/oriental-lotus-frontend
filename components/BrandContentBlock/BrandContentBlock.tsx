@@ -4,7 +4,8 @@ import React, {} from 'react'
 export default function BrandContentBlock({content}:any) {
     return (
         <div className={styles.RightImageBlock}>
-              {content?.map((element:any, index:any)=>(
+            { content?
+              content?.map((element:any, index:any)=>(
                  element.acf_fc_layout == 'left_content_right_image' ?
                 <div className={`row justify-content-center align-items-center g-0  bg-primary`} key={index}>
                       
@@ -36,7 +37,7 @@ export default function BrandContentBlock({content}:any) {
                 </div>
                 :''
 
-              ))}
+              )):''}
         </div>
     );
 }

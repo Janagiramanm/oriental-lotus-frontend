@@ -16,7 +16,7 @@ export default function Product(props: any) {
     
     return (
         <div>
-            <MainNav categories={props.categories} products={props.menuProducts}/>
+            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts}/>
             <ProductHeroSection heroProduct={props.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct.content_section}/>
             <ProductListSection productList={props.productList}/>
@@ -44,6 +44,9 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
     const menuCats = await cat.json();
 
+    const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
+    const brands = await brand.json();
+
     const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     const products = await prod.json();
 
@@ -52,7 +55,7 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     
     if (menuCats && menuCats.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList } }
+        return { props: { brands:brands, categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList } }
     } else {
         return {
             props: {}

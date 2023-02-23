@@ -18018,4 +18018,9 @@ body {
   padding-top: 5px;
 }
 
+.brandMenu img {
+  width: 100%;
+  padding: 20px;
+}
+
 /*# sourceMappingURL=globals.css.map */

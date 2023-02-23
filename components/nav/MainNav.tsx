@@ -88,7 +88,7 @@ export default function MainNav({categories, products, brands}: any) {
                         </li>
                         <li><Link href="#" className="nav-link px-2 " onMouseOver={showBrandMenu}>BRANDS</Link>
                         
-                        <div className={ "menuDrop product-menu "+bmenu } onMouseLeave={hideMenu}>
+                        <div className={ "menuDrop product-menu brandMenu "+bmenu } onMouseLeave={hideMenu}>
                                 <div className={`row`}>
                                     <div className={`col-md-3`}>
                                         <h4>Brands</h4>

@@ -14,11 +14,11 @@ import axios from 'axios';
 
 export default function Brand(props: any) {
 
-    console.log('PRODSU==',props.productList);
+    // console.log('PRODSU==',props);
     return (
         <div>
             <MainNav brands={props.menuBrand} categories={props.categories} products={props.menuProducts}/>
-            <BrandHeroSection heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
+            <BrandHeroSection logo={props.brands.brand_logo} heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
             <ProductIntroSection introContent={props.brands.brand_intro}/>
             <ProductListSection productList={props.productList}/>
             <BrandContentBlock content={props.brands.content_section}/>

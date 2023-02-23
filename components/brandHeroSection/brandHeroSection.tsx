@@ -3,8 +3,8 @@ import styles from "./brandHeroSection.module.scss";
 import React, {} from 'react'
 import Link from "next/link";
 import Slider from "react-slick";
-export default function BrandHeroSection({heroSection, hereProduct}:any) {
-    // console.log('Hero==',heroSection);
+export default function BrandHeroSection({logo, heroSection, hereProduct}:any) {
+    // console.log('Hero==',logo);
     const settings = {
         dots: true,
         infinite: true,
@@ -25,7 +25,7 @@ export default function BrandHeroSection({heroSection, hereProduct}:any) {
                                     <div className={`row justify-content-center align-items-center`}>
                                             <div className={`col-md-6`}>
                                                 <div className={styles.brandImage}>
-                                                    <img src={`/images/client-1.png`} />
+                                                    <img src={logo.url} />
                                                 </div>
                                                 <div className={styles.HeroContent}>
                                                     <h2>{element.brand_hero_title}</h2>

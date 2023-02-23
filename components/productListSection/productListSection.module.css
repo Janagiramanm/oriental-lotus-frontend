@@ -8,6 +8,10 @@
   border-radius: 10px;
   height: 480px;
   margin-bottom: 0px;
+  overflow: hidden;
+}
+.productCard .protitle {
+  height: 100px;
 }
 .productCard .protitle h5 {
   font-size: 24px;
@@ -28,7 +32,12 @@
 }
 .productCard .brandImage {
   padding-left: 20px;
-  padding-bottom: 20px;
+  width: 100%;
+  height: 60px;
+}
+.productCard .brandImage img {
+  width: 70px;
+  object-fit: cover;
 }
 .productCard .shopNow {
   padding-right: 20px;

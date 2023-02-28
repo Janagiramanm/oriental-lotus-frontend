@@ -19,7 +19,7 @@ export default function Product(props: any) {
             <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts}/>
             <ProductHeroSection heroProduct={props.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct.content_section}/>
-            <ProductListSection productList={props.productList}/>
+            <ProductListSection productList={props.productList} mainId={props.heroProductId} parent={'product_overview'}/>
             {/* <BrandSection/> */}
             <ServiceSection/>
             <FooterSection/>
@@ -41,10 +41,10 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     const heroProducts = productOverview.data[0].acf;  
     const heroProductId = productOverview.data[0].id;  
 
-    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
+    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
     const menuCats = await cat.json();
 
-    const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
+    const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard&per_page=6`);
     const brands = await brand.json();
 
     const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
@@ -55,7 +55,7 @@ export async function getServerSideProps(context: { query: { product: any } }) {
     
     if (menuCats && menuCats.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { brands:brands, categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList } }
+        return { props: { brands:brands, categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId } }
     } else {
         return {
             props: {}

@@ -20,7 +20,7 @@ export default function Brand(props: any) {
             <MainNav brands={props.menuBrand} categories={props.categories} products={props.menuProducts}/>
             <BrandHeroSection logo={props.brands.brand_logo} heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
             <ProductIntroSection introContent={props.brands.brand_intro}/>
-            <ProductListSection productList={props.productList}/>
+            <ProductListSection productList={props.productList} mainId={props.brandId} parent={'brand'}/>
             <BrandContentBlock content={props.brands.content_section}/>
             <BrandSingleImageBlock brandSingleImage = {props.brands.brand_single_image}/>
             {/* <InsightSection/> */}
@@ -34,11 +34,11 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     const baseUrl = new ApiService();
     const { brand } = context.query; 
     
-    const res = await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?slug=${brand}&acf_format=standard`);
+    const res = await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?slug=${brand}&acf_format=standard&per_page=6`);
     // const result =  res.acf;
     const brandId = res.data[0].id;
 
-    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc`);
+    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
     const menuCats = await cat.json();
 
     const brands = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
@@ -56,7 +56,7 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     
     if (res ) {
       const brands = res.data[0].acf.brands;
-        return { props: { brands:brands, menuProducts:products, menuBrand:menuBrand,  categories:menuCats, productList:productList } }
+        return { props: { brands:brands, menuProducts:products, menuBrand:menuBrand,  categories:menuCats, productList:productList, brandId:brandId } }
     } else {
         return {
             props: {}

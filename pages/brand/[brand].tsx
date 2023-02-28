@@ -14,7 +14,7 @@ import axios from 'axios';
 
 export default function Brand(props: any) {
 
-    // console.log('PRODSU==',props);
+    //console.log('PRODSU==',props.brands);
     return (
         <div>
             <MainNav brands={props.menuBrand} categories={props.categories} products={props.menuProducts}/>

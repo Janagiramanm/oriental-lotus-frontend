@@ -17,7 +17,7 @@ export default function BrandContentBlock({content}:any) {
                         </div>
                         <div className={`col-md-6`}>
                             <div className={styles.RightImage}>
-                                <img src={`/images/brand-banner.png`} />
+                                <img src={element.image_section.image.url} />
                             </div>
                         </div>
                </div>
@@ -25,7 +25,7 @@ export default function BrandContentBlock({content}:any) {
                <div className={`row justify-content-center align-items-center g-0  bg-primary`} key={index}>
                        <div className={`col-md-6`}>
                             <div className={styles.RightImage}>
-                                <img src={`/images/brand-banner.png`} />
+                                <img src={element.image_section.image.url} />
                             </div>
                         </div> 
                         <div className={`col-md-6`}>

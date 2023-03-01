@@ -18,6 +18,7 @@ export default function ProductListSection({productList, mainId, parent}:any) {
 
     useEffect(() => {
         setVisiblePosts(productList.data)
+        setPaged(2);
     }, [mainId]);
     
     const getProducts  = async () => {
@@ -30,6 +31,7 @@ export default function ProductListSection({productList, mainId, parent}:any) {
     
     const handleLoadMore = async () => {
         const newPosts = await getProducts();
+        console.log('NEW==',newPosts);
         if(newPosts?.data){
             setVisiblePosts([ ...visiblePosts, ...newPosts.data]);
         }

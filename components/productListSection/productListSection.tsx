@@ -101,7 +101,7 @@ export default function ProductListSection({productList, mainId, parent}:any) {
                             <button className={`btn btn-primary`} onClick={handleClick}>Load More</button>
                         </div>
                     </div>
-                    :''}
+                    :<div></div>}
                 </div>
             </div>
         </div>

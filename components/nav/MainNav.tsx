@@ -66,7 +66,7 @@ export default function MainNav({categories, products, brands}: any) {
                                         <div className={`row`}>
                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
-                                                        <Link href={`/product/`+element.acf.product_overview.post_name} onClick={hideMenu}>
+                                                        <Link href={`/product/`+element.acf.product_overview?.post_name} onClick={hideMenu}>
                                                             <div className={styles.MenuCard}>
                                                                 <div className={styles.MenuImage}>
                                                                     <img src={element.acf.product_image.url} />

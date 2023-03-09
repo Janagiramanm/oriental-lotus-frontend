@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   margin-top: -50px;
 }
+.footerSection .footLogo {
+  width: 126px;
+}
 @media (max-width: 575.98px) {
   .footerSection {
     padding-top: 50px;

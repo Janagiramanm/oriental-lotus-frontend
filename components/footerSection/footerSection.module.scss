@@ -6,15 +6,16 @@
   background-size: 100%;
   background-repeat: no-repeat;
   margin-top: -50px;
+  .footLogo{
+    width: 126px;
+  }
   @media (max-width: 575.98px) {
     padding-top: 50px;
     .footerLeft{
       padding-bottom: 30px;
     }
   }
-
-
-    .talkExpert{
+  .talkExpert{
     display: flex;
     justify-content: space-between;
     align-items: end;

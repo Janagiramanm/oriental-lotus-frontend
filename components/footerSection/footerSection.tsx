@@ -9,7 +9,7 @@ export default function FooterSection() {
            <div className={`container`}>
                <div className={`row pb-5 justify-content-center align-items-center`}>
                    <div className={`col-md-8 text-center text-md-start pb-4`}>
-                      <img src={'/images/logo-footer.png'} alt={`image`}  />
+                      <img className={styles.footLogo} src={'/images/logo-footer.png'} alt={`image`}  />
                    </div>
                    <div className={`col-md-4 justify-content-end text-end`}>
                         <div className={styles.talkExpert}>

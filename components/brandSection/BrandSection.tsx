@@ -23,8 +23,6 @@ export default function BrandSection({brandTitle, brands}:any) {
                             </div>
                         </div>
                   ))}
-                 
-
               </div>
            </div>
        </div>

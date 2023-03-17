@@ -7,9 +7,14 @@
 .brandHeroSection .brandImage {
   padding-bottom: 40px;
   padding-top: 40px;
+  text-align: center;
 }
 .brandHeroSection h2 {
   font-size: 48px;
+}
+.brandHeroSection .heroBanner img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .heroSmallContent {

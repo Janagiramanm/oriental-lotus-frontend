@@ -16,6 +16,7 @@
 .RightImageBlock .RightImage img {
   max-width: 100%;
   object-fit: cover;
+  width: 100%;
 }
 
 /*# sourceMappingURL=BrandContentBlock.module.css.map */

@@ -17,13 +17,13 @@ export default function BrandHeroSection({logo, heroSection, hereProduct}:any) {
     return (
         <div>
             <div className={styles.brandHeroSection}>
-                <div className={`container`}>
+
                     <Slider {...settings}>
                      { heroSection ?
                         heroSection?.map((element:any,index: any)=> (
                             <div key={index}>
                                     <div className={`row justify-content-center align-items-center`}>
-                                            <div className={`col-md-6`}>
+                                            <div className={`col-md-6 text-center`}>
                                                 <div className={styles.brandImage}>
                                                     <img src={logo.url} />
                                                 </div>
@@ -43,8 +43,7 @@ export default function BrandHeroSection({logo, heroSection, hereProduct}:any) {
                         :''
                     }
                         </Slider>
-                   
-                </div>
+
 
             </div>
                

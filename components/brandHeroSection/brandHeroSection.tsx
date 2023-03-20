@@ -25,7 +25,7 @@ export default function BrandHeroSection({logo, heroSection, hereProduct}:any) {
                                     <div className={`row justify-content-center align-items-center`}>
                                             <div className={`col-md-6 text-center`}>
                                                 <div className={styles.brandImage}>
-                                                    <img src={logo.url} />
+                                                    <img className={`m-auto`} src={logo.url} />
                                                 </div>
                                                 <div className={styles.HeroContent}>
                                                     <h2>{element.brand_hero_title}</h2>

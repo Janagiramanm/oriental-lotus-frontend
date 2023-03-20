@@ -105,7 +105,7 @@ export default function MainNav({categories, products, brands}: any) {
                                     <div className={`col-md-9`}>
                                         <div className={`row`}>
                                                {brands?.map((element:any, index:any)=>(
-                                                    <div className={`col-4`} key={index}>
+                                                    <div className={`col-3`} key={index}>
                                                         <Link href={`/brand/`+element.slug} onClick={hideMenu}>
                                                            
                                                                 <div className={styles.MenuImage}>

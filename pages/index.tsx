@@ -38,7 +38,7 @@ export async function getServerSideProps() {
   const response = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/home-page?_fields=acf&acf_format=standard`);
   const res = await response.json();
 
-  const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard&per_page=6`);
+  const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
   const brands = await brand.json(); 
 
   

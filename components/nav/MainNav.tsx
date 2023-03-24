@@ -90,7 +90,7 @@ export default function MainNav({categories, products, brands}: any) {
                         
                         <div className={ "menuDrop product-menu brandMenu "+bmenu } onMouseLeave={hideMenu}>
                                 <div className={`row`}>
-                                    <div className={`col-md-3`}>
+                                    {/* <div className={`col-md-3`}>
                                         <h4>Brands</h4>
                                         <ul>
                                             {brands?.map((element:any, index:any)=>(
@@ -101,8 +101,8 @@ export default function MainNav({categories, products, brands}: any) {
                                            
                                         </ul>
                                         <Link href={`/`} className={styles.viewMore}>View More Products</Link>
-                                    </div>
-                                    <div className={`col-md-9`}>
+                                    </div> */}
+                                    <div className={`col-md-12`}>
                                         <div className={`row`}>
                                                {brands?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>

@@ -1,0 +1,25 @@
+.aboutBlock {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+.aboutBlock .aboutContent {
+  text-align: center;
+}
+.aboutBlock .aboutContent h4 {
+  font-size: 40px;
+}
+.aboutBlock .aboutContent p {
+  font-size: 20px;
+}
+.aboutBlock .aboutThree {
+  padding: 60px;
+  background: #eeeeee;
+}
+.aboutBlock .aboutThree h3 {
+  font-size: 38px;
+}
+.aboutBlock .aboutThree p {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=aboutBlock.module.css.map */

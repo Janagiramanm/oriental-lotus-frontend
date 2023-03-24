@@ -25,7 +25,7 @@ export default function FooterSection() {
                           <div className={`${styles.InputCustom} input-group mb-3`}>
                               <input type="text" className="form-control" placeholder="Enter Email Address"
                                      aria-label="Enter Email Address" aria-describedby="button-addon2" />
-                                  <button className="btn btn-outline-secondary" type="button"
+                                  <button className="btn btn-outline-primary" type="button"
                                           id="button-addon2">Submit
                                   </button>
                           </div>

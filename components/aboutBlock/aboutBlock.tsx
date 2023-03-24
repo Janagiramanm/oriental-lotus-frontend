@@ -32,7 +32,7 @@ export default function AboutBlock() {
                   </div>
                   <div className={`row pt-4 pb-4`}>
                       <div className={`col-12 text-center`}>
-                          <h2>Lotus is a leading direct manufacturer of premium hotel amenities founded in 1997. From the start, our company's motto and goal has been six small words: Quality and Service You Can Trust. We pride ourselves in supplying amenities that deliver on quality, luxury, and sophistication.</h2>
+                          <h2>Lotus is a leading direct manufacturer of premium hotel amenities founded in 1997. From the start, our companys motto and goal has been six small words: Quality and Service You Can Trust. We pride ourselves in supplying amenities that deliver on quality, luxury, and sophistication.</h2>
                       </div>
                   </div>
               </div>

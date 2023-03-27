@@ -7,6 +7,7 @@ import ProductIntroSection from "../../../components/productIntroSection/product
 import ProductListSection from "../../../components/productListSection/productListSection";
 import { ApiService } from "../../../services/api.service";
 import axios from 'axios';
+import ProductDetails from "../../../components/productDetails/productDetails";
 
 export default function Product(props: any) {
 
@@ -17,9 +18,9 @@ export default function Product(props: any) {
     return (
         <div>
             <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts}/>
-            <div>This is for test page</div>
+            <ProductDetails/>
 
-
+            <FooterSection/>
         </div>
     )
 }

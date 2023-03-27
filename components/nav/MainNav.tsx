@@ -54,7 +54,7 @@ export default function MainNav({categories, products, brands}: any) {
                                         <ul>
                                             {categories?.map((element:any, index:any)=>(
                                                
-                                                 <li key={index}><Link href={`/product/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
+                                                 <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
                                                
                                             ))}
                                            
@@ -66,7 +66,7 @@ export default function MainNav({categories, products, brands}: any) {
                                         <div className={`row`}>
                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
-                                                        <Link href={`/product/`+element.acf.product_overview?.post_name} onClick={hideMenu}>
+                                                        <Link href={`/`+element.acf.product_overview?.post_name} onClick={hideMenu}>
                                                             <div className={styles.MenuCard}>
                                                                 <div className={styles.MenuImage}>
                                                                     <img src={element.acf.product_image.url} />

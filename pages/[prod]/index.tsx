@@ -38,8 +38,8 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
     // const categories = await category.json();
 
     const productOverview =  await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?slug=${prod}&acf_format=standard`);
-    const heroProducts = productOverview.data[0].acf;  
-    const heroProductId = productOverview.data[0].id;  
+    const heroProducts = productOverview.data[0]?.acf;  
+    const heroProductId = productOverview.data[0]?.id;  
 
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
     const menuCats = await cat.json();

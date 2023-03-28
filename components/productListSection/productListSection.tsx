@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
 
-export default function ProductListSection({productList, mainId, parent}:any) {
+export default function ProductListSection({productList, mainId, parent, prodCat}:any) {
 
      
-    // console.log('PRODLIST==', productList.count);
+    console.log('PRODLISdddddddT==', productList);
     // console.log('MAIN===',mainId);
     const baseUrl = new ApiService();
     
@@ -31,7 +31,7 @@ export default function ProductListSection({productList, mainId, parent}:any) {
     
     const handleLoadMore = async () => {
         const newPosts = await getProducts();
-        console.log('NEW==',newPosts);
+        // console.log('NEW==',newPosts);
         if(newPosts?.data){
             setVisiblePosts([ ...visiblePosts, ...newPosts.data]);
         }
@@ -85,7 +85,7 @@ export default function ProductListSection({productList, mainId, parent}:any) {
                                             </div>
                                             <div className={`col-md-6`}>
                                                 <div className={styles.shopNow}>
-                                                    <Link href={`/`}>
+                                                    <Link href={`/`+prodCat+`/`+element.acf.slug}>
                                                         <img src={`/images/readmore.svg`} />
                                                     </Link>
                                                 </div>

@@ -3,9 +3,11 @@ import styles from "./checkoutBlock.module.scss";
 import React, { useEffect, useState } from 'react'
 import Link from "next/link";
 // import { isAnyArrayBuffer } from "util/types";
+import EnquiryBlock from "../../components/enquiryBlock/enquiryBlock";
 
 export default function CheckoutBlock({cartItems}:any) {
 
+   
     return (
         <div>
             <div className={styles.checkoutTitle}>
@@ -44,6 +46,20 @@ export default function CheckoutBlock({cartItems}:any) {
 
                         const items =window.localStorage.getItem(element);
                         const product = JSON.parse(items || '{}');
+                        const [quantity, setQuantity] = useState(100);
+                        
+                        const plusQuanity = () =>{
+                            if(quantity >= 100){
+                             setQuantity(quantity + 100)
+                            }
+                        }
+                    
+                        const minusQuanity = () =>{
+                            if(quantity > 100){
+                             setQuantity(quantity - 100)
+                            }
+                        }
+
                         return(
                             <div className={styles.orderBody} key={index}>
                                 <div className={`row justify-content-center align-items-center`} >
@@ -56,9 +72,9 @@ export default function CheckoutBlock({cartItems}:any) {
                                 </div>
                                 <div className={`col-2`}>
                                         <div className={`${styles.threeInput} input-group`}>
-                                            <span className="input-group-text"> <i className="bi bi-dash"></i></span>
-                                            <input type="text" aria-label="First name" className="form-control text-center" />
-                                            <span className="input-group-text"> <i className="bi bi-plus"></i></span>
+                                            <span className="input-group-text" onClick={minusQuanity}> <i className="bi bi-dash"></i></span>
+                                            <input type="text" aria-label="First name" className="form-control text-center"  value={quantity}/>
+                                            <span className="input-group-text" onClick={plusQuanity}> <i className="bi bi-plus"></i></span>
                                         </div>
                                 </div>
                             </div>
@@ -68,6 +84,7 @@ export default function CheckoutBlock({cartItems}:any) {
                    
                 </div>
             </div>
+            <EnquiryBlock/>
         </div>
     );
 }

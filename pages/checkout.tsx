@@ -3,51 +3,41 @@ import Image from 'next/image'
 import MainNav from "../components/nav/MainNav";
 import FooterSection from "../components/footerSection/footerSection";
 import CheckoutBlock from "../components/checkoutBlock/checkoutBlock";
-import EnquiryBlock from "../components/enquiryBlock/enquiryBlock";
 import { useEffect, useState } from 'react';
+import { ApiService } from "../services/api.service";
 
-
-export default function Checkout() {
+export default function Checkout(props:any) {
 
     const [cartItems, setCartItems] = useState([]);
-    const [cartProducts, setCartProducts] = useState([]);
-   
-
+    
     useEffect(()=>{
         const storedIds = window.localStorage.getItem('ids');
-        // console.log('STORED==',);
         setCartItems(JSON.parse(storedIds || '{}'));
         
     },[])
 
-    console.log('CITEM==',cartItems)
-
-    // useEffect(()=>{
-        
-    //     // const ids = window.localStorage.getItem('ids');
-    //     // console.log('idds==',ids)
-    //     const cartIds = JSON.parse(storedIds);
-    //     if(cartIds){
-    //         // console.log(ids); 
-    //      setCartItems(JSON.parse(ids));
-    //      console.log('IIII==',cartItems);
-    //     }   
-        
-    //  },[])
-  
-
-//    const productIds = window.localStorage.getItem('ids');
-
-    //  console.log('CARTITMEMEM==',cartProducts)
-
-
     return (
         <div>
-            <MainNav/>
+            <MainNav categories={props.menuCats} products={props.products} brands={props.brands} cartItems={''} />
             <CheckoutBlock cartItems={cartItems}/>
-            <EnquiryBlock/>
             <FooterSection/>
-
         </div>
     )
+}
+
+export async function getServerSideProps() {
+
+    const baseUrl = new ApiService();
+    
+    const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
+    const brands = await brand.json(); 
+      
+    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
+    const menuCats = await cat.json();
+  
+    const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
+    const products = await product.json();
+  
+    return { props: { brands, menuCats, products } }
+    
 }

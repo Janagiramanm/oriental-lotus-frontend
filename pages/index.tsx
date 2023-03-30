@@ -15,8 +15,6 @@ import { ApiService } from "../services/api.service";
 import axios from 'axios';
 
 export default function Home(props: any) {
-
-   console.log('RES==',props.brands);
   return (
     <div>
         <MainNav categories={props.menuCats} products={props.products} brands={props.brands} cartItems={''} />

@@ -7,6 +7,20 @@
   z-index: 10;
   transition: 0.5s ease all;
 }
+.mainNav .counter {
+  background: Red;
+  padding: 3px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  width: 20px;
+  display: block;
+  text-align: center;
+  height: 20px;
+  position: absolute;
+  right: -10px;
+  top: -7px;
+}
 @media (max-width: 575.98px) {
   .mainNav {
     padding-left: 0px;

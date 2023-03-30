@@ -9,9 +9,9 @@
 }
 .mainNav .counter {
   background: Red;
-  padding: 3px;
+  padding: 1px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   width: 20px;
   display: block;
@@ -20,6 +20,7 @@
   position: absolute;
   right: -10px;
   top: -7px;
+  color: white;
 }
 @media (max-width: 575.98px) {
   .mainNav {

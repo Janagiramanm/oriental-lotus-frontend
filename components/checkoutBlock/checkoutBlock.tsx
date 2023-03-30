@@ -7,7 +7,7 @@ import EnquiryBlock from "../../components/enquiryBlock/enquiryBlock";
 
 export default function CheckoutBlock({cartItems}:any) {
 
-   
+    const [quantity, setQuantity] = useState(100);
     return (
         <div>
             <div className={styles.checkoutTitle}>
@@ -46,7 +46,7 @@ export default function CheckoutBlock({cartItems}:any) {
 
                         const items =window.localStorage.getItem(element);
                         const product = JSON.parse(items || '{}');
-                        const [quantity, setQuantity] = useState(100);
+                       
                         
                         const plusQuanity = () =>{
                             if(quantity >= 100){

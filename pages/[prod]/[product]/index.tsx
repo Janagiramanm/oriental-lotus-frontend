@@ -12,10 +12,6 @@ import ProductDetails from "../../../components/productDetails/productDetails";
 
 export default function Product(props: any) {
 
-    console.log('PROD==',props.productDetails);
-    // console.log('CATS==',props.cats);
-    // console.log('PRODLIST==',props.productList);
-
     const [productIds, setProductIds] = useState([]);
     const [cart, setCart] = useState('cart');
     const [cartCount, setCartCount] = useState('');
@@ -38,23 +34,15 @@ export default function Product(props: any) {
             "image": image
         }
         window.localStorage.setItem(pId,JSON.stringify(cartItem));
-        // window.localStorage.setObj(id, cartItem);  
        
     }
 
-    // console.log('CARTITEMS=====',productIds)
     useEffect(()=>{
         // localStorage.clear();
-         let cartItems = window.localStorage.getItem('ids');
-         console.log('CARTITEMS==',cartItems)
-
+         const cartItems = window.localStorage.getItem('ids');
          if(cartItems){
                 setProductIds(JSON.parse(cartItems));
          }
-
-         
-         
-         
 
     },[])
     

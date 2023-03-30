@@ -7,7 +7,7 @@ import EnquiryBlock from "../../components/enquiryBlock/enquiryBlock";
 
 export default function CheckoutBlock({cartItems}:any) {
 
-    const [quantity, setQuantity] = useState(100);
+    
     return (
         <div>
             <div className={styles.checkoutTitle}>
@@ -44,42 +44,45 @@ export default function CheckoutBlock({cartItems}:any) {
                     
                     {cartItems?.map((element:any, index:any)=>{
 
-                        const items =window.localStorage.getItem(element);
-                        const product = JSON.parse(items || '{}');
                        
-                        
-                        const plusQuanity = () =>{
-                            if(quantity >= 100){
-                             setQuantity(quantity + 100)
-                            }
-                        }
-                    
-                        const minusQuanity = () =>{
-                            if(quantity > 100){
-                             setQuantity(quantity - 100)
-                            }
-                        }
-
                         return(
-                            <div className={styles.orderBody} key={index}>
-                                <div className={`row justify-content-center align-items-center`} >
-                                <div className={`col-1`}>
-                                    <img src={product.image} />
-                                </div>
-                                <div className={`col-8`}>
-                                    <h4>{product.name}</h4>
-                                    <h5>Item Code - 83320012342</h5>
-                                </div>
-                                <div className={`col-2`}>
-                                        <div className={`${styles.threeInput} input-group`}>
-                                            <span className="input-group-text" onClick={minusQuanity}> <i className="bi bi-dash"></i></span>
-                                            <input type="text" aria-label="First name" className="form-control text-center"  value={quantity}/>
-                                            <span className="input-group-text" onClick={plusQuanity}> <i className="bi bi-plus"></i></span>
-                                        </div>
-                                </div>
-                            </div>
-                            </div>
+                                <CartSection key={index} item={element} />
                         )
+                        
+                        
+                        
+                        // const plusQuanity = () =>{
+                        //     if(quantity >= 100){
+                        //      setQuantity(quantity + 100)
+                        //     }
+                        // }
+                    
+                        // const minusQuanity = () =>{
+                        //     if(quantity > 100){
+                        //      setQuantity(quantity - 100)
+                        //     }
+                        // }
+
+                        // return(
+                        //     <div className={styles.orderBody} key={index}>
+                        //         <div className={`row justify-content-center align-items-center`} >
+                        //         <div className={`col-1`}>
+                        //             <img src={product.image} />
+                        //         </div>
+                        //         <div className={`col-8`}>
+                        //             <h4>{product.name}</h4>
+                        //             <h5>Item Code - 83320012342</h5>
+                        //         </div>
+                        //         <div className={`col-2`}>
+                        //                 <div className={`${styles.threeInput} input-group`}>
+                        //                     <span className="input-group-text" onClick={minusQuanity}> <i className="bi bi-dash"></i></span>
+                        //                     <input type="text" aria-label="First name" className="form-control text-center"  value={quantity}/>
+                        //                     <span className="input-group-text" onClick={plusQuanity}> <i className="bi bi-plus"></i></span>
+                        //                 </div>
+                        //         </div>
+                        //     </div>
+                        //     </div>
+                        // )
                     })}
                    
                 </div>
@@ -88,3 +91,41 @@ export default function CheckoutBlock({cartItems}:any) {
         </div>
     );
 }
+function CartSection(item:any) {
+    
+    const items =window.localStorage.getItem(item.item);    
+    const product = JSON.parse(items || '{}');
+    const [quantity, setQuantity] = useState(100);
+        const plusQuanity = () =>{
+            if(quantity >= 100){
+             setQuantity(quantity + 100)
+            }
+        }
+    
+        const minusQuanity = () =>{
+            if(quantity > 100){
+             setQuantity(quantity - 100)
+            }
+        }
+
+        return(
+            <div className={styles.orderBody}>
+                <div className={`row justify-content-center align-items-center`} >
+                <div className={`col-1`}>
+                    <img src={product.image} />
+                </div>
+                <div className={`col-8`}>
+                    <h4>{product.name}</h4>
+                    <h5>Item Code - 83320012342</h5>
+                </div>
+                <div className={`col-2`}>
+                        <div className={`${styles.threeInput} input-group`}>
+                            <span className="input-group-text" onClick={minusQuanity}> <i className="bi bi-dash"></i></span>
+                            <input type="text" aria-label="First name" className="form-control text-center"  value={quantity}/>
+                            <span className="input-group-text" onClick={plusQuanity}> <i className="bi bi-plus"></i></span>
+                        </div>
+                </div>
+            </div>
+            </div>
+        )
+  }

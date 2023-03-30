@@ -15,5 +15,8 @@
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
+.productDetails .productImage img {
+  width: 100%;
+}
 
 /*# sourceMappingURL=productDetails.module.css.map */

@@ -5,13 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
-export default function MainNav({categories, products, brands}: any) {
+export default function MainNav({categories, products, brands, cartItems}: any) {
   
     // console.log('BRANDS==',brands)
    
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");
     const [bmenu, setBrandblock] = useState(" d-none");
+    const [cartCount, setCartItems] = useState<string | null >('');
     useEffect(() => {
         document.addEventListener("scroll", () => {
             const scrollCheck = window.scrollY > 100
@@ -21,8 +22,10 @@ export default function MainNav({categories, products, brands}: any) {
                 setScroll('');
             }
         })
+        const count = window.localStorage.getItem('cartCount');
+        setCartItems(count);
 
-    },[])
+    },[cartItems])
     const showMenu = (() =>{
         hideMenu();
         setDblock("");
@@ -132,7 +135,11 @@ export default function MainNav({categories, products, brands}: any) {
 
                     <div className="col-md-3  text-end">
                         <div className="d-flex justify-content-end align-items-center">
-                            <div className={styles.cartIcon}><img alt={`image`} src={"/images/cart.svg"} /></div>
+                            <div className={styles.cartIcon}>
+                                {cartCount!=null? 
+                                <a href={'/checkout'} className="btn btn-primary"><span className="badge badge-light badge-info">{cartCount}</span></a>
+                                   :''            }
+                                <img alt={`image`} src={"/images/cart.svg"} /></div>
                             <div className={`${styles.cartIcon} d-block d-md-none`}><img alt={`image`} src={"/images/menu.svg"} /></div>
                             <button type="button" className="d-none d-md-block btn btn-primary">CONTACT</button>
                         </div>

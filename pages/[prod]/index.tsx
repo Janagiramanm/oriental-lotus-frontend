@@ -12,11 +12,11 @@ export default function Product(props: any) {
 
     // console.log('PROD==',props.heroProduct);
     // console.log('CATS==',props.cats);
-    console.log('PRODLIasaST==',props.productList);
+    // console.log('PRODLIasaST==',props.productList);
     
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts}/>
+            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={''}/>
             <ProductHeroSection heroProduct={props.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct.content_section}/>
             <ProductListSection productList={props.productList} mainId={props.heroProductId} parent={'product_overview'} prodCat={props.prodCat}/>
@@ -39,7 +39,7 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
 
     const productOverview =  await axios.get(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?slug=${prod}&acf_format=standard`);
     const heroProducts = productOverview.data[0]?.acf;  
-    const heroProductId = productOverview.data[0]?.id;  
+    let heroProductId = productOverview.data[0]?.id;  
 
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
     const menuCats = await cat.json();

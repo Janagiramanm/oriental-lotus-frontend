@@ -9,7 +9,7 @@ export default function Checkout(props: any)  {
     return (
         <div>
             <MainNav/>
-            <InsightSection insight={props.acf.insight_section}/>
+            
             <FooterSection/>
 
         </div>

@@ -10,10 +10,6 @@ import axios from 'axios';
 
 export default function Product(props: any) {
 
-    // console.log('PROD==',props.heroProduct);
-    // console.log('CATS==',props.cats);
-    // console.log('PRODLIasaST==',props.productList);
-    
     return (
         <div>
             <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={''}/>

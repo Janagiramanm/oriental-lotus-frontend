@@ -18,4 +18,24 @@
   .productImage img{
     width: 100%;
   }
+  .customeToater{
+    background: #000000;
+    color: #FFFFFF;
+    width: 400px;
+    img{
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    div:first-child{
+      background: #000000;
+      padding: 0px;
+    }
+    .toasterContent{
+      // @include type-style-toaster();
+      color: #FFFFFF;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
 }
+

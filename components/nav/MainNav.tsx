@@ -136,7 +136,7 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                     <div className="col-md-3  text-end">
                         <div className="d-flex justify-content-end align-items-center">
                             <div className={styles.cartIcon}>
-                                {cartCount!=null? 
+                                {cartCount !='0' ? 
                                 <a className={`position-relative`} href={'/checkout'}><span className={styles.counter}>{cartCount}</span></a>
                                    :''            }
                                 <img alt={`image`} src={"/images/cart.svg"} /></div>

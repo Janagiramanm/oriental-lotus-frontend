@@ -20,7 +20,7 @@ export default function Brand(props: any) {
             <MainNav brands={props.menuBrand} categories={props.categories} products={props.menuProducts}/>
             <BrandHeroSection logo={props.brands.brand_logo} heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
             <ProductIntroSection introContent={props.brands.brand_intro}/>
-            <ProductListSection productList={props.productList} mainId={props.brandId} parent={'brand'}/>
+            <ProductListSection productList={props.productList} mainId={props.brandId} parent={'brand'} prodCat={props.prodCat}/>
             <BrandContentBlock content={props.brands.content_section}/>
             <BrandSingleImageBlock brandSingleImage = {props.brands.brand_single_image}/>
             {/* <InsightSection/> */}
@@ -56,7 +56,7 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     
     if (res ) {
       const brands = res.data[0].acf.brands;
-        return { props: { brands:brands, menuProducts:products, menuBrand:menuBrand,  categories:menuCats, productList:productList, brandId:brandId } }
+        return { props: { brands:brands, menuProducts:products, menuBrand:menuBrand,  categories:menuCats, productList:productList, brandId:brandId, prodCat:brand } }
     } else {
         return {
             props: {}

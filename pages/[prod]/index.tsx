@@ -12,7 +12,7 @@ export default function Product(props: any) {
 
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={''}/>
+            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} />
             <ProductHeroSection heroProduct={props?.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct?.content_section}/>
             <ProductListSection productList={props.productList} mainId={props.heroProductId} parent={'product_overview'} prodCat={props.prodCat}/>

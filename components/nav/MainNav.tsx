@@ -66,7 +66,7 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                     </div>
                                     <div className={`col-md-9`}>
                                         <h4 className={`text-center`}>Products by Brand</h4>
-                                        <div className={`row`}>
+                                        <div className={`row justify-content-center align-items-center`}>
                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
                                                         <Link href={`/`+element.acf.product_overview?.post_name} onClick={hideMenu}>

@@ -18,7 +18,7 @@ export default function BrandHeroSection({logo, heroSection, hereProduct}:any) {
         <div>
             <div className={styles.brandHeroSection}>
 
-                    <Slider {...settings}>
+
                      { heroSection ?
                         heroSection?.map((element:any,index: any)=> (
                             <div key={index}>
@@ -42,7 +42,7 @@ export default function BrandHeroSection({logo, heroSection, hereProduct}:any) {
                         ) )
                         :''
                     }
-                        </Slider>
+
 
 
             </div>

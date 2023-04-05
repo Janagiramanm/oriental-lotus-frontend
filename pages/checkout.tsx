@@ -12,7 +12,9 @@ export default function Checkout(props:any) {
     
     useEffect(()=>{
         const storedIds = window.localStorage.getItem('ids');
-        setCartItems(JSON.parse(storedIds || '{}'));
+        ///console.log('SS=',storedIds)
+        // setCartItems(JSON.parse(storedIds));
+        setCartItems(JSON.parse(storedIds || '[]'));
         
     },[])
 

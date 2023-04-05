@@ -17,7 +17,7 @@ import axios from 'axios';
 export default function Home(props: any) {
   return (
     <div>
-        <MainNav categories={props.menuCats} products={props.products} brands={props.brands} cartItems={''} />
+        <MainNav categories={props.menuCats} products={props.products} brands={props.brands} />
         <HeroSlider heroSlider={props.acf.hero_section} heroProduct={props.acf.hero_product}/>
         <AboutSection aboutUs={props.acf.about_section}/>
         <FeaturedProductSection featureProduct={props.acf.feature_product}/>

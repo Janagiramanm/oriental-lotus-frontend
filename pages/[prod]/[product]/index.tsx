@@ -7,7 +7,9 @@ import ProductHeroSection from "../../../components/productHeroSection/productHe
 import ProductIntroSection from "../../../components/productIntroSection/productIntroSection";
 import ProductListSection from "../../../components/productListSection/productListSection";
 import { ApiService } from "../../../services/api.service";
-import axios from 'axios';
+import Modal from '../../../components/modalPopup/index';
+
+// import axios from 'axios';
 import ProductDetails from "../../../components/productDetails/productDetails";
 
 export default function Product(props: any) {
@@ -15,6 +17,9 @@ export default function Product(props: any) {
     const [productIds, setProductIds] = useState([]);
     const [cart, setCart] = useState('cart');
     const [cartCount, setCartCount] = useState('');
+    const [modalPop, setModalPopup] = useState(false);
+    const [message, setMessage] = useState('')
+    const [openPopup, setOpenPopup] = useState('d-none');
 
     const addToCart = (pId:never,image:any, title:any) =>{
 
@@ -24,17 +29,31 @@ export default function Product(props: any) {
         if(ids.indexOf(pId) == -1){
             ids.push(pId);
             window.localStorage.setItem('ids', JSON.stringify(ids));
+            setProductIds(ids);
+            window.localStorage.setItem('cartCount', ids.length);
+            setModalPopup(true);
+            setOpenPopup('d-block');
+            var cartItem = {
+                "id": pId,
+                "name": title,
+                "image": image
+            }
+            window.localStorage.setItem(pId,JSON.stringify(cartItem));
+            setMessage(title + ' has been added to cart')
+        }else{
+            setModalPopup(true);
+            setOpenPopup('d-block');
+            setMessage(title + ' already added in the cart. You can change the quantity in the cart')
         }
-        setProductIds(ids);
-        window.localStorage.setItem('cartCount', ids.length);
-
-        var cartItem = {
-            "id": pId,
-            "name": title,
-            "image": image
-        }
-        window.localStorage.setItem(pId,JSON.stringify(cartItem));
+        
+        
        
+    }
+    console.log('mMMMMM==',modalPop)
+
+    const closeModal = () =>{
+        console.log('COMESSS');
+        setModalPopup(false);
     }
 
     useEffect(()=>{
@@ -44,14 +63,16 @@ export default function Product(props: any) {
                 setProductIds(JSON.parse(cartItems));
          }
 
-    },[])
+    },[modalPop])
     
     
     return (
         <div>
             <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={productIds}/>
             <ProductDetails productDetails={props.productDetails} addToCart={addToCart} />
+            {modalPop && <Modal message={message} action={'add'} popup={openPopup} changeStatus={''} removeItem={''}/> }
             <FooterSection/>
+            
         </div>
     )
 }

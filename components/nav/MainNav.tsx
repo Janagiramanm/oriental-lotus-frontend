@@ -106,9 +106,9 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                         <Link href={`/`} className={styles.viewMore}>View More Products</Link>
                                     </div> */}
                                     <div className={`col-md-12`}>
-                                        <div className={`row`}>
+                                        <div className={`row justify-content-center align-items-center`}>
                                                {brands?.map((element:any, index:any)=>(
-                                                    <div className={`col-3`} key={index}>
+                                                    <div className={`${styles.borderNav} col-3`} key={index}>
                                                         <Link href={`/brand/`+element.slug} onClick={hideMenu}>
                                                            
                                                                 <div className={styles.MenuImage}>

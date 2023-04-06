@@ -10,7 +10,7 @@ export default function EnquiryBlock() {
                 <div className={`container`}>
                     <div className={`row`}>
                         <div className={styles.EnquiryTitle}>
-                            <h4>Make and Enquiry</h4>
+                            <h4>Make an Enquiry</h4>
                         </div>
                     </div>
                     <div className={`row`}>

@@ -43,7 +43,7 @@ export async function getServerSideProps() {
   const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
   const menuCats = await cat.json();
 
-  const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
+  const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?acf_format=standard&per_page=4`);
   const products = await product.json();
 
 

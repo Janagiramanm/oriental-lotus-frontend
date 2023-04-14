@@ -7,7 +7,7 @@ import { ApiService } from "../../services/api.service";
 import axios from "axios";
 export default function MainNav({categories, products, brands, cartItems}: any) {
   
-    // console.log('BRANDS==',brands)
+    console.log('PROD==',products)
    
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");
@@ -69,7 +69,7 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                         <div className={`row justify-content-center align-items-center`}>
                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
-                                                        <Link href={`/`+element.acf.product_overview?.post_name} onClick={hideMenu}>
+                                                        <Link href={`/`+element.acf.product_overview?.post_name+`/`+element.slug} onClick={hideMenu}>
                                                             <div className={styles.MenuCard}>
                                                                 <div className={styles.MenuImage}>
                                                                     <img src={element.acf.product_image.url} />

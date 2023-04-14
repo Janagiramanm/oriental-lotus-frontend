@@ -49,7 +49,7 @@ function ModalPopup({message, action, popup, changeStatus, removeItem}:any) {
      
     >
       <Modal.Dialog>
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title>Oriental Lotus</Modal.Title>
         </Modal.Header>
 

@@ -52,6 +52,13 @@
   text-decoration: underline;
 }
 
+.MenuImage {
+  height: 100px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
 .MenuCard .MenuImage {
   height: 240px;
   display: flex;

@@ -45,7 +45,6 @@ export default function ProductListSection({productList, mainId, parent, prodCat
     // console.log('VISIBLE==',visiblePosts.length);
     return (
         <div className={styles.productList}>
-
             <div className={`container`}>
                 <div className={styles.productHeader}>
                     <div className={`row`}>

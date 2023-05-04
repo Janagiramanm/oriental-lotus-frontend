@@ -21,9 +21,9 @@ export default function ProductDetails({productDetails,addToCart}:any) {
     return (
         <div className={styles.productDetails}>
             <div className={styles.breadcrumb}>
-                <p> <Link href={'/'}>Home</Link> / 
+                <p> <Link href={'/'}>Home</Link> <img src={"../images/arrow-right.svg"} width={'14'} />
                 <Link href={`../`+ productDetails[0]?.acf.product_overview.post_name}> {productDetails[0]?.acf.product_overview.post_title}</Link>
-                    / {productDetails[0]?.acf.product_title}</p>
+                    <img src={"../images/arrow-right.svg"} width={'14'} /> {productDetails[0]?.acf.product_title}</p>
             </div>
 
             <div className={styles.productDetailsBlock}>

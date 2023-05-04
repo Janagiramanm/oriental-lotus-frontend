@@ -59,31 +59,30 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                                 {categories?.map((element:any, index:any)=>(
                                                     <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
                                                 ))}
-
                                             </ul>
 
                                         </div>
-                                        <div className={`col-md-9`}>
-                                            <h4 className={`text-center`}>Products by Brand</h4>
-                                            <div className={`row justify-content-center align-items-center`}>
-                                                {products?.map((element:any, index:any)=>(
-                                                    <div className={`col-3`} key={index}>
-                                                        <Link href={`/`+element.acf.product_overview?.post_name+`/`+element.slug} onClick={hideMenu}>
-                                                            <div className={styles.MenuCard}>
-                                                                <div className={styles.MenuImage}>
-                                                                    <img src={element.acf.product_image.url} />
-                                                                </div>
-                                                                <h5>{element.acf.product_title}</h5>
-                                                            </div>
-                                                        </Link>
+                                        {/*<div className={`col-md-9`}>*/}
+                                        {/*    <h4 className={`text-center`}>Products by Brand</h4>*/}
+                                        {/*    <div className={`row justify-content-center align-items-center`}>*/}
+                                        {/*        {products?.map((element:any, index:any)=>(*/}
+                                        {/*            <div className={`col-3`} key={index}>*/}
+                                        {/*                <Link href={`/`+element.acf.product_overview?.post_name+`/`+element.slug} onClick={hideMenu}>*/}
+                                        {/*                    <div className={styles.MenuCard}>*/}
+                                        {/*                        <div className={styles.MenuImage}>*/}
+                                        {/*                            <img src={element.acf.product_image.url} />*/}
+                                        {/*                        </div>*/}
+                                        {/*                        <h5>{element.acf.product_title}</h5>*/}
+                                        {/*                    </div>*/}
+                                        {/*                </Link>*/}
 
-                                                    </div>
-                                                ))}
+                                        {/*            </div>*/}
+                                        {/*        ))}*/}
 
 
 
-                                            </div>
-                                        </div>
+                                        {/*    </div>*/}
+                                        {/*</div>*/}
                                     </div>
                                 </div>
 

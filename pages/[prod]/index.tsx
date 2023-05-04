@@ -19,8 +19,6 @@ export default function Product(props: any) {
             {/* <BrandSection/> */}
             <ServiceSection/>
             <FooterSection/>
-
-
         </div>
     )
 }

@@ -13,14 +13,19 @@ import FooterSection from "../components/footerSection/footerSection";
 import ComingSoon from "../components/comingSoon/comingSoon";
 import { ApiService } from "../services/api.service";
 import axios from 'axios';
-import SplashHero from "../components/splashHero/splashHero";
 
 export default function Home(props: any) {
   return (
     <div>
         <MainNav categories={props.menuCats} products={props.products} brands={props.brands} />
-        <SplashHero/>
-
+        <HeroSlider heroSlider={props.acf.hero_section} heroProduct={props.acf.hero_product}/>
+        <AboutSection aboutUs={props.acf.about_section}/>
+        <FeaturedProductSection featureProduct={props.acf.feature_product}/>
+        <FeaturedProductSlider productSlider={props.acf.feature_product_slider}/>
+        {/* <ServiceSection service={props.acf.service_section}/> */}
+        <BrandSection brandTitle={props.acf.brand_section.title} brands={props.brands}/>
+        <InsightSection insight={props.acf.insight_section}/>
+        <FooterSection/>
     </div>
   )
 }

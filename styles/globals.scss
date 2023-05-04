@@ -23,8 +23,6 @@ body{
   float: left;
   transition: all .2s ease-out;
   font-size: 28px;
-
-
 }
 
 .orb:hover {
@@ -32,7 +30,6 @@ body{
   opacity: .5;
   cursor: pointer;
 }
-
 
 
 .marquee {
@@ -103,11 +100,16 @@ body{
   left: 0px;
   right: 0px;
   top: 112px;
-  width: 70%;
+  width: 100%;
+  overflow: hidden;
   margin: auto;
   padding: 60px;
   letter-spacing: 0px;
   z-index: 100;
+  &:hover{
+      max-height: 500px;
+      transition: max-height 0.25s ease-in;
+  }
   h4{
     font-size: 24px;
     font-weight: 600;

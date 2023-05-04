@@ -5,7 +5,11 @@
   padding-left: 40px;
   padding-right: 40px;
   z-index: 10;
-  transition: 0.5s ease all;
+  height: auto;
+  transition: max-height 0.15s ease-out;
+}
+.mainNav:hover {
+  background: #ffffff;
 }
 .mainNav .borderNav {
   border: 1px solid #e8e8e8;

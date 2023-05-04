@@ -1,0 +1,30 @@
+.IntroText {
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fbe8f0;
+}
+.IntroText h1 {
+  font-size: 82px;
+  text-transform: uppercase;
+  color: #36276f;
+}
+.IntroText h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #36276f;
+}
+.IntroText h5 {
+  padding-bottom: 20px;
+  color: #36276f;
+}
+
+.smallText {
+  background: #fbe8f0;
+  text-align: center;
+  padding-bottom: 14px;
+}
+
+/*# sourceMappingURL=splashHero.module.css.map */

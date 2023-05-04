@@ -51,23 +51,22 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                         <li>
                             <Link href="#" className="nav-link px-2 " onMouseOver={showMenu}>PRODUCTS</Link>
                             <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
-                                <div className={`row`}>
-                                    <div className={`col-md-3`}>
-                                        <h4>Products</h4>
-                                        <ul>
-                                            {categories?.map((element:any, index:any)=>(
-                                               
-                                                 <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
-                                               
-                                            ))}
-                                           
-                                        </ul>
-                                        <Link href={`/`} className={styles.viewMore}>View More Products</Link>
-                                    </div>
-                                    <div className={`col-md-9`}>
-                                        <h4 className={`text-center`}>Products by Brand</h4>
-                                        <div className={`row justify-content-center align-items-center`}>
-                                               {products?.map((element:any, index:any)=>(
+                                <div className={`container`}>
+                                    <div className={`row`}>
+                                        <div className={`col-md-3`}>
+                                            <h4>Products</h4>
+                                            <ul>
+                                                {categories?.map((element:any, index:any)=>(
+                                                    <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
+                                                ))}
+
+                                            </ul>
+
+                                        </div>
+                                        <div className={`col-md-9`}>
+                                            <h4 className={`text-center`}>Products by Brand</h4>
+                                            <div className={`row justify-content-center align-items-center`}>
+                                                {products?.map((element:any, index:any)=>(
                                                     <div className={`col-3`} key={index}>
                                                         <Link href={`/`+element.acf.product_overview?.post_name+`/`+element.slug} onClick={hideMenu}>
                                                             <div className={styles.MenuCard}>
@@ -77,21 +76,25 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                                                 <h5>{element.acf.product_title}</h5>
                                                             </div>
                                                         </Link>
-                                                       
+
                                                     </div>
-                                               ))}
-                                                
-                                            
-                                            
+                                                ))}
+
+
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
+
                             </div>
                         </li>
-                        <li><Link href="#" className="nav-link px-2 " onMouseOver={showBrandMenu}>BRANDS</Link>
+                        <li><Link href="#" className="nav-link px-2" onMouseOver={showBrandMenu}>BRANDS</Link>
                         
                         <div className={ "menuDrop product-menu brandMenu "+bmenu } onMouseLeave={hideMenu}>
+
+                            <div className={`container`}>
                                 <div className={`row`}>
                                     {/* <div className={`col-md-3`}>
                                         <h4>Brands</h4>
@@ -126,20 +129,21 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
                             </div>
                         </li>
                         <li><Link href="#" className="nav-link px-2 ">CUSTOMISE</Link></li>
-                        <li><Link href="#" className="nav-link px-2 ">ABOUT</Link></li>
+                        <li><Link href="/aboutus" className="nav-link px-2 ">ABOUT</Link></li>
                     </ul>
 
                     <div className="col-md-3  text-end">
                         <div className="d-flex justify-content-end align-items-center">
                             <div className={styles.cartIcon}>
                                 {cartCount !='0' ? 
-                                <a className={`position-relative`} href={'/checkout'}><span className={styles.counter}>{cartCount}</span></a>
+                                <a className={`position-relative`} href={'/checkout'}><span className={styles.counter}>{cartCount}</span><img alt={`image`} src={"/images/cart.svg"} /></a>
                                    :''            }
-                                <img alt={`image`} src={"/images/cart.svg"} /></div>
+                                </div>
                             <div className={`${styles.cartIcon} d-block d-md-none`}><img alt={`image`} src={"/images/menu.svg"} /></div>
                             <button type="button" className="d-none d-md-block btn btn-primary">CONTACT</button>
                         </div>

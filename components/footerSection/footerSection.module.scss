@@ -1,7 +1,7 @@
 .footerSection{
   text-align: center;
   background: url("/images/shape-bg.svg");
-  padding-top: 140px;
+  padding-top: 20px;
   padding-bottom: 20px;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -45,9 +45,8 @@
     z-index: 1;
   }
   .footerBottom{
-    border-top: 1px solid #979797;
     padding-top: 20px;
-    margin-top: 60px;
+    font-size: 12px;
     ul{
       display: flex;
       justify-items: center;

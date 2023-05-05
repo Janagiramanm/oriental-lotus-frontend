@@ -14,12 +14,16 @@ import ComingSoon from "../components/comingSoon/comingSoon";
 import { ApiService } from "../services/api.service";
 import axios from 'axios';
 import SplashHero from "../components/splashHero/splashHero";
+import React from "react";
 
 export default function Home(props: any) {
   return (
     <div>
         <MainNav categories={props.menuCats} products={props.products} brands={props.brands} />
         <SplashHero/>
+        <div className={`animate__animated animate__delay-4s animate__fadeInUp`}>
+            <FooterSection/>
+        </div>
 
     </div>
   )

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default function FooterSection() {
     return (
-       <div className={`${styles.footerSection} animate__animated animate__delay-4s animate__fadeInUp`}>
+       <div className={`${styles.footerSection}`}>
            <div className={`container`}>
                <div className={`row justify-content-center align-items-center`}>
                    {/*<div className={`col-md-12 text-center`}>*/}

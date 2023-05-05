@@ -18008,7 +18008,6 @@ body {
   content: " ";
   position: absolute;
   z-index: 2;
-  background: red;
 }
 .menuDrop:hover {
   max-height: 500px;

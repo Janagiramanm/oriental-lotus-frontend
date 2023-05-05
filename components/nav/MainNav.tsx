@@ -40,7 +40,7 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
         setBrandblock("");
     })
     return (
-        <div className={styles.mainNav +' '+ scroll } >
+        <div className={`${styles.mainNav +' '+ scroll } animate__animated animate__delay-4s animate__fadeInDown`} >
             <div className="container-fluid">
                 <header className="d-flex flex-wrap justify-content-between align-items-center py-0 py-sm-4">
                     <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
@@ -54,7 +54,14 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                                 <div className={`container`}>
                                     <div className={`row`}>
                                         <div className={`col-md-3`}>
-                                            <h4>Products</h4>
+                                            <ul>
+                                                {categories?.map((element:any, index:any)=>(
+                                                    <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
+                                                ))}
+                                            </ul>
+
+                                        </div>
+                                        <div className={`col-md-3`}>
                                             <ul>
                                                 {categories?.map((element:any, index:any)=>(
                                                     <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>

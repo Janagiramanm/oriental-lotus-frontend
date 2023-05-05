@@ -11,9 +11,11 @@ export default function SplashHero({service}:any) {
         <div>
             <div className={styles.IntroText}>
                 <div className={`container animate__animated animate__pulse`}>
-                    <h5>WELCOME</h5>
-                    <h1 className={`animate__animated animate__pulse`}>Proven Results -Tried, Tested & Loved</h1>
-                    <h3>Bring your mind + skin back into balance with our new skincare collection. Powered by our BioActive complex to help reveal your most beautiful complexion ever</h3>
+                        <div className={styles.logoBlock}>
+                            <div className={styles.icon}><img className={`animate__animated animate__fadeIn animate__delay-2s `} src={"./images/lotus-icon.png"} /></div>
+                            <div className={styles.icon}><img className={`animate__animated animate__fadeIn animate__delay-3s `} src={"./images/text-logo.png"} /></div>
+                            <div className={styles.icon}><img className={`animate__animated animate__fadeIn animate__delay-4s `} src={"./images/tagline.png"} /></div>
+                        </div>
                 </div>
             </div>
             <FooterSection/>

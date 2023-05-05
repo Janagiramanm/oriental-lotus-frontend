@@ -1,14 +1,33 @@
 import next from "next";
 import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import styles from "./splashHero.module.scss";
 import FooterSection from "../footerSection/footerSection";
 
 
+
+
 export default function SplashHero({service}:any) {
+    gsap.registerPlugin(CSSPlugin, ScrollTrigger);
+
+
+    const animateBox = () => {
+        gsap.to(".box", {
+            x: 100,
+            duration: 1,
+            ease: "power2.out",
+        });
+    };
 
 
     return (
         <div>
+            <div className="box" onClick={animateBox}>
+                Click me to animate!
+            </div>
             <div className={styles.IntroText}>
                 <div className={`container animate__animated animate__pulse`}>
                         <div className={styles.logoBlock}>

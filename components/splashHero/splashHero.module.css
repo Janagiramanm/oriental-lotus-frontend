@@ -5,10 +5,6 @@
   align-items: center;
   text-align: center;
   background: #ffffff;
-  animation-name: changeColor;
-  animation-duration: 1s;
-  animation-delay: 5s;
-  animation-fill-mode: forwards;
 }
 .IntroText h1 {
   font-size: 82px;
@@ -29,15 +25,6 @@
   background: #fbe8f0;
   text-align: center;
   padding-bottom: 14px;
-}
-
-@keyframes changeColor {
-  from {
-    background-color: #ffffff;
-  }
-  to {
-    background-color: #fbe8f0;
-  }
 }
 
 /*# sourceMappingURL=splashHero.module.css.map */

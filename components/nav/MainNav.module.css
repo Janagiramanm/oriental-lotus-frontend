@@ -2,11 +2,13 @@
   position: fixed;
   top: 0px;
   width: 100%;
-  padding-left: 40px;
-  padding-right: 40px;
   z-index: 10;
   height: auto;
-  transition: max-height 0.15s ease-out;
+}
+.mainNav .menuWhite {
+  background: #ffffff;
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
 .mainNav:hover {
   background: #ffffff;
@@ -40,7 +42,7 @@
 .mainNav ul li {
   padding-left: 20px;
   padding-right: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
 }
 .mainNav ul li a {
   color: #36276F;

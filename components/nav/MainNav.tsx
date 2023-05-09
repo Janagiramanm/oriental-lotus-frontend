@@ -47,11 +47,11 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                         <img width={`120`} src={"/images/logo.png"}  alt={`image`} />
                     </Link>
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
-
                         <li>
                             <Link href="#" className="nav-link px-2 " onMouseOver={showMenu}>PRODUCTS</Link>
                             <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
-                                <div className={`container`}>
+                                <div className={styles.menuWhite}>
+                                    <div className={`container`}>
                                     <div className={`row`}>
                                         <div className={`col-md-3`}>
                                             <ul>
@@ -85,15 +85,11 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
 
                                         {/*            </div>*/}
                                         {/*        ))}*/}
-
-
-
                                         {/*    </div>*/}
                                         {/*</div>*/}
                                     </div>
                                 </div>
-
-
+                                </div>
                             </div>
                         </li>
                         <li><Link href="#" className="nav-link px-2" onMouseOver={showBrandMenu}>BRANDS</Link>

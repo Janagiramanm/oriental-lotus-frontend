@@ -17907,11 +17907,6 @@ body {
   padding-bottom: 2px;
 }
 
-.whitemenu {
-  background: #ffffff;
-  box-shadow: 1px -15px 30px #2c205c;
-}
-
 .orb {
   width: fit-content;
   height: 50px;
@@ -17994,19 +17989,22 @@ body {
 
 .menuDrop {
   position: absolute;
-  background: #fff;
+  background: #2c205c;
   left: 0px;
   right: 0px;
   letter-spacing: 0px;
-  top: 132px;
+  top: 120px;
+  width: 100%;
   width: 100%;
   margin: auto;
   letter-spacing: 0px;
   z-index: 100;
+  overflow: hidden;
+  transition: ease all 0.5s;
 }
-.menuDrop:hover {
-  max-height: 500px;
-  transition: max-height 0.25s ease-in;
+.menuDrop a {
+  color: #ffffff !important;
+  padding-bottom: 10px;
 }
 .menuDrop h4, .menuDrop .h4 {
   font-size: 24px;
@@ -18037,6 +18035,11 @@ body {
 
 .menuDrop {
   letter-spacing: 0px;
+}
+
+.columnCount {
+  column-count: 3;
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=globals.css.map */

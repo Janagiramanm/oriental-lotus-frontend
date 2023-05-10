@@ -81,7 +81,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                 <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
                                         <div className={styles.menuWhite}>
                                             <div className={`container`} >
-                                                <div className="row">
+                                                <div className="row py-5">
                                                              <div className="col-md-3">
                                                                 {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
                                                                         
@@ -97,7 +97,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                                              </div>
                                                              <div className="col-md-8">
                                                              {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
-                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock:'d-none'}>
+                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock +` columnCount`:'d-none'}>
                                                                           
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              

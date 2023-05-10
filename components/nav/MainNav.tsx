@@ -12,6 +12,11 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
     const [dblock, setDblock] = useState(" d-none");
     const [bmenu, setBrandblock] = useState(" d-none");
     const [cartCount, setCartItems] = useState<string | null >('');
+    // console.log('DDD======',menu);
+
+
+    const [activeMainIndex, setActivemainIndex] = useState(-1);
+    const [activeSubmenuIndex, setActiveSubmenuIndex] = useState(-1);
     
     useEffect(() => {
         document.addEventListener("scroll", () => {
@@ -24,6 +29,8 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
         })
         const count = window.localStorage.getItem('cartCount');
         setCartItems(count);
+
+
 
     },[cartItems])
     const showMenu = (() =>{
@@ -39,6 +46,25 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
         hideMenu();
         setBrandblock("");
     })
+    
+    const handleMouseOver = (arg:any,index:any) =>{
+        setActivemainIndex(index);
+        showMenu();
+    }
+
+    const currentMenu = (arg:any, index:any) =>{
+        return () => handleMouseOver(arg,index)
+    }
+
+    const handleSubMenu = (index:any) =>{
+        setActiveSubmenuIndex(index);
+        showMenu();
+
+    }
+    const selectSubMenu = (index:any) => {
+        return () => handleSubMenu(index);
+    }
+
     return (
         <div className={`${styles.mainNav +' '+ scroll } animate__animated animate__delay-4s animate__fadeInDown`} >
             <div className="container-fluid">
@@ -48,22 +74,54 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                     </Link>
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
                          {menu[0]?.acf.main_menu?.map((element:any, index:any)=>(
-                              <li key={index}><Link href='' onMouseOver={showMenu} onClick={hideMenu}>{element.main_menu_name}</Link>
-                                <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
-                                        <div className={styles.menuWhite}>
-                                            <div className={`container`}>
-                                                <div className={`row`}>
-                                                    <div className={`col-md-3`}>
-                                                            <ul> {
-                                                                element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>(
-                                                                    <li key={ind}> <Link href='/'>{elem.sub_menu_title}</Link> </li>
-                                                                ))
-                                                                }
-                                                            </ul>
+                              <li key={index}>
 
-                                                    </div>
-                                                
+                                <Link href='' onMouseOver={currentMenu(element.main_menu_name.toLowerCase(),index)} onClick={hideMenu}>{element.main_menu_name}</Link>
+
+                                <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
+                                        <div className={styles.menuWhite}>
+                                            <div className={`container`} >
+                                                <div className="row">
+                                                             <div className="col-md-3">
+                                                                {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
+                                                                        
+                                                                        return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
+                                                                                
+                                                                                            <Link className="row" href='/'>{elem.sub_menu_title}</Link> 
+                                                                                
+                                                                            </div>)
+                                                                    
+
+                                                                })}
+
+                                                             </div>
+                                                             <div className="col-md-8">
+                                                             {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
+                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock:'d-none'}>
+                                                                          
+                                                                           {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
+                                                                             
+                                                                                return(<div className="row">
+                                                                                    <Link key={childInd} href='/'>{childMenu.child_menu_label}</Link> 
+
+                                                                                </div>
+                                                                                                  
+                                                                                    )   
+                                                                            })}
+
+                                                                    </div>)
+                                                                   
+
+                                                                    
+                                                                  
+                                                         })}
+
+                                                             </div>
+                                                            
+                                                             
+                                                           
                                                 </div>
+                                                 
                                             </div>
                                         </div>
                                         

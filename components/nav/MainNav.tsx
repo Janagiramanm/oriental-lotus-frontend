@@ -5,14 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
-export default function MainNav({categories, products, brands, cartItems}: any) {
+export default function MainNav({categories, products, brands, cartItems, menu}: any) {
   
-    console.log('PROD==',products)
+    console.log('MENUA==',menu[0].acf)
    
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");
     const [bmenu, setBrandblock] = useState(" d-none");
     const [cartCount, setCartItems] = useState<string | null >('');
+    
     useEffect(() => {
         document.addEventListener("scroll", () => {
             const scrollCheck = window.scrollY > 100
@@ -28,7 +29,7 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
     },[cartItems])
     const showMenu = (() =>{
         hideMenu();
-        setDblock("");
+        setDblock(" d-block");
     });
     const hideMenu = (() =>{
         setDblock(" d-none");
@@ -47,97 +48,34 @@ export default function MainNav({categories, products, brands, cartItems}: any) 
                         <img width={`120`} src={"/images/logo.png"}  alt={`image`} />
                     </Link>
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li>
-                            <Link href="#" className="nav-link px-2 " onMouseOver={showMenu}>PRODUCTS</Link>
-                            <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
-                                <div className={styles.menuWhite}>
-                                    <div className={`container`}>
-                                    <div className={`row`}>
-                                        <div className={`col-md-3`}>
-                                            <ul>
-                                                {categories?.map((element:any, index:any)=>(
-                                                    <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
-                                                ))}
-                                            </ul>
+                         {menu[0].acf.main_menu?.map((element:any, index:any)=>(
+                              <li key={index}><Link href='' onMouseOver={showMenu} onClick={hideMenu}>{element.main_menu_name}</Link>
+                                <div className={ "menuDrop product-menu "+dblock } onMouseLeave={hideMenu}>
+                                        <div className={styles.menuWhite}>
+                                            <div className={`container`}>
+                                                <div className={`row`}>
+                                                    <div className={`col-md-3`}>
+                                                            <ul>
+                                                                {
+                                                                element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>(
+                                                                    <li key={ind}><Link href='' onClick={hideMenu}>{elem.sub_menu_title}</Link></li>
+                                                                ))
+                                                            }
+                                                            </ul>
 
-                                        </div>
-                                        <div className={`col-md-3`}>
-                                            <ul>
-                                                {categories?.map((element:any, index:any)=>(
-                                                    <li key={index}><Link href={`/`+element.slug} onClick={hideMenu}>{element.acf.title}</Link></li>
-                                                ))}
-                                            </ul>
-
-                                        </div>
-                                        {/*<div className={`col-md-9`}>*/}
-                                        {/*    <h4 className={`text-center`}>Products by Brand</h4>*/}
-                                        {/*    <div className={`row justify-content-center align-items-center`}>*/}
-                                        {/*        {products?.map((element:any, index:any)=>(*/}
-                                        {/*            <div className={`col-3`} key={index}>*/}
-                                        {/*                <Link href={`/`+element.acf.product_overview?.post_name+`/`+element.slug} onClick={hideMenu}>*/}
-                                        {/*                    <div className={styles.MenuCard}>*/}
-                                        {/*                        <div className={styles.MenuImage}>*/}
-                                        {/*                            <img src={element.acf.product_image.url} />*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <h5>{element.acf.product_title}</h5>*/}
-                                        {/*                    </div>*/}
-                                        {/*                </Link>*/}
-
-                                        {/*            </div>*/}
-                                        {/*        ))}*/}
-                                        {/*    </div>*/}
-                                        {/*</div>*/}
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li><Link href="#" className="nav-link px-2" onMouseOver={showBrandMenu}>BRANDS</Link>
-                        
-                        <div className={ "menuDrop product-menu brandMenu "+bmenu } onMouseLeave={hideMenu}>
-
-                            <div className={`container`}>
-                                <div className={`row`}>
-                                    {/* <div className={`col-md-3`}>
-                                        <h4>Brands</h4>
-                                        <ul>
-                                            {brands?.map((element:any, index:any)=>(
-                                               
-                                                 <li key={index}><Link href={`/brand/`+element.slug} onClick={hideMenu}>{element.acf.brands.brand_title}</Link></li>
-                                               
-                                            ))}
-                                           
-                                        </ul>
-                                        <Link href={`/`} className={styles.viewMore}>View More Products</Link>
-                                    </div> */}
-                                    <div className={`col-md-12`}>
-                                        <div className={`row justify-content-center align-items-center`}>
-                                               {brands?.map((element:any, index:any)=>(
-                                                    <div className={`${styles.borderNav} col-3`} key={index}>
-                                                        <Link href={`/brand/`+element.slug} onClick={hideMenu}>
-                                                           
-                                                                <div className={styles.MenuImage}>
-                                                                    <img src={element.acf.brands.brand_logo.url} />
-                                                                </div>
-                                                               
-                                                            
-                                                        </Link>
-                                                       
                                                     </div>
-                                               ))}
                                                 
-                                            
-                                            
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        
 
-                            </div>
-                        </li>
-                        <li><Link href="#" className="nav-link px-2 ">CUSTOMISE</Link></li>
-                        <li><Link href="/aboutus" className="nav-link px-2 ">ABOUT</Link></li>
+                                </div>
+                          </li>
+                        ))}
+                         
                     </ul>
+                
 
                     <div className="col-md-3  text-end">
                         <div className="d-flex justify-content-end align-items-center">

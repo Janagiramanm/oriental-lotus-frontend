@@ -19,7 +19,7 @@ import React from "react";
 export default function Home(props: any) {
   return (
     <div>
-        <MainNav categories={props.menuCats} products={props.products} brands={props.brands} />
+        <MainNav categories={props.menuCats} products={props.products} brands={props.brands} menu={props.menu}/>
         <SplashHero/>
         <div className={`animate__animated animate__delay-4s animate__fadeInUp`}>
             <FooterSection/>
@@ -46,11 +46,15 @@ export async function getServerSideProps() {
   const products = await product.json();
 
 
+  const mainmenu = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/menu?_fields=acf&acf_format=standard`);
+  const menu =  await mainmenu.json();
+
+
  
   
   if (res && res.length > 0) {
     const acf = res[0].acf;
-      return { props: { acf, brands, menuCats, products } }
+      return { props: { acf, brands, menuCats, products, menu } }
   } else {
       return {
           props: {}

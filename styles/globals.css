@@ -18042,4 +18042,8 @@ body {
   font-size: 13px;
 }
 
+.logoAni img {
+  max-width: 100%;
+}
+
 /*# sourceMappingURL=globals.css.map */

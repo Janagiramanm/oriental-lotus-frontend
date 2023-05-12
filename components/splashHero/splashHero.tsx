@@ -31,7 +31,7 @@ export default function SplashHero({service}:any) {
 
     const animateLogo = () => {
         gsap.fromTo(".logoAni",{
-                opacity: 0, y: 90, duration:1,
+                opacity: 0, y: "50%", duration:1,
             },
             {
                 opacity: 1, delay: 4, duration: 1, y:80, stagger: 1, ease: "bounce",

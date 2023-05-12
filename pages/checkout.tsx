@@ -20,7 +20,7 @@ export default function Checkout(props:any) {
 
     return (
         <div>
-            <MainNav categories={props.menuCats} products={props.products} brands={props.brands} cartItems={''} />
+            <MainNav categories={props.menuCats} products={props.products} brands={props.brands} cartItems={''} menu={props.menu} />
             <CheckoutBlock cartItems={cartItems}/>
             <FooterSection/>
         </div>
@@ -39,7 +39,10 @@ export async function getServerSideProps() {
   
     const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     const products = await product.json();
+
+    const mainmenu = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/menu?_fields=acf&acf_format=standard`);
+    const menu =  await mainmenu.json();
   
-    return { props: { brands, menuCats, products } }
+    return { props: { brands, menuCats, products, menu } }
     
 }

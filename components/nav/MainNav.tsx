@@ -12,8 +12,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
     const [dblock, setDblock] = useState(" d-none");
     const [bmenu, setBrandblock] = useState(" d-none");
     const [cartCount, setCartItems] = useState<string | null >('');
-    // console.log('DDD======',menu);
-
+   
 
     const [activeMainIndex, setActivemainIndex] = useState(-1);
     const [activeSubmenuIndex, setActiveSubmenuIndex] = useState(-1);

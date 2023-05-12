@@ -12,7 +12,7 @@ export default function Product(props: any) {
 
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} />
+            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} menu={props.menu} />
             <ProductHeroSection heroProduct={props?.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct?.content_section}/>
             <ProductListSection productList={props.productList} mainId={props.heroProductId} parent={'product_overview'} prodCat={props.prodCat}/>
@@ -46,10 +46,13 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
 
     const allProd =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=product_overview&meta_value=${heroProductId}`);
     const productList = await allProd.json();
+
+    const mainmenu = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/menu?_fields=acf&acf_format=standard`);
+    const menu =  await mainmenu.json();
     
     if (menuCats && menuCats.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { brands:brands, categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId, prodCat:prod } }
+        return { props: { brands:brands, categories:menuCats, menuProducts:products, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId, prodCat:prod, menu:menu } }
     } else {
         return {
             props: {}

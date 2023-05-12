@@ -68,7 +68,7 @@ export default function Product(props: any) {
     
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={productIds}/>
+            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={productIds} menu={props.menu}/>
             <ProductDetails productDetails={props.productDetails} addToCart={addToCart} />
             {modalPop && <Modal message={message} action={'add'} popup={openPopup} changeStatus={''} removeItem={''}/> }
             <FooterSection/>
@@ -100,10 +100,14 @@ export async function getServerSideProps(context: { query: { product: any } }) {
 
     const allProd =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?acf_format=standard&slug==${product}`);
     const productDetails = await allProd.json();
+
+    const mainmenu = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/menu?_fields=acf&acf_format=standard`);
+    const menu =  await mainmenu.json();
+
     
     if (menuCats && menuCats.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { brands:brands, categories:menuCats, menuProducts:products, productDetails: productDetails } }
+        return { props: { brands:brands, categories:menuCats, menuProducts:products, productDetails: productDetails, menu:menu } }
     } else {
         return {
             props: {}

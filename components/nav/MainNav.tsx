@@ -101,8 +101,8 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                                                           
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              
-                                                                                return(<div className="row">
-                                                                                    <Link key={childInd} href='/'>{childMenu.child_menu_label}</Link> 
+                                                                                return(<div className="row" key={childInd}>
+                                                                                    <Link  href='/'>{childMenu.child_menu_label}</Link> 
 
                                                                                 </div>
                                                                                                   

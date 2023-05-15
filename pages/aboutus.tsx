@@ -8,9 +8,9 @@ import AboutBlock from "../components/aboutBlock/aboutBlock";
 export default function Aboutus() {
     return (
         <div>
-            {/* <MainNav/>
+            <MainNav/>
             <AboutBlock/>
-            <FooterSection/> */}
+            <FooterSection/>
         </div>
     )
 }

@@ -86,7 +86,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                                                         
                                                                         return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
                                                                                 
-                                                                                            <Link className="row" href={elem.sub_menu_link}>{elem.sub_menu_title}</Link> 
+                                                                                            <Link className="row" href={process.env.NEXT_PUBLIC_BASE_PATH_PRODUCTION+'/'+elem.sub_menu_link}>{elem.sub_menu_title}</Link> 
                                                                                 
                                                                             </div>)
                                                                     
@@ -101,7 +101,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              
                                                                                 return(<div className="row" key={childInd}>
-                                                                                    <Link  href={childMenu.link}>{childMenu.child_menu_label}</Link> 
+                                                                                    <Link  href={process.env.NEXT_PUBLIC_BASE_PATH_PRODUCTION+'/'+elem.sub_menu_link+'/'+childMenu.link}>{childMenu.child_menu_label}</Link> 
 
                                                                                 </div>
                                                                                                   

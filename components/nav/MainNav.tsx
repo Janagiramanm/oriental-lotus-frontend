@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
-export default function MainNav({categories, products, brands, cartItems, menu}: any) {
+export default function MainNav({cartItems, menu}: any) {
   
 
     const [scroll, setScroll] = useState('')
@@ -63,6 +63,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
     const selectSubMenu = (index:any) => {
         return () => handleSubMenu(index);
     }
+    const baseUrl = new ApiService();
 
     return (
         <div className={`${styles.mainNav +' '+ scroll } animate__animated animate__delay-4s animate__fadeInDown`} >
@@ -86,7 +87,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                                                         
                                                                         return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
                                                                                 
-                                                                                            <Link className="row" href={process.env.NEXT_PUBLIC_BASE_PATH_PRODUCTION+'/'+elem.sub_menu_link}>{elem.sub_menu_title}</Link> 
+                                                                                            <Link className="row" href={baseUrl.getFrotendUrl()+'/'+elem.sub_menu_link}>{elem.sub_menu_title}</Link> 
                                                                                 
                                                                             </div>)
                                                                     
@@ -101,7 +102,7 @@ export default function MainNav({categories, products, brands, cartItems, menu}:
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              
                                                                                 return(<div className="row" key={childInd}>
-                                                                                    <Link  href={process.env.NEXT_PUBLIC_BASE_PATH_PRODUCTION+'/'+elem.sub_menu_link+'/'+childMenu.link}>{childMenu.child_menu_label}</Link> 
+                                                                                    <Link  href={baseUrl.getFrotendUrl()+'/'+elem.sub_menu_link+'/'+childMenu.link}>{childMenu.child_menu_label}</Link> 
 
                                                                                 </div>
                                                                                                   

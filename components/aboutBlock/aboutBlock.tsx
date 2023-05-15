@@ -12,27 +12,21 @@ export default function AboutBlock() {
                       <div className={`col-md-12`}>
                           <div className={styles.aboutContent}>
                               <h4>About</h4>
-                              <p>Lotus is a leading direct manufacturer of premium hotel amenities founded in 1997. From the start, our companys motto and goal has been six small words: Quality and Service You Can Trust. We pride ourselves in supplying amenities that deliver on quality, luxury, and sophistication.</p>
+                              <p>Oriental Lotus is the industry benchmark for manufacturing and production of world class hotel amenities, catering the largest client base of 1500+ premium 5-star and luxury boutique hotels in India since 2014.
+                              </p>
                           </div>
                       </div>
                   </div>
                   <div className={`row pt-4 pb-4`}>
                       <div className={`col-md-6`}>
                           <div className={styles.aboutThree}>
-                              <h3>Design</h3>
-                              <p>Today the opportunities are greater than ever. Places of accommodation all around the world are depending on brand loyalty and recognition and we have the expertise to act as your very own concierge of amenities. Our in-house design team allows us to capture a hotel individuality and reflect that essence into unique customized guest room amenities. In addition to having our own design team and manufacturing capabilities we have also pre-selected the best vendors in the business, making us your one-direct source for all guest amenities and guest room items.</p>
+                              <h3>With a total 57,000 sq ft of manufacturing area seamlessly operated by a dedicated workforce of 150 people, we offer one of the largest production capacities in India.</h3>
                           </div>
                       </div>
                       <div className={`col-md-6`}>
                           <div className={styles.aboutThree}>
-                              <h3>Design</h3>
-                              <p>Today the opportunities are greater than ever. Places of accommodation all around the world are depending on brand loyalty and recognition and we have the expertise to act as your very own concierge of amenities. Our in-house design team allows us to capture a hotel individuality and reflect that essence into unique customized guest room amenities. In addition to having our own design team and manufacturing capabilities we have also pre-selected the best vendors in the business, making us your one-direct source for all guest amenities and guest room items.</p>
+                              <h3>Our full-fledged dedicated in-house laboratory develops custom formulations for private labels and produces third-party licensed hotel toiletries either in partnership or through the contract manufacturing route for luxury and couture International Amenities Brands.</h3>
                           </div>
-                      </div>
-                  </div>
-                  <div className={`row pt-4 pb-4`}>
-                      <div className={`col-12 text-center`}>
-                          <h2>Lotus is a leading direct manufacturer of premium hotel amenities founded in 1997. From the start, our companys motto and goal has been six small words: Quality and Service You Can Trust. We pride ourselves in supplying amenities that deliver on quality, luxury, and sophistication.</h2>
                       </div>
                   </div>
               </div>

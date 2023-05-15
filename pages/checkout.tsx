@@ -20,7 +20,7 @@ export default function Checkout(props:any) {
 
     return (
         <div>
-            <MainNav categories={props.menuCats} products={props.products} brands={props.brands} cartItems={''} menu={props.menu} />
+            <MainNav  cartItems={''} menu={props.menu} />
             <CheckoutBlock cartItems={cartItems}/>
             <FooterSection/>
         </div>

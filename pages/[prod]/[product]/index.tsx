@@ -68,7 +68,7 @@ export default function Product(props: any) {
     
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={productIds} menu={props.menu}/>
+            <MainNav cartItems={productIds} menu={props.menu}/>
             <ProductDetails productDetails={props.productDetails} addToCart={addToCart} />
             {modalPop && <Modal message={message} action={'add'} popup={openPopup} changeStatus={''} removeItem={''}/> }
             <FooterSection/>

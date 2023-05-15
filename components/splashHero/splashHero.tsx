@@ -22,7 +22,7 @@ export default function SplashHero({service}:any) {
             opacity: 1, y: -100, duration:1, scale: ("1"),
             },
         {
-            opacity: 1, delay: 3, y: 60, duration: 1, scale: (".5"), ease: "linear"
+            opacity: 1, delay: 3, y: 60, duration: 1, scale: (".5"), ease: "fade"
         });
     };
 
@@ -34,7 +34,7 @@ export default function SplashHero({service}:any) {
                 opacity: 0, y: "50%", duration:1,
             },
             {
-                opacity: 1, delay: 4, duration: 1, y:80, stagger: 1, ease: "bounce",
+                opacity: 1, delay: 4, duration: 1, y:80, stagger: 1, ease: "fade",
             });
     };
 

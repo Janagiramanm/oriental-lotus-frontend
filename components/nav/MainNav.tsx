@@ -76,7 +76,7 @@ export default function MainNav({cartItems, menu}: any) {
                          {menu[0]?.acf.main_menu?.map((element:any, index:any)=>(
                               <li key={index}>
 
-                                <Link href='' onMouseOver={currentMenu(element.main_menu_name.toLowerCase(),index)} onClick={hideMenu}>{element.main_menu_name}</Link>
+                                <Link href={element.main_menu_link} onMouseOver={currentMenu(element.main_menu_name.toLowerCase(),index)} onClick={hideMenu}>{element.main_menu_name}</Link>
 
                                 <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
                                         <div className={styles.menuWhite}>

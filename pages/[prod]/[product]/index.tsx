@@ -9,7 +9,7 @@ import ProductListSection from "../../../components/productListSection/productLi
 import { ApiService } from "../../../services/api.service";
 import Modal from '../../../components/modalPopup/index';
 
-// import axios from 'axios';
+// import axios from 'axios'; 
 import ProductDetails from "../../../components/productDetails/productDetails";
 
 export default function Product(props: any) {
@@ -48,7 +48,7 @@ export default function Product(props: any) {
         
         
        
-    }
+    } 
     console.log('mMMMMM==',modalPop)
 
     const closeModal = () =>{
@@ -68,7 +68,7 @@ export default function Product(props: any) {
     
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={props.menuProducts} cartItems={productIds} menu={props.menu}/>
+            <MainNav cartItems={productIds} menu={props.menu}/>
             <ProductDetails productDetails={props.productDetails} addToCart={addToCart} />
             {modalPop && <Modal message={message} action={'add'} popup={openPopup} changeStatus={''} removeItem={''}/> }
             <FooterSection/>

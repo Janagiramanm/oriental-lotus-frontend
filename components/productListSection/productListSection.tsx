@@ -4,6 +4,7 @@ import React, { useState, useEffect} from 'react'
 import Link from "next/link";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
+import {useRouter} from 'next/router';
 
 export default function ProductListSection({productList, mainId, parent, prodCat}:any) {
 
@@ -11,6 +12,7 @@ export default function ProductListSection({productList, mainId, parent, prodCat
     console.log('PRODLISdddddddT==', productList);
     // console.log('MAIN===',mainId);
     const baseUrl = new ApiService();
+    const router = useRouter()
     
     const [visiblePosts, setVisiblePosts] = useState(productList.data);
     const [paged, setPaged] = useState(2);
@@ -84,7 +86,7 @@ export default function ProductListSection({productList, mainId, parent, prodCat
                                             </div>
                                             <div className={`col-md-6`}>
                                                 <div className={styles.shopNow}>
-                                                    <Link href={`/`+prodCat+`/`+element.acf.slug}>
+                                                    <Link href={`/`+router.asPath+`/`+element.acf.slug}>
                                                         <img src={`/images/readmore.svg`} />
                                                     </Link>
                                                 </div>

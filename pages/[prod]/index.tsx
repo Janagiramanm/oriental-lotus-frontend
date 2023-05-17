@@ -12,7 +12,7 @@ export default function Product(props: any) {
 
     return (
         <div>
-            <MainNav brands={props.brands} categories={props.categories} products={''} menu={props.menu} />
+            <MainNav cartItem={''} menu={props.menu} />
             <ProductHeroSection heroProduct={props?.heroProduct}/>
             <ProductIntroSection introContent={props.heroProduct?.content_section}/>
             <ProductListSection productList={props.productList} mainId={props.heroProductId} parent={'product_overview'} prodCat={props.prodCat}/>
@@ -26,7 +26,7 @@ export default function Product(props: any) {
 export async function getServerSideProps(context: { query: { prod: any } }) {
 
     const baseUrl = new ApiService();
-    const { prod } = context.query; 
+    const { prod } = context.query || null; 
        
     // const category =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/categories?orderby=id&order=asc`);
     // const categories = await category.json();
@@ -38,8 +38,8 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
     const menuCats = await cat.json();
 
-    const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
-    const brands = await brand.json();
+    // const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
+    // const brands = await brand.json();
 
     // const prods =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     // const products = await prods.json();
@@ -50,9 +50,9 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
     const mainmenu = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/menu?_fields=acf&acf_format=standard`);
     const menu =  await mainmenu.json();
     
-    if (menuCats && menuCats.length > 0) {
+    if (menu && menu.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { brands:brands, categories:menuCats, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId, prodCat:prod, menu:menu } }
+        return { props: {  categories:menuCats, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId, prodCat:prod, menu:menu } }
     } else {
         return {
             props: {}

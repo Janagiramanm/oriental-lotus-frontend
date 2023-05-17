@@ -1,34 +1,73 @@
 import next from "next";
 import styles from "./aboutBlock.module.scss";
-import React, {} from 'react'
+import React, {useState} from 'react'
 import Link from "next/link";
 
-export default function AboutBlock() {
+export default function AboutBlock({aboutUs}:any) {
+   
+   
+    
     return (
         <div>
           <div className={styles.aboutBlock}>
               <div className={`container`}>
-                  <div className={`row`}>
-                      <div className={`col-md-12`}>
-                          <div className={styles.aboutContent}>
-                              <h4>About</h4>
-                              <p>Oriental Lotus is the industry benchmark for manufacturing and production of world class hotel amenities, catering the largest client base of 1500+ premium 5-star and luxury boutique hotels in India since 2014.
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-                  <div className={`row pt-4 pb-4`}>
-                      <div className={`col-md-6`}>
-                          <div className={styles.aboutThree}>
-                              <p>With a total 57,000 sq ft of manufacturing area seamlessly operated by a dedicated workforce of 150 people, we offer one of the largest production capacities in India.</p>
-                          </div>
-                      </div>
-                      <div className={`col-md-6`}>
-                          <div className={styles.aboutThree}>
-                              <p>Our full-fledged dedicated in-house laboratory develops custom formulations for private labels and produces third-party licensed hotel toiletries either in partnership or through the contract manufacturing route for luxury and couture International Amenities Brands.</p>
-                          </div>
-                      </div>
-                  </div>
+                 
+                    {aboutUs.map((element:any, index:any)=>(
+                         <div className="row" key={index}>
+                                <div className={`col-md-12`}>
+                                    <div className={styles.aboutContent}>
+                                        <h4>{element.acf.about_us.title}</h4>
+                                        <div dangerouslySetInnerHTML={{__html: element.acf.about_us.header_content}}></div>
+                                    </div>
+                                </div>
+                                {element.acf.about_us.flexible_content.map((elem:any, ind:any)=>(
+                                      <div className={`col-md-6`}  key={ind}>
+                                            {elem.acf_fc_layout == 'left_content' ? 
+                                            <div className={`col-md-12 ${styles.aboutThree}`} >
+                                               <div dangerouslySetInnerHTML={{__html:elem.content}}></div>
+                                            </div>
+                                            :''}
+                                             {elem.acf_fc_layout == 'right_content' ? 
+                                            <div className={`col-md-12 ${styles.aboutThree}`} >
+                                               <div dangerouslySetInnerHTML={{__html:elem.content}}></div>
+                                            </div>
+                                            :''}
+                                      </div>
+                                ))}
+                                 {element.acf.about_us.flexible_content.map((elem:any, ind:any)=>(
+                                      <div   key={ind}>
+                                            {elem.acf_fc_layout == 'full_content' ? 
+                                               <div dangerouslySetInnerHTML={{__html:elem.content}}></div>
+                                            :''}
+                                            {elem.acf_fc_layout == 'left_image_right_content' ? 
+                                              <div className="row" >
+                                                 <div className="col-md-6">
+                                                    <img src={elem.image.url} alt="" />
+                                                </div>
+                                                <div className="col-md-6">
+                                                <div dangerouslySetInnerHTML={{__html:elem.content}}></div>
+                                                </div>
+                                              </div>
+                                            
+                                            :''}
+                                            {elem.acf_fc_layout == 'right_image_left_content' ? 
+                                              <div className="row" >
+                                                <div className="col-md-6">
+                                                    <div dangerouslySetInnerHTML={{__html:elem.content}}></div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <img src={elem.image.url} alt="" />
+                                                </div>
+                                              </div>
+                                            :''}
+                                            
+                                      </div>
+                                ))}
+                         </div>
+                        
+                  
+                   ))}
+                   
               </div>
           </div>
         </div>

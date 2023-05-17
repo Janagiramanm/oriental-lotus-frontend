@@ -76,7 +76,7 @@ export default function MainNav({cartItems, menu}: any) {
                          {menu[0]?.acf.main_menu?.map((element:any, index:any)=>(
                               <li key={index}>
 
-                                <Link href={element.main_menu_link} onMouseOver={currentMenu(element.main_menu_name.toLowerCase(),index)} onClick={hideMenu}>{element.main_menu_name}</Link>
+                                <Link href={element.main_menu_link?element.main_menu_link:''} onMouseOver={currentMenu(element.main_menu_name.toLowerCase(),index)} onClick={hideMenu}>{element.main_menu_name}</Link>
 
                                 <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
                                         <div className={styles.menuWhite}>
@@ -87,7 +87,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                                         
                                                                         return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
                                                                                 
-                                                                                            <Link className="row" href={baseUrl.getFrotendUrl()+'/'+elem.sub_menu_link}>{elem.sub_menu_title}</Link> 
+                                                                                            <div className={`row ${styles.subMenu}`} >{elem.sub_menu_title}</div> 
                                                                                 
                                                                             </div>)
                                                                     
@@ -102,7 +102,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              
                                                                                 return(<div className="row" key={childInd}>
-                                                                                    <Link  href={baseUrl.getFrotendUrl()+'/'+elem.sub_menu_link+'/'+childMenu.link}>{childMenu.child_menu_label}</Link> 
+                                                                                    <Link  href={baseUrl.getFrotendUrl()+'/'+childMenu.link}>{childMenu.child_menu_label}</Link> 
 
                                                                                 </div>
                                                                                                   

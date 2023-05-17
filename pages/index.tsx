@@ -19,7 +19,7 @@ import React from "react";
 export default function Home(props: any) {
   return (
     <div>
-        <MainNav categories={props.menuCats} products={props.products} brands={props.brands} menu={props.menu}/>
+        <MainNav cartItems={''} menu={props.menu}/>
         <SplashHero/>
         <div className={`animate__animated animate__delay-4s animate__fadeInUp`}>
             <FooterSection/>

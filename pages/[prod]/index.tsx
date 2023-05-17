@@ -38,8 +38,8 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
     const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
     const menuCats = await cat.json();
 
-    const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
-    const brands = await brand.json();
+    // const brand = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
+    // const brands = await brand.json();
 
     // const prods =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     // const products = await prods.json();
@@ -52,7 +52,7 @@ export async function getServerSideProps(context: { query: { prod: any } }) {
     
     if (menu && menu.length > 0) {
     //   const brands = res[0].acf.brands;
-        return { props: { brands:brands, categories:menuCats, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId, prodCat:prod, menu:menu } }
+        return { props: {  categories:menuCats, heroProduct:heroProducts, productList:productList, heroProductId:heroProductId, prodCat:prod, menu:menu } }
     } else {
         return {
             props: {}

@@ -9,7 +9,7 @@ import ProductListSection from "../../../components/productListSection/productLi
 import { ApiService } from "../../../services/api.service";
 import Modal from '../../../components/modalPopup/index';
 
-// import axios from 'axios';
+// import axios from 'axios'; 
 import ProductDetails from "../../../components/productDetails/productDetails";
 
 export default function Product(props: any) {
@@ -48,7 +48,7 @@ export default function Product(props: any) {
         
         
        
-    }
+    } 
     console.log('mMMMMM==',modalPop)
 
     const closeModal = () =>{

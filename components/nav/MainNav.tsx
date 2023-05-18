@@ -11,7 +11,7 @@ export default function MainNav({cartItems, menu}: any) {
     const [scroll, setScroll] = useState('')
     const [dblock, setDblock] = useState(" d-none");
     const [bmenu, setBrandblock] = useState(" d-none");
-    const [cartCount, setCartItems] = useState<string | null >('');
+    const [cartCount, setCartItems] = useState<string | null >('0');
    
 
     const [activeMainIndex, setActivemainIndex] = useState(-1);
@@ -64,6 +64,8 @@ export default function MainNav({cartItems, menu}: any) {
         return () => handleSubMenu(index);
     }
     const baseUrl = new ApiService();
+
+    console.log('COUNT==',cartCount);
 
     return (
         <div className={`${styles.mainNav +' '+ scroll } animate__animated animate__delay-4s animate__fadeInDown`} >
@@ -136,9 +138,13 @@ export default function MainNav({cartItems, menu}: any) {
                     <div className="col-md-3  text-end">
                         <div className="d-flex justify-content-end align-items-center">
                             <div className={styles.cartIcon}>
-                                {cartCount !='0' ? 
-                                <a className={`position-relative`} href={'/checkout'}><span className={styles.counter}>{cartCount}</span><img alt={`image`} src={"/images/cart.svg"} /></a>
-                                   :''            }
+                               
+                                <a className={`position-relative`} href={'/checkout'}>
+                                {cartCount != '0' && cartCount !=null ? 
+                                    <span className={styles.counter}>{cartCount}</span>
+                                    :''}
+                                    <img alt={`image`} src={"/images/cart.svg"} /></a>
+                                  
                                 </div>
                             <div className={`${styles.cartIcon} d-block d-md-none`}><img alt={`image`} src={"/images/menu.svg"} /></div>
                             <button type="button" className="d-none d-md-block btn btn-primary">CONTACT</button>

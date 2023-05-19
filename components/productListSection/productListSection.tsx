@@ -56,14 +56,14 @@ export default function ProductListSection({productList, mainId, parent, prodCat
                             </div>
                         </div>
                         <div className={`col-3 text-end`}>
-                            <div className={styles.productItemsTitle}>
+                            {/* <div className={styles.productItemsTitle}>
                                 <select className="form-select" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

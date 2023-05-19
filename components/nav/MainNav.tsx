@@ -70,7 +70,8 @@ export default function MainNav({cartItems, menu}: any) {
     return (
         <div className={`${styles.mainNav +' '+ scroll } animate__animated animate__delay-4s animate__fadeInDown`} >
             <div className="container-fluid">
-                <header className="d-flex flex-wrap justify-content-between align-items-center py-0 py-sm-4">
+                    <header className="d-flex flex-wrap justify-content-between align-items-center py-0 py-sm-4">
+                    <title>OLHS</title>
                     <Link href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                         <img width={`120`} src={"/images/logo.png"}  alt={`image`} />
                     </Link>
@@ -78,7 +79,13 @@ export default function MainNav({cartItems, menu}: any) {
                          {menu[0]?.acf.main_menu?.map((element:any, index:any)=>(
                               <li key={index}>
 
-                                <Link href={element.main_menu_link?element.main_menu_link:''} onMouseOver={currentMenu(element.main_menu_name.toLowerCase(),index)} onClick={hideMenu}>{element.main_menu_name}</Link>
+
+                                <Link href={element.main_menu_link?element.main_menu_link:''} 
+                                onMouseOver={ currentMenu(element.main_menu_name.toLowerCase(),index) } 
+                                onClick={hideMenu}
+                                >
+                                    {element.main_menu_name}
+                                </Link>
 
                                 <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
                                         <div className={styles.menuWhite}>

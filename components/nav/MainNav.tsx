@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ApiService } from "../../services/api.service";
 import axios from "axios";
+import Router from 'next/router'
 export default function MainNav({cartItems, menu}: any) {
   
 
@@ -63,12 +64,14 @@ export default function MainNav({cartItems, menu}: any) {
     const selectSubMenu = (index:any) => {
         return () => handleSubMenu(index);
     }
+
+    const handleContact = () => {
+        Router.push('/contact')
+    }
     const baseUrl = new ApiService();
 
-    console.log('COUNT==',cartCount);
-
     return (
-        <div className={`${styles.mainNav +' '+ scroll } animate__animated animate__delay-4s animate__fadeInDown`} >
+        <div className={`${styles.mainNav +' '+ scroll } `} >
             <div className="container-fluid">
                     <header className="d-flex flex-wrap justify-content-between align-items-center py-0 py-sm-4">
                     <title>OLHS</title>
@@ -127,11 +130,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                                             })}
 
                                                                     </div>)
-                                                                   
-
-                                                                    
-                                                                  
-                                                         })}
+                                                            })}
 
                                                              </div>
                                                             
@@ -162,7 +161,7 @@ export default function MainNav({cartItems, menu}: any) {
                                   
                                 </div>
                             <div className={`${styles.cartIcon} d-block d-md-none`}><img alt={`image`} src={"/images/menu.svg"} /></div>
-                            <button type="button" className="d-none d-md-block btn btn-primary">CONTACT</button>
+                            <button type="button" className="d-none d-md-block btn btn-primary" onClick={handleContact}>CONTACT</button>
                         </div>
                     </div>
                 </header>

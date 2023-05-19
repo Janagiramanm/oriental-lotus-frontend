@@ -19,8 +19,10 @@ import React from "react";
 export default function Home(props: any) {
   return (
     <div>
-        <MainNav cartItems={''} menu={props.menu}/>
-        <SplashHero/>
+        <div className={`animate__animated animate__delay-4s animate__fadeInDown`}>
+            <MainNav cartItems={''} menu={props.menu}/>
+        </div>
+        <SplashHero />
         <div className={`animate__animated animate__delay-4s animate__fadeInUp`}>
             <FooterSection/>
         </div>

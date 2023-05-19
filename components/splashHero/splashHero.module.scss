@@ -5,6 +5,8 @@
   align-items: center;
   text-align: center;
   background: #ffffff;
+  z-index: -1;
+  position: relative;
   h1{
     font-size: 82px;
     text-transform: uppercase;

@@ -108,7 +108,7 @@ body{
   letter-spacing: 0px;
   //padding-top: 40px;
   //padding-bottom: 40px;
-  z-index: 100;
+  z-index: 300;
   overflow: hidden;
   transition: ease all 0.5s ;
   a{
@@ -163,7 +163,7 @@ body{
 //  }
 //}
 .columnCount{
-  column-count: 3;
+  column-count: 2;
   font-size: 13px;
 }
 

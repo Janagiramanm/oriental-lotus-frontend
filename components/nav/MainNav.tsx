@@ -78,14 +78,22 @@ export default function MainNav({cartItems, menu}: any) {
                     <ul className="d-none d-md-flex nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
                          {menu[0]?.acf.main_menu?.map((element:any, index:any)=>(
                               <li key={index}>
+                            {element.sub_menu ? 
 
-
-                                <Link href={element.main_menu_link?element.main_menu_link:''} 
+                                <Link href={element.main_menu_link?element.main_menu_link:''}
+                                
                                 onMouseOver={ currentMenu(element.main_menu_name.toLowerCase(),index) } 
                                 onClick={hideMenu}
                                 >
                                     {element.main_menu_name}
-                                </Link>
+                                </Link>:
+                                 <Link href={element.main_menu_link?element.main_menu_link:''}
+                                        onClick={hideMenu}
+                                        onMouseOver={hideMenu} 
+                                 >
+                                     {element.main_menu_name}
+                                 </Link>
+                                }
 
                                 <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
                                         <div className={styles.menuWhite}>

@@ -129,7 +129,8 @@ export default function CustomizeFormBlock() {
                                     <div className="form-floating mb-3">
                                         <input type="text" className="form-control" id="floatingInput"
                                                placeholder="Full Name"
-                                               onChange={(e) => setName(e.target.value)} />
+                                               onChange={(e) => setName(e.target.value)} 
+                                               value={name}/>
                                         <label htmlFor="floatingInput">Full Name</label>
                                     </div>
 
@@ -170,7 +171,8 @@ export default function CustomizeFormBlock() {
                                     <div className="form-floating mb-3">
                                         <input type="Name" className="form-control" id="floatingInput"
                                                placeholder="Company Name"
-                                               onChange={(e) => setCompanyName(e.target.value)} />
+                                               onChange={(e) => setCompanyName(e.target.value)}
+                                               value={companyName} />
                                         <label htmlFor="floatingInput">Company Name</label>
                                     </div>
                                 </div>
@@ -180,7 +182,8 @@ export default function CustomizeFormBlock() {
                                     <div className="form-floating mb-3">
                                         <input type="Name" className="form-control" id="floatingInput"
                                                placeholder="Location"
-                                               onChange={(e) => setLocation(e.target.value)} />
+                                               onChange={(e) => setLocation(e.target.value)}
+                                               value={location} />
                                         <label htmlFor="floatingInput">Location</label>
                                     </div>
 
@@ -189,7 +192,8 @@ export default function CustomizeFormBlock() {
                                     <div className="form-floating mb-3">
                                         <input type="Name" className="form-control" id="floatingInput"
                                                placeholder="City" 
-                                               onChange={(e) => setCity(e.target.value)}/>
+                                               onChange={(e) => setCity(e.target.value)}
+                                               value={city}/>
                                         <label htmlFor="floatingInput">City</label>
                                     </div>
                                 </div>
@@ -199,7 +203,8 @@ export default function CustomizeFormBlock() {
                                     <div className="form-floating mb-3">
                                         <textarea  className="form-control" id="floatingInput"
                                                placeholder="Remark" 
-                                               onChange={(e) => setRemarks(e.target.value)}/>
+                                               onChange={(e) => setRemarks(e.target.value)}
+                                               value={remarks}/>
                                         <label htmlFor="floatingInput">Remark</label>
                                     </div>
 
@@ -211,6 +216,17 @@ export default function CustomizeFormBlock() {
                                     <button className={`btn btn-primary`} onClick={handleSubmit}>Sumbit</button>
                                 </div>
                             </div>
+                            <div className={`row`}>
+                                <div className="col-12 text-center">
+                                  {success ?
+                                     <label className={`${styles.successMsg}`}>{success}</label>
+                                  :''}
+
+                                </div>
+
+                            </div>
+
+
                         </div>
 
                     </div>

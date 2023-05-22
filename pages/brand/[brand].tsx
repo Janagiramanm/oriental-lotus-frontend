@@ -14,10 +14,11 @@ import axios from 'axios';
 
 export default function Brand(props: any) {
 
-    //console.log('PRODSU==',props.brands);
+    console.log('PRODSUASADA==',props.brands);
     return (
         <div>
-            <MainNav brands={props.menuBrand} categories={props.categories} products={props.menuProducts}/>
+            <MainNav cartItem={''} menu={props.menu} />
+            {/* <MainNav brands={props.menuBrand} categories={props.categories} products={props.menuProducts}/> */}
             <BrandHeroSection logo={props.brands.brand_logo} heroSection={props.brands.brand_banner} hereProduct={props.brands.brand_hero_product}/>
             <ProductIntroSection introContent={props.brands.brand_intro}/>
             <ProductListSection productList={props.productList} mainId={props.brandId} parent={'brand'} prodCat={props.prodCat}/>
@@ -53,10 +54,12 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
 
     // const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products`);
     // const products = await product.json();
+    const mainmenu = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/menu?_fields=acf&acf_format=standard`);
+    const menu =  await mainmenu.json();
     
     if (res ) {
       const brands = res.data[0].acf.brands;
-        return { props: { brands:brands, menuProducts:products, menuBrand:menuBrand,  categories:menuCats, productList:productList, brandId:brandId, prodCat:brand } }
+        return { props: { brands:brands, menuProducts:products, menuBrand:menuBrand,  categories:menuCats, productList:productList, brandId:brandId, prodCat:brand, menu:menu  } }
     } else {
         return {
             props: {}

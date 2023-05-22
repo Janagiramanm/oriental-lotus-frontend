@@ -104,12 +104,16 @@ export default function MainNav({cartItems, menu}: any) {
                                                 <div className="row py-5">
                                                              <div className="col-md-3">
                                                                 {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
-                                                                        
-                                                                        return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
-                                                                                
+                                                                       
+                                                                        if(element.main_menu_name == 'PRODUCTS') { 
+                                                                          return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
                                                                                             <div className={`row ${styles.subMenu}`} >{elem.sub_menu_title}</div> 
-                                                                                
-                                                                            </div>)
+                                                                              </div>)
+                                                                        }else{
+                                                                            return(<div key={ind} >
+                                                                                            <Link  href={elem.sub_menu_link} className={`row ${styles.subMenu}`} >{elem.sub_menu_title}</Link> 
+                                                                              </div>)
+                                                                        }
                                                                     
 
                                                                 })}

@@ -39,16 +39,16 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     // const result =  res.acf;
     const brandId = res.data[0].id;
 
-    const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
-    const menuCats = await cat.json();
+    // const cat =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/product-overview?acf_format=standard&orderby=id&order=asc&per_page=6`);
+    // const menuCats = await cat.json();
 
-    const brands = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
-    const menuBrand = await brands.json();
+    // const brands = await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/brand-page?acf_format=standard`);
+    // const menuBrand = await brands.json();
 
     // const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     // const products = await prod.json();
 
-    const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=brand&meta_value=${brandId}`);
+    const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/brand-products?meta_key=brand&meta_value=${brandId}`);
     const productList = await product.json();
 
 
@@ -59,7 +59,7 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     
     if (res ) {
       const brands = res.data[0].acf.brands;
-        return { props: { brands:brands,  menuBrand:menuBrand,  categories:menuCats, productList:productList, brandId:brandId, prodCat:brand, menu:menu  } }
+        return { props: { brands:brands,   productList:productList, brandId:brandId, prodCat:brand, menu:menu  } }
     } else {
         return {
             props: {}

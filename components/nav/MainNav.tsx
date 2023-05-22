@@ -107,8 +107,8 @@ export default function MainNav({cartItems, menu}: any) {
                                                                 {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
                                                                        
                                                                         if(element.main_menu_name == 'PRODUCTS') { 
-                                                                          return(<div key={ind} onMouseOver={selectSubMenu(ind)}>
-                                                                                            <div className={`row ${styles.subMenu}`} >{elem.sub_menu_title}</div> 
+                                                                          return(<div key={ind} >
+                                                                                            <div className={`row ${styles.subMenu}`} onMouseOver={selectSubMenu(ind)}>{elem.sub_menu_title}</div> 
                                                                               </div>)
                                                                         }else{
                                                                             return(<div key={ind} >
@@ -127,7 +127,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              
                                                                                 return(<div className="row" key={childInd}>
-                                                                                    <Link  href={baseUrl.getFrotendUrl()+'/'+childMenu.link}>{childMenu.child_menu_label}</Link> 
+                                                                                    <Link  href={baseUrl.getFrotendUrl()+'/'+childMenu.link} onClick={hideMenu}>{childMenu.child_menu_label}</Link> 
 
                                                                                 </div>
                                                                                                   

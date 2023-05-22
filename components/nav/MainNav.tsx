@@ -69,6 +69,7 @@ export default function MainNav({cartItems, menu}: any) {
         Router.push('/contact')
     }
     const baseUrl = new ApiService();
+  
 
     return (
         <div className={`${styles.mainNav +' '+ scroll } `} >
@@ -111,7 +112,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                                               </div>)
                                                                         }else{
                                                                             return(<div key={ind} >
-                                                                                            <Link  href={elem.sub_menu_link} className={`row ${styles.subMenu}`} >{elem.sub_menu_title}</Link> 
+                                                                                            <Link  href={baseUrl.getFrotendUrl()+`/`+elem.sub_menu_link} className={`row ${styles.subMenu}`} >{elem.sub_menu_title}</Link> 
                                                                               </div>)
                                                                         }
                                                                     

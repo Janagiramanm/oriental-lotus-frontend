@@ -84,7 +84,7 @@ export default function MainNav({cartItems, menu}: any) {
                               <li key={index}>
                             {element.sub_menu ? 
 
-                                <Link href={'#'}
+                                <Link href={baseUrl.getFrotendUrl()}
                                 
                                 onMouseOver={ currentMenu(element.main_menu_name.toLowerCase(),index) } 
                                 onClick={hideMenu}

@@ -24,8 +24,8 @@ export default function ProductListSection({productList, mainId, parent, prodCat
     }, [mainId]);
     
     const getProducts  = async () => {
-        console.log('URL',baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=${parent}&meta_value=${mainId}&paged=${paged}`);
-        const moreProducts =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=${parent}&meta_value=${mainId}&paged=${paged}`);
+        console.log('URL',baseUrl.getBaseUrl() + `/wp-json/wl/v1/brand-products?meta_key=${parent}&meta_value=${mainId}&paged=${paged}`);
+        const moreProducts =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/brand-products?meta_key=${parent}&meta_value=${mainId}&paged=${paged}`);
         const moreProductList = await moreProducts.json();
         return moreProductList;
 
@@ -69,7 +69,7 @@ export default function ProductListSection({productList, mainId, parent, prodCat
                 </div>
                 <div className={styles.productsCardBlock}>
                     <div className={`row gx-5 gy-5 justify-content-center`}>
-                        {visiblePosts?.map((element:any, index:any)=>(
+                        {/* {visiblePosts?.map((element:any, index:any)=>(
                             <div className={`col-md-4`} key={index}>
                                     <div className={styles.productCard}>
                                         <div className={styles.productImage}>
@@ -94,7 +94,7 @@ export default function ProductListSection({productList, mainId, parent, prodCat
                                         </div>
                                     </div>
                                 </div>
-                        ))}
+                        ))} */}
                     </div>
                     {visiblePosts?.length < productList.count ? 
                     <div className={`row pt-5 pb-5`}>

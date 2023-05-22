@@ -14,7 +14,7 @@ import axios from 'axios';
 
 export default function Brand(props: any) {
 
-    console.log('PRODSUASADA==',props.brands);
+    console.log('PRODSUASADA==',props);
     return (
         <div>
             <MainNav cartItem={''} menu={props.menu} />
@@ -48,7 +48,7 @@ export async function getServerSideProps(context: { query: { brand: any; }; }) {
     const prod =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wp/v2/products?_fields=acf&acf_format=standard&per_page=4`);
     const products = await prod.json();
 
-    const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/products?meta_key=brand&meta_value=${brandId}`);
+    const product =  await fetch(baseUrl.getBaseUrl() + `/wp-json/wl/v1/brand-products?meta_key=brand&meta_value=${brandId}`);
     const productList = await product.json();
 
 

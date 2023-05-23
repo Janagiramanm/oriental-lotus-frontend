@@ -174,7 +174,7 @@ export default function MainNav({cartItems, menu}: any) {
                         </div>
                     </div>
 
-                        <div className="accordion" id="accordionExample">
+                        <div className="accordion d-none" id="accordionExample">
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button" type="button" data-bs-toggle="collapse"

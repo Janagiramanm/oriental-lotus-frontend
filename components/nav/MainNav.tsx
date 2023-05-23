@@ -107,8 +107,8 @@ export default function MainNav({cartItems, menu}: any) {
                                                                 {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
                                                                        
                                                                         if(element.main_menu_name == 'PRODUCTS') { 
-                                                                          return(<div key={ind} >
-                                                                                            <div className={`row ${styles.subMenu}`} onMouseOver={selectSubMenu(ind)}>{elem.sub_menu_title}</div> 
+                                                                          return(<div key={ind} className={activeSubmenuIndex == ind ?`${styles.active} `+`${styles.subMenu}`:`${styles.subMenu}`}  onMouseOver={selectSubMenu(ind)}>
+                                                                                            {elem.sub_menu_title}
                                                                               </div>)
                                                                         }else{
                                                                             return(<div key={ind} >
@@ -122,7 +122,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                              </div>
                                                              <div className="col-md-8">
                                                              {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
-                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock +` columnCount`:'d-none'}>
+                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock +` columnCount `:'d-none'}>
                                                                           
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              

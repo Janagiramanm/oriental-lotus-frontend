@@ -16,6 +16,7 @@ import axios from 'axios';
 import SplashHero from "../components/splashHero/splashHero";
 import React from "react";
 
+
 export default function Home(props: any) {
   return (
     <div>

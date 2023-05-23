@@ -10,8 +10,8 @@ export default function MainNav({cartItems, menu}: any) {
   
 
     const [scroll, setScroll] = useState('')
-    const [dblock, setDblock] = useState(" d-none");
-    const [bmenu, setBrandblock] = useState(" d-none");
+    const [dblock, setDblock] = useState(" invisible");
+    const [bmenu, setBrandblock] = useState(" invisible");
     const [cartCount, setCartItems] = useState<string | null >('0');
    
 
@@ -35,11 +35,15 @@ export default function MainNav({cartItems, menu}: any) {
     },[cartItems])
     const showMenu = (() =>{
         hideMenu();
-        setDblock(" d-block");
+        // setDblock(" d-block");
+        setDblock(" visible");
     });
     const hideMenu = (() =>{
-        setDblock(" d-none");
-        setBrandblock(" d-none");
+        // setDblock(" d-none");
+        // setBrandblock(" d-none");
+
+        setDblock(" invisible");
+        setBrandblock(" invisible");
     });
 
     const showBrandMenu = (()=>{
@@ -99,7 +103,7 @@ export default function MainNav({cartItems, menu}: any) {
                                  </Link>
                                 }
 
-                                <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":'d-none '  } onMouseLeave={hideMenu}>
+                                <div className={ activeMainIndex == index ? dblock+' '+ element.main_menu_name.toLowerCase()+'-menu'+ " menuDrop  ":' invisible menuDrop'  } onMouseLeave={hideMenu}>
                                         <div className={styles.menuWhite}>
                                             <div className={`container`} >
                                                 <div className="row py-5">
@@ -122,7 +126,7 @@ export default function MainNav({cartItems, menu}: any) {
                                                              </div>
                                                              <div className="col-md-8">
                                                              {element.sub_menu&&element.sub_menu?.map((elem:any, ind:any)=>{
-                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock +` columnCount `:'d-none'}>
+                                                                    return (<div key={ind} className={activeSubmenuIndex == ind ? dblock +` columnCount `:'d-none '}>
                                                                           
                                                                            {elem.child_menu&&elem.child_menu?.map((childMenu:any, childInd:any )=>{
                                                                              

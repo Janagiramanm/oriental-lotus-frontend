@@ -9,8 +9,8 @@ export class ApiService {
          return "https://lotuswp.netiapps.com";
       }
      else if(process.env.NEXT_PUBLIC_API_ENV == 'dev'){
-      // return "https://lotuswp.netiapps.com";
-         return "http://localhost/oriental-lotus-wp/index.php";
+       return "https://lotuswp.netiapps.com";
+         // return "http://localhost/oriental-lotus-wp/index.php";
         // return "http://localhost/oriental-lotus-wp/index.php";
       }
       else{

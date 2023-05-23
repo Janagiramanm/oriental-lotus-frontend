@@ -3,11 +3,11 @@
   background: url("/images/shape-bg.svg");
   padding-top: 20px;
   padding-bottom: 20px;
-  background-size: 100%;
   background-repeat: no-repeat;
   margin-top: -60px;
   position: relative;
   z-index: 3;
+  background-position: center top;
 }
 .footerSection .footLogo {
   width: 126px;

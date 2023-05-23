@@ -14,6 +14,7 @@
 .aboutBlock .aboutThree {
   padding: 60px;
   background: #eeeeee;
+  min-height: 300px;
 }
 .aboutBlock .aboutThree h3 {
   font-size: 38px;

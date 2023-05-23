@@ -1,0 +1,16 @@
+.form {
+  background: #efefef;
+  padding-top: 210px;
+  padding-bottom: 110px;
+}
+.form .EnquiryTitle {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.successMsg {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=contactFormBlock.module.css.map */

@@ -5,6 +5,7 @@
   z-index: 10;
   height: auto;
   background: #ffffff;
+  color: white;
 }
 .mainNav:hover {
   background: #ffffff;
@@ -79,6 +80,17 @@
 }
 .MenuCard h5 a {
   color: #36276F;
+}
+
+.subMenu {
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.subMenu.active {
+  border-bottom: 1px solid white;
 }
 
 /*# sourceMappingURL=MainNav.module.css.map */

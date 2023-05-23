@@ -64,8 +64,6 @@ export default function AboutBlock({aboutUs}:any) {
                                       </div>
                                 ))}
                          </div>
-                        
-                  
                    ))}
                    
               </div>

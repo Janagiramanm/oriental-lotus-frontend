@@ -19,10 +19,10 @@ export default function SplashHero({service}:any) {
 
     const animateBox = () => {
         gsap.fromTo(".slogan12",{
-            opacity: 1, y: -100, duration:1, scale: ("1"),
+            opacity: 1, y: -100, duration:.5, scale: ("1"),
             },
         {
-            opacity: 1, delay: 3, y: 60, duration: 1, scale: (".5"), ease: "fade"
+            opacity: 1, delay: 2, y: 60, duration: .5, scale: (".5"), ease: "fade"
         });
     };
 
@@ -31,10 +31,10 @@ export default function SplashHero({service}:any) {
 
     const animateLogo = () => {
         gsap.fromTo(".logoAni",{
-                opacity: 0, y: "50%", duration:1,
+                opacity: 0, y: "50%", duration:.5,
             },
             {
-                opacity: 1, delay: 4, duration: 1, y:80, stagger: 1, ease: "fade",
+                opacity: 1, delay: 3, duration: .5, y:80, stagger: 1, ease: "fade",
             });
     };
 

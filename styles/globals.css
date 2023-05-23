@@ -17990,6 +17990,7 @@ body {
 .menuDrop {
   position: absolute;
   background: #2c205c;
+  backdrop-filter: saturate(180%) blur(20px);
   left: 0px;
   right: 0px;
   letter-spacing: 0px;
@@ -17998,9 +17999,10 @@ body {
   width: 100%;
   margin: auto;
   letter-spacing: 0px;
-  z-index: 100;
+  z-index: 300;
   overflow: hidden;
-  transition: ease all 0.5s;
+  max-height: 0;
+  transition: max-height 0.15s ease-out;
 }
 .menuDrop a {
   color: #ffffff !important;
@@ -18038,12 +18040,16 @@ body {
 }
 
 .columnCount {
-  column-count: 3;
+  column-count: 2;
   font-size: 13px;
 }
 
 .logoAni img {
   max-width: 100%;
+}
+.visible {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
 }
 
 /*# sourceMappingURL=globals.css.map */

@@ -79,12 +79,12 @@ export default function ProductListSection({productList, mainId, parent, prodCat
                                             <h5>{element.acf.product_title}</h5>
                                         </div>
                                         <div className={`row pb-4`}>
-                                            <div className={`col-md-6`}>
+                                            <div className={`col-6`}>
                                                 <div className={styles.brandImage}>
                                                     <img src={element.acf.brand?.brands?.brand_logo?.url} />
                                                 </div>
                                             </div>
-                                            <div className={`col-md-6`}>
+                                            <div className={`col-6`}>
                                                 <div className={styles.shopNow}>
                                                     <Link href={`/`+router.asPath+`/`+element.acf.slug}>
                                                         <img src={`/images/readmore.svg`} />
